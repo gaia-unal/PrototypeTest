@@ -3,7 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/Test.css'
 
 function Test() {
-    const srcIframe = "http://localhost:3000/Activities/TypingActivity/indice.html";
+    // This is the domain to get the activities' route
+    const domain = "http://localhost:3000";
+
+    const srcIframe = domain + "/Activities/TypingActivity/indice.html";
 
     return (
         <div>
