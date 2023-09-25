@@ -6,7 +6,7 @@ function Test() {
     // This is the domain to get the activities' route
     const domain = "http://localhost:3000";
 
-    const srcIframe = domain + "/Activities/TypingActivity/indice.html";
+    const srcIframe = domain + "/Activities/EarlyDetection/PhonologicalDyslexia/PhonologicalAwareness/1/indice.html";
 
     return (
         <div>
