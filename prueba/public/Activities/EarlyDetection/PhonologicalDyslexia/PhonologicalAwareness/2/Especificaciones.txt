@@ -1,0 +1,5 @@
+Grado: Primero
+Competencia: Competencia Fonológica y léxica 
+Tipo: Selección simple
+Categoría: Léxica
+Habilidades: Conciencia léxica, conocimiento de palabras, asociación de palabras

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--
+	Change the * for the proficiency that the activity assesses, and the # for the grade level
+	For example, if it is a phonological awareness activity for grade 1, write Phonological Activity Gr 1
+	-->
+	<title>***** Actividad Gr #</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<!-- Bootstrap CSS file -->
+	<link rel="stylesheet" href="../../../../../Bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	<div class="container w-75 contenedor">
+
+		<!-- Green Header -->
+		<div class="green-image"></div>
+
+		<!-- Button to change the font -->
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 mb-2">
+			<button type="button" class="btn btn-outline-dark" id="changeFont">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+					class="bi bi-file-font-fill" viewBox="0 0 16 16">
+					<path
+						d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.057 4h5.886L11 6h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v6.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V4.755l-.293.01C5.856 4.808 5.68 4.905 5.5 6H5l.057-2z" />
+				</svg>
+				Cambiar fuente
+			</button>
+		</div>
+
+		<!-- Megaphone icon and activity instruction -->
+		<div class="instruccion">
+			<div>
+				<a href="#" onmouseover="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
+						title="¡Escucha aquí!"></a>
+				<audio id="audio0" class="audio-element" controls hidden="true">
+					<source src="audio0.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+
+			<!-- Activity instruction -->
+			<a href="#" onclick="sonido(0)" style="text-decoration:none; outline:none;">
+				<h2 id="texto" title="¡Da clic para escuchar!">Selecciona todas las letras M de las siguientes:
+				</h2>
+			</a>
+		</div>
+
+		<!-- Activity options -->
+		<div class="contenedor-opciones">
+			<div id="opcion1">
+				<a href="#" class="opciones" id="1" onClick="seleccionar(1)"><img src="letra1-Open-Dyslexic.png" id="imageOption0" height="60" alt="opcion1"></a>
+			</div>
+			<div id="opcion2">
+				<a href="#" class="opciones" id="2" onClick="seleccionar(2)"><img src="letra2-Open-Dyslexic.png" id="imageOption1" height="60" alt="opcion2"></a>
+			</div>
+			<div id="opcion3">
+				<a href="#" class="opciones" id="3" onClick="seleccionar(3)"><img src="letra3-Open-Dyslexic.png" id="imageOption2" height="60" alt="opcion3"></a>
+			</div>
+			<div id="opcion4">
+				<a href="#" class="opciones" id="4" onClick="seleccionar(4)"><img src="letra4-Open-Dyslexic.png" id="imageOption3" height="60"alt="opcion4"></a>
+			</div>
+			<div id="opcion5">
+				<a href="#" class="opciones" id="5" onClick="seleccionar(5)"><img src="letra5-Open-Dyslexic.png" id="imageOption4" height="60" alt="opcion5"></a>
+			</div>
+			<div id="opcion6">
+				<a href="#" class="opciones" id="6" onClick="seleccionar(6)"><img src="letra6-Open-Dyslexic.png" id="imageOption5" height="60" alt="opcion6"></a>
+			</div>
+			<div id="opcion7">
+				<a href="#" class="opciones" id="7" onClick="seleccionar(7)"><img src="letra7-Open-Dyslexic.png" id="imageOption6" height="60" alt="opcion7"></a>
+			</div>
+			<div id="opcion8">
+				<a href="#" class="opciones" id="8" onClick="seleccionar(8)"><img src="letra8-Open-Dyslexic.png" id="imageOption7" height="60" alt="opcion8"></a>
+			</div>
+		</div>
+
+		<!-- Here is the continue button -->
+		<div id="continuar">
+			<button id="btn-continuar" onmouseover="sonido(5)" title="Clic para continuar">Continuar</button>
+			<audio id="audio5" controls hidden="true">
+				<source src="audio5.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="script.js"></script>
+	<!-- Bootstrap JS file -->
+	<script src="../../../../../Bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
