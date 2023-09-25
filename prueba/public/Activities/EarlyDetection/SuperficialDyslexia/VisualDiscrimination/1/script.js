@@ -17,9 +17,10 @@ var idSeleccion = null;
 // Marco para establecer límites en la actividad
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
-// Botón para continuar
-var boton = document.getElementById('btn-continuar');
-boton.addEventListener('click', procesarPuntaje, false);
+var boton = document.getElementById('btn-continuar').addEventListener('click', function() {
+	// Envía un mensaje al componente React en el padre
+	window.parent.postMessage('cambiarActividad', '*');
+  });
 
 // To change the font
 

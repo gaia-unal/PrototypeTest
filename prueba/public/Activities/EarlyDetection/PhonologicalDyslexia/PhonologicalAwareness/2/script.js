@@ -13,8 +13,10 @@ var idOpcionCorrecta = "opcion" + "1";
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
 // Botón de continuar
-var boton = document.getElementById('btn-continuar');
-boton.addEventListener('click', procesarPuntaje, false);
+var boton = document.getElementById('btn-continuar').addEventListener('click', function() {
+	// Envía un mensaje al componente React en el padre
+	window.parent.postMessage('cambiarActividad', '*');
+  });
 
 // To change the font
 
