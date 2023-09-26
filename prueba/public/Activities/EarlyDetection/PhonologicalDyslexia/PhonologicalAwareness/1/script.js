@@ -10,11 +10,12 @@ var respuestaCorrectaDelInput = 2;
 // boton.addEventListener('click', procesarPuntaje, false);
 
 // Dentro del archivo JS de tu actividad en el iframe
-var boton = document.getElementById('btn-continuar').addEventListener('click', function() {
+var boton = document.getElementById('btn-continuar');
+
+boton.addEventListener('click', function() {
 	// Envía un mensaje al componente React en el padre
 	window.parent.postMessage('cambiarActividad', '*');
   });
-  
 
 //Solo hace parte del contenedor
 document.getElementsByClassName("contenedor")[0].style.border="solid black";

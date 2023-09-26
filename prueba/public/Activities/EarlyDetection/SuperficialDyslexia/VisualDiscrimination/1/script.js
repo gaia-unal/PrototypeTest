@@ -17,7 +17,9 @@ var idSeleccion = null;
 // Marco para establecer límites en la actividad
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
-var boton = document.getElementById('btn-continuar').addEventListener('click', function() {
+var boton = document.getElementById('btn-continuar');
+
+boton.addEventListener('click', function() {
 	// Envía un mensaje al componente React en el padre
 	window.parent.postMessage('cambiarActividad', '*');
   });
