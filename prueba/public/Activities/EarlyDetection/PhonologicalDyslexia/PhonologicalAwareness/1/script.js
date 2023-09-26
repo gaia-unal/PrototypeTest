@@ -5,9 +5,16 @@ var puntaje = null;
 // Acá va el valor de la respuesta correcta
 var respuestaCorrectaDelInput = 2; 
 
-// Acá se definen las acciones del botón continuar
-var boton = document.getElementById('btn-continuar');
-boton.addEventListener('click', procesarPuntaje, false);
+// // Acá se definen las acciones del botón continuar
+// var boton = document.getElementById('btn-continuar');
+// boton.addEventListener('click', procesarPuntaje, false);
+
+// Dentro del archivo JS de tu actividad en el iframe
+var boton = document.getElementById('btn-continuar').addEventListener('click', function() {
+	// Envía un mensaje al componente React en el padre
+	window.parent.postMessage('cambiarActividad', '*');
+  });
+  
 
 //Solo hace parte del contenedor
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
@@ -70,6 +77,8 @@ function procesarPuntaje() {
 		ocultarContinuar();
 	} else {
 		//Aquí se envía el puntaje para que se procese de forma global
+		// Dentro del iframe
+		window.parent.postMessage('Mensaje desde el iframe', '*');
 	}
 }
 
@@ -128,3 +137,4 @@ function calificar(valor) {
 		console.log('puntaje = 0')
 	}
 }
+
