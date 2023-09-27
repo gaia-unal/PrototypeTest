@@ -17,7 +17,8 @@ var boton = document.getElementById('btn-continuar');
 
 boton.addEventListener('click', function() {
 	// Envía un mensaje al componente React en el padre
-	window.parent.postMessage('cambiarActividad', '*');
+	procesarPuntaje();
+	window.parent.postMessage(puntaje, '*');
   });
 
 // To change the font

@@ -14,6 +14,8 @@ function Test() {
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
   const iframeRef = useRef(null); // Se utiliza el hook useRef
   //Se utiliza para crear una referencia mutable que puede apuntar a un elemento del DOM o a cualquier otro valor mutable dentro del componente.
+  
+  const [puntajePrueba, setPuntajePrueba] = useState(0); // Se usa un estado para llevar el puntaje global de la prueba, que inicia siendo 0
 
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
@@ -23,14 +25,26 @@ function Test() {
         const mensajeDesdeIframe = event.data;
 
         // Verifica el mensaje y avanza a la siguiente actividad si es necesario
-        // Si desde el iframe le llega el mensaje "cambiarActividad", entonces se define una constante que guarda el
-        // índice de la siguiente actividad
-        if (mensajeDesdeIframe === "cambiarActividad") {
+        // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
+        // índice de la siguiente actividad y se actualiza el puntaje global
+        if (typeof mensajeDesdeIframe === "number") {
+          console.log("Puntaje recibido del iframe:" + mensajeDesdeIframe);
+          
+          // Se actualiza el puntaje global
+          let puntajeAcumulado = puntajePrueba + mensajeDesdeIframe;
+          setPuntajePrueba(puntajeAcumulado);
+
+          console.log("Puntaje de la prueba hasta el momento: " + puntajeAcumulado); // Revisamos esta variable porque puntajePrueba todavía no se ha actualizado
+
           const siguienteActividad = actividadActual + 1;
 
           if (siguienteActividad < srcIframe.length) {
             setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
             // el estado que tiene el índice de la actividad actual
+          }
+          else {
+            // Puntaje total de la prueba
+            console.log("Puntaje de la prueba calculado: " + puntajeAcumulado);
           }
         }
       }
@@ -40,7 +54,7 @@ function Test() {
     window.addEventListener('message', recibirMensajeDesdeIframe);
 
     return () => {
-      //  Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
+      // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
       window.removeEventListener('message', recibirMensajeDesdeIframe);
     };
   }, [actividadActual]);
