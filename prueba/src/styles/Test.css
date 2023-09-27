@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%; /* Takes up the entire width of the screen */
-    height: 100vh; /* Takes up the entire height of the screen */
+    height: 150vh; /* Takes up the entire height of the screen */
     overflow: hidden; /* Hide scroll bars if the content is larger */
 }
 
