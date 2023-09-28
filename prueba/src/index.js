@@ -9,7 +9,10 @@ import Test from './components/Test';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Test />
+    {/* Props indicate the type of test (phonological dyslexia or superficial dyslexia) */}
+    <Test
+      module="/Activities/EarlyDetection/PhonologicalDyslexia"
+      competence1="/PhonologicalAwareness" />
   </React.StrictMode>
 );
 

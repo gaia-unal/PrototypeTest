@@ -20,7 +20,7 @@ document.getElementsByClassName("contenedor")[0].style.border="solid black";
 var boton = document.getElementById('btn-continuar');
 
 boton.addEventListener('click', function() {
-	// Envía un mensaje al componente React en el padre
+	// Calcula y envía el puntaje al componente React padre
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });

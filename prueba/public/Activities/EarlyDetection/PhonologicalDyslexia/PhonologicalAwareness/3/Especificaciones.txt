@@ -1,0 +1,5 @@
+Grado: Primero
+Nivel: Competencia fonológica y léxica
+Tipo: Selección ordenada
+Categoría: Sílabas
+Habilidades: Conciencia fonológica, Conciencia silábica, segmentación silábica, reconocimiento de sílabas, manipulación silábica
