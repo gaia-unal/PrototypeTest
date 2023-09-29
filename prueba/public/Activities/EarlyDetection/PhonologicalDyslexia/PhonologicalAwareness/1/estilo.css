@@ -29,19 +29,19 @@ html, body {
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-	width: 2vw;
+	width: 2.2vw;
 }
 
 .btn.btn-outline-dark {
-	font-size: 1.5vw;
+	font-size: 2.2vw;
 }
 
 /* Activity instruction */
 .instruccion {
 	display: grid;
 	grid-template-columns: 10% 90%;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 #icono-bocina {
@@ -50,7 +50,7 @@ html, body {
 
 #texto {
  	color: black;
-	font-size: 2vw;
+	font-size: 2.5vw;
 }
 
 /* Activity image */
@@ -68,11 +68,11 @@ html, body {
 #respuesta{
 	width: 30%;
 	font-family: 'Open-Dyslexic', sans-serif; 
-	font-size: 1.5vw; 
+	font-size: 2vw; 
 	border: 2px solid #bb5b02; 
 	padding: 0.5rem;
 	text-align: center;
-	margin-top: 2rem;
+	margin-top: 3rem;
 	margin-bottom: 1rem;
 }
 
@@ -92,7 +92,7 @@ html, body {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-size: 1.5vw;
+	font-size: 2vw;
 	padding: 0.5rem 0rem;
 	text-decoration: none;
 	font-family: "Open-Dyslexic", sans-serif;
