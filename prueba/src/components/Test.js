@@ -15,10 +15,14 @@ function Test(props) {
   const iframeRef = useRef(null); // Se utiliza el hook useRef
   //Se utiliza para crear una referencia mutable que puede apuntar a un elemento del DOM o a cualquier otro valor mutable dentro del componente.
 
-  const [testScore, setTestScore] = useState(0); // A state is used to keep the overall score of the test, which starts at 0
+  const [testScore, setTestScore] = useState(0); // A state is used to keep the overall score of the test
   // A state is used to manage the score of each competence
   const [competence1Score, setCompetence1Score] = useState(0);
   const [competence2Score, setCompetence2Score] = useState(0);
+  // This status is used to save the score obtained in each activity and the time needed to perform it
+  const [results, setResults] = useState([]);
+  // Time at which the first activity starts
+  const [startTime, setStartTime] = useState(new Date());
 
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
@@ -31,7 +35,18 @@ function Test(props) {
         // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
         // índice de la siguiente actividad y se actualiza el puntaje global
         if (typeof mensajeDesdeIframe === "number") {
-          console.log("Puntaje recibido del iframe:" + mensajeDesdeIframe);
+          // Time elapsed to perform the activity
+          const currentTime = new Date();
+          const elapsedTime = (currentTime - startTime) / 1000; // Seconds
+          // Information of each activity
+          const activitieResult = {
+            location: srcIframe[actividadActual],
+            score: mensajeDesdeIframe,
+            time: elapsedTime
+          };
+          const currentResults = [...results, activitieResult];
+          // Activity information is saved
+          setResults(currentResults);
 
           // Global score is updated
           let cumulativeScore = testScore + mensajeDesdeIframe;
@@ -52,22 +67,20 @@ function Test(props) {
             }
           }
 
-          console.log("Puntaje de la prueba hasta el momento: " + cumulativeScore); // Revisamos esta variable porque puntajePrueba todavía no se ha actualizado
-
           const siguienteActividad = actividadActual + 1;
 
           if (siguienteActividad < srcIframe.length) {
             setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
             // el estado que tiene el índice de la actividad actual
+            setStartTime(new Date()); // Update startTime for the next activity
           }
           else {
-            // Puntaje total de la prueba
-            console.log("Puntaje de la prueba calculado: " + cumulativeScore);
+            // The test is over
+            console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
             console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
             console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
-
-            // Aquí se podría trabajar con lo que debe hacerse cuando finalice la prueba...
-            // Creo que es mejor llamar una función
+            console.log("Resultados de cada actividad: ");
+            currentResults.forEach(activitie => console.log(activitie.location, activitie.score, activitie.time));
           }
         }
       }
@@ -80,7 +93,7 @@ function Test(props) {
       // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
       window.removeEventListener('message', recibirMensajeDesdeIframe);
     };
-  }, [actividadActual]);
+  }, [actividadActual, startTime, results]);
 
   return (
     <div className='iframe-container'>
