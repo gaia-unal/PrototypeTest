@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Test.css';
 
-function Test(props) {
+export const Test = ({ module, competence1, competence2 }) => {
   const domain = "http://localhost:3000";
 
   const srcIframe = [
-    domain + props.module + props.competence1 + "/1/indice.html",
-    domain + props.module + props.competence1 + "/2/indice.html",
-    domain + props.module + props.competence1 + "/3/indice.html"
+    domain + module + competence1 + "/1/indice.html",
+    domain + module + competence1 + "/2/indice.html",
+    domain + module + competence1 + "/3/indice.html"
   ];
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
@@ -80,7 +80,7 @@ function Test(props) {
             console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
             console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
             console.log("Resultados de cada actividad: ");
-            currentResults.forEach(activitie => console.log(activitie.location, activitie.score, activitie.time));
+            console.log(JSON.stringify(currentResults));
           }
         }
       }
@@ -102,5 +102,3 @@ function Test(props) {
     </div>
   );
 }
-
-export default Test;

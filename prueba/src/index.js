@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Test from './components/Test';
-import Header from './components/Header';
+import { Test } from './components/Test';
+import { Header } from './components/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
