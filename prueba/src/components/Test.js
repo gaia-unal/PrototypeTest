@@ -16,7 +16,7 @@ export const Test = ({ module, competence1, competence2 }) => {
     domain + module + competence2 + "/2/indice.html",
     domain + module + competence2 + "/3/indice.html",
     domain + module + competence2 + "/4/indice.html",
-    domain + module + competence2 + "/5/indice.html",
+    domain + module + competence2 + "/5/indice.html"
   ];
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
@@ -69,7 +69,7 @@ export const Test = ({ module, competence1, competence2 }) => {
             setCompetence1Score(cumulativeCompetence1Score);
           }
           else {
-            if (srcIframe[actividadActual].includes("AlphabetKnowledge") || srcIframe[actividadActual].includes("Orthography")) {
+            if (srcIframe[actividadActual].includes("LetterKnowledge") || srcIframe[actividadActual].includes("Orthography")) {
               cumulativeCompetence2Score += mensajeDesdeIframe;
               setCompetence2Score(cumulativeCompetence2Score);
             }
