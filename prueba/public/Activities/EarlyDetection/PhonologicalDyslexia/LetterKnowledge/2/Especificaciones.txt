@@ -1,0 +1,8 @@
+Tipo actividad: Seleccionar el audio que corresponde al sonido de una letra dada
+Grado: Primero
+Competencia: Conocimiento de las letras
+Tipo plantilla: Selección simple
+Categoría: * Correspondencia letra-sonido
+Habilidades: * Atención auditiva
+* Asociación letra-sonido
+

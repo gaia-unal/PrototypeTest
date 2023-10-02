@@ -13,6 +13,7 @@ export const Test = ({ module, competence1, competence2 }) => {
     domain + module + competence1 + "/5/indice.html",
 
     domain + module + competence2 + "/1/indice.html",
+    domain + module + competence2 + "/2/indice.html",
   ];
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
