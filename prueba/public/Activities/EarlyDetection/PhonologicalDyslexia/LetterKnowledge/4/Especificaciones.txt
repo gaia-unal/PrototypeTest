@@ -1,0 +1,8 @@
+Tipo actividad: Digitar la palabra que corresponde a la tarjeta dada del alfabeto
+Grado: Primero
+Competencia: Competencia Fonológica
+Tipo plantilla: Digitar
+Categoría: * Correspondencia letra-palabra
+Habilidades: * Atención visual
+* Pensamiento analítico
+

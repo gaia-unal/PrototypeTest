@@ -1,0 +1,105 @@
+/* General styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+	font-family: 'Open-Dyslexic';
+	/* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
+	src: url('http://localhost:3000/fonts/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+/* Main container */
+.contenedor{
+	width: 60%;
+	height: auto;
+	margin-top: 4rem;
+	font-family: 'Open-Dyslexic', sans-serif; 
+	overflow: hidden;
+	border: 2px solid black;
+}
+
+/* Header image */
+.green-image {
+	background-color: #98d4a4;
+	height: 2.5rem;
+}
+
+/* Button to change the font of the activity text */
+.bi.bi-file-font-fill {
+	width: 2vw;
+}
+
+.btn.btn-outline-dark {
+	font-size: 1.5vw;
+}
+
+/* Activity instruction */
+.instruccion {
+	display: grid;
+	grid-template-columns: 10% 90%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+#icono-bocina {
+	width: 90%;
+}
+
+#texto {
+ 	color: black;
+	font-size: 2vw;
+}
+
+/* Activity image */
+.contenedorImagen, .contenedorInput {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#imagen1 {
+	width: 20%;
+}
+
+/* Answer input */
+#respuesta{
+	width: 30%;
+	font-family: 'Open-Dyslexic', sans-serif; 
+	font-size: 1.5vw; 
+	border: 2px solid #bb5b02; 
+	padding: 0.5rem;
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+/* Continue button */
+#continuar {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+#btn-continuar {
+	width: 20%;
+	background-color: #16be2c;
+	border-radius: 8px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 1.5vw;
+	padding: 0.5rem 0rem;
+	text-decoration: none;
+	font-family: "Open-Dyslexic", sans-serif;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+#btn-continuar:hover {
+	background-color: #0d791b;
+}
