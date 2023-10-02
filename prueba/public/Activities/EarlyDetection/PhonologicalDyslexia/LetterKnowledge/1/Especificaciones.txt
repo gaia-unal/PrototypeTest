@@ -1,0 +1,9 @@
+Tipo actividad: Seleccionar en orden las letras de una palabra dada
+Grado: Primero
+Competencia: Conocimiento de las letras
+Tipo plantilla: Selección ordenada
+Categoría: * Identificación de letras
+Habilidades: * Memoria visual
+* Pensamiento secuencial
+* Reconocimiento del alfabeto
+

@@ -16,7 +16,8 @@ root.render(
     
     <Test
       module="/Activities/EarlyDetection/PhonologicalDyslexia"
-      competence1="/PhonologicalAwareness" />
+      competence1="/PhonologicalAwareness"
+      competence2="/LetterKnowledge" />
 
   </React.StrictMode>
 );
