@@ -8,7 +8,7 @@ export const Test = ({ module, competence1, competence2 }) => {
   const srcIframe = [
     domain + module + competence1 + "/1/indice.html",
     domain + module + competence1 + "/2/indice.html",
-    domain + module + competence1 + "/3/indice.html"
+    domain + module + competence1 + "/3/indice.html",
   ];
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual

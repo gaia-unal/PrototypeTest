@@ -13,14 +13,12 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<!-- Bootstrap CSS file -->
 	<link rel="stylesheet" href="../../../../../Bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
 	<div class="container w-75 contenedor">
-
-		<!-- Green Header -->
-		<div class="green-image"></div>
 
 		<!-- Button to change the font -->
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 mb-2">
@@ -37,8 +35,8 @@
 		<!-- Megaphone icon and activity instruction -->
 		<div class="instruccion">
 			<div>
-				<a href="#" onmouseover="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
-						title="¡Escucha aquí!"></a>
+				<a href="#" onclick="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
+						title="¡Da clic para escuchar!"></a>
 				<audio id="audio0" class="audio-element" controls hidden="true">
 					<source src="audio0.mp3" type="audio/mpeg">
 				</audio>
@@ -62,18 +60,12 @@
 
 		<!-- Here the user types the answer -->
 		<div>
-			<a href="#" class="contenedorInput" onclick="sonido(2)"><input type="number" id="respuesta" placeholder="Número de sílabas"></a>
-			<audio id="audio2" controls hidden="true">
-				<source src="audio2.mp3" type="audio/mpeg">
-			</audio>
+			<a href="#" class="contenedorInput"><input type="number" id="respuesta" placeholder="Número de sílabas"></a>
 		</div>
 
 		<!-- Here is the continue button -->
 		<div id="continuar">
-			<button id="btn-continuar" onmouseover="sonido(5)" title="Clic para continuar">Continuar</button>
-			<audio id="audio5" controls hidden="true">
-				<source src="audio5.mp3" type="audio/mpeg">
-			</audio>
+			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
 		</div>
 	</div>
 

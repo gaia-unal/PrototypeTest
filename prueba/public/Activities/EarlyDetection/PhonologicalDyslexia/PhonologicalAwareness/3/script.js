@@ -1,30 +1,29 @@
-// Variables globales
+// Global variables
 var puntaje = 0.01;
 
-// Agregar los id de los div de las opciones correctas EN ORDEN ESTRICTO en forma de arreglo. Es decir, poner aquí los id de los objetos en el orden que se supone
-// el usuario debería seleccionar para obtener una calificación perfecta.
-// NOTA IMPORTANTE: En este tipo de actividad deben seleccionar todas las opciones, por eso el botón de continuar no aparecerá hasta que se hayan seleccionado
-// todas las opciones que están listadas en el siguiente arreglo
+// Add the IDs of the correct options STRICTLY IN ORDER as an array. 
+// In this type of activity, all options must be selected, so the continue
+// button won't appear until all options listed in the following array 
+// have been selected.
 var opcionesCorrectasEnOrden = ["opcion1", "opcion2", "opcion3","opcion4"];
 
-// Variables para guardar el valor de las opciones buenas y malas
+// Variables to store the values of good and bad options
 var valorBueno = 1/opcionesCorrectasEnOrden.length;
 var valorMalo = valorBueno/2;
 
-// Variable para guardar las opciones que se han seleccionado
+// Variable to store the selected options
 var seleccionadas = Array();
 
-// Variable para guardar el id de la opción que se acaba de seleccionar
+// Variable to store the ID of the just-selected option
 var idSeleccion = null;
 
-// Aquí se tiene un borde para delimitar el área de la actividad
+// Border to set limits in the activity
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
-// Botón de continuar
+// Continue Button
 var boton = document.getElementById('btn-continuar');
-
 boton.addEventListener('click', function() {
-	// Envía un mensaje al componente React en el padre
+	// Send a message to the React component in the parent
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });
@@ -73,17 +72,17 @@ changeFontButton.addEventListener("click", () => {
     document.getElementById("imageOption3").src = images[3][imagenActual];
 });
 
-// Función para mostrar el botón de continuar
+// Function to show the continue button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 }
 
-// Función para ocultar el botón de continuar
+// Function to hide the continue button
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-// Función para procesar el puntaje y enviarlo a la herramienta
+// Function to process the score and send it to the tool
 function procesarPuntaje() {
 	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
@@ -99,9 +98,9 @@ function procesarPuntaje() {
 	}
 }
 
-// Función para que se reproduzcan los audios
+// Function to play audio
 function sonido(id) {
-	// Verificamos que no haya ningun audio reproduciendose, o sino lo detenemos
+	// Check if any audio is currently playing and stop it if so
 
 	let audioElements = document.getElementsByClassName("audio-element");
     
@@ -113,7 +112,7 @@ function sonido(id) {
             audio.currentTime = 0;
         }
     }
-	// Reproducimos el audio que queremos
+	// Play the desired audio
 	let audio = document.getElementById("audio"+id);
 	console.log(audio);
 	audio.pause();
@@ -121,9 +120,9 @@ function sonido(id) {
 	audio.play();
 }
 
-// Función para renumerar las opciones según el orden en que han sido seleccionadas
+// Function to renumber options based on the order they've been selected
 function renumerarOpciones(){
-	// Primero, ocultar el contenido de toda la segunda fila
+	// First, hide the content of the entire second row
 	let numeracionesActuales = document.getElementsByTagName('p');
 	for(let casilla of numeracionesActuales){
 		casilla.style.visibility = 'hidden';
@@ -132,7 +131,7 @@ function renumerarOpciones(){
 		document.getElementById("contenedorNumeracionOpcion"+i).style.visibility = 'hidden';
 	}
 
-	// Ahora, numerar según el orden en que han sido seleccionadas
+	// Now, number them based on the order they've been selected
 	for(let i = 1; i <= seleccionadas.length; i++){
 		let idActual = seleccionadas[i-1];
 		// console.log("IdActual: ", idActual);
@@ -153,14 +152,13 @@ function seleccionar(id){
 	id = "opcion"+id;
 	// console.log("El id del seleccionado es:", id);
 
-	// Si ya está seleccionada y la acaban de volver a pulsar, voy a quitar su selección
-	if(seleccionadas.includes(id)){
+// If it's already selected and they click it again, I will remove its selection
+if(seleccionadas.includes(id)){
 		document.getElementById(id).style.border = "none";
 		let indice = seleccionadas.indexOf(id);
 		seleccionadas.splice(indice, 1);
 		renumerarOpciones();
-	}else{ // Si no está seleccionada, le pongo el borde y la guardo en el arreglo
-		document.getElementById(id).style.border = "2px solid #00FF00";
+	}else{ // If it's not selected, I put a border around it and store it in the array		document.getElementById(id).style.border = "2px solid #00FF00";
 		seleccionadas.push(id);
 		renumerarOpciones();
 	}
@@ -175,19 +173,19 @@ function seleccionar(id){
 	calificar();
 }
 
-// Función para cuando hay error
+// Function for when there is an error
 function Error() {
 	puntaje = 0;
 	console.log('el puntaje es ', puntaje);
 }
 
-// Función para cuando la respuesta es correcta
+// Function for when the answer is correct
 function Correcto() {
 	puntaje = 1;
 	console.log('el puntaje es ', puntaje);
 }
 
-// Función de calificar
+// Scoring function
 function calificar(){
 	puntaje = 0.0;
 	let correctas = 0;

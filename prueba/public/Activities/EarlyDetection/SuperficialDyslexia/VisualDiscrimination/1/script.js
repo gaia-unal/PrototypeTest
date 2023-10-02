@@ -1,26 +1,26 @@
-// Definición de variables globales
+// Global variable definitions
 var puntaje = 0.01;
 
-// Agregar los id de los div de las opciones correctas en forma de arreglo
+// Add the IDs of the correct options as an array
 var opcionesCorrectas = ["opcion1", "opcion7"];
 
-// Variables para guardar el valor de las opciones correctas e incorrectas
+// Variables to store the values of correct and incorrect options
 var valorBueno = 1/opcionesCorrectas.length;
 var valorMalo = valorBueno/2;
 
-// Arreglo para guardar las opciones seleccionadas
+// Array to store selected options
 var seleccionadas = Array();
 
-// Variable para guardar el id de la opción que se acaba de seleccionar
+// Variable to store the ID of the just-selected option
 var idSeleccion = null;
 
-// Marco para establecer límites en la actividad
+// Border to set limits in the activity
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
+// Continue button
 var boton = document.getElementById('btn-continuar');
-
 boton.addEventListener('click', function() {
-	// Calcula y envía el puntaje al componente React padre
+	// Send a message to the React component in the parent
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });
@@ -64,17 +64,17 @@ changeFontButton.addEventListener("click", () => {
 });
 
 
-// Función para mostrar el botón de continuar
+// Function to show the continue button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 }
 
-// Función para ocultar el botón de continuar
+// Function to hide the continue button
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-// Función para procesar el puntaje
+// Function to process the score
 function procesarPuntaje() {
 	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
@@ -86,14 +86,14 @@ function procesarPuntaje() {
 		ocultarContinuar();
 	} else {
 		console.log("El puntaje es: ", puntaje);
-		// Aquí se envía el puntaje para que se procese de forma global
+		// Here, the score should be sent to be processed globally
 		// parent.enviarPuntaje(puntaje);
 	}
 }
 
-// Función para reproducir el audio
+// Function to play the audio
 function sonido(id) {
-	// Verificamos que no haya ningun audio reproduciendose, o sino lo detenemos
+	// Check if any audio is currently playing and stop it if so
 
 	let audioElements = document.getElementsByClassName("audio-element");
     
@@ -105,7 +105,7 @@ function sonido(id) {
             audio.currentTime = 0;
         }
     }
-	// Reproducimos el audio que queremos
+	// Play the desired audio
 	let audio = document.getElementById("audio"+id);
 	console.log(audio);
 	audio.pause();
@@ -113,17 +113,17 @@ function sonido(id) {
 	audio.play();
 }
 
-// Función para seleccionar las opciones
+// Function to select options
 function seleccionar(id){
 	id = "opcion"+id;
 	// console.log("El id del seleccionado es:", id);
 
-	// Si ya está seleccionada y la acaban de volver a pulsar, voy a quitar su selección
+	// If it's already selected and they click it again, we'll remove the selection
 	if(seleccionadas.includes(id)){
 		document.getElementById(id).style.border = "none";
 		let indice = seleccionadas.indexOf(id);
 		seleccionadas.splice(indice, 1);
-	}else{ // Si no está seleccionada, le pongo el borde y la guardo en el arreglo
+	}else{ 	// If it's not selected, we'll add the border and save it in the array
 		document.getElementById(id).style.border = "solid lightgreen";
 		seleccionadas.push(id);
 	}
@@ -138,7 +138,7 @@ function seleccionar(id){
 	
 }
 
-// Función para calificar
+// Function to grade
 function calificar(){
 	puntaje = 0.0;
 	let correctas = 0;

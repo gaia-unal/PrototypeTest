@@ -1,24 +1,19 @@
-// Definición de variables globales
-// En puntaje va el valor del puntaje de la actividad
+// Global variable definitions
+// The 'puntaje' variable holds the activity's score
 var puntaje = null;
 
-// Acá va el valor de la respuesta correcta
+// Here goes the correct answer value
 var respuestaCorrectaDelInput = 2; 
 
-// // Acá se definen las acciones del botón continuar
-// var boton = document.getElementById('btn-continuar');
-// boton.addEventListener('click', procesarPuntaje, false);
-
-// Dentro del archivo JS de tu actividad en el iframe
+// Here, the actions of the 'continuar' button are defined
 var boton = document.getElementById('btn-continuar');
-
 boton.addEventListener('click', function() {
 	// Envía un mensaje al componente React en el padre
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });
 
-//Solo hace parte del contenedor
+// Only part of the container
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
 // To change the font
@@ -56,7 +51,7 @@ changeFontButton.addEventListener("click", () => {
     imageElement.src = images[imagenActual];
 });
 
-// Función para mostrar el botón continuar
+// Function to show the 'continuar' button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 }
@@ -66,7 +61,7 @@ function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-// Función para procesar el puntaje de la actividad
+// Function to hide the 'continuar' button
 function procesarPuntaje() {
 	console.log("Puntaje de la actividad: ", puntaje);
 	if (puntaje == null || isNaN(puntaje)) {
@@ -78,28 +73,27 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		//Aquí se envía el puntaje para que se procese de forma global
-		// Dentro del iframe
+		// Here, the score is sent for global processing
 		window.parent.postMessage('Mensaje desde el iframe', '*');
 	}
 }
 
-// Función que coloca el puntaje en 0 cuando la actividad es incorrecta
+// Function to set the score to 0 when the activity is incorrect
 function Error() {
 	puntaje = 0;
 	mostrarContinuar();
 }
 
-// Función que coloca el puntaje en 1 cuando la actividad es correcta
+// Function to set the score to 1 when the activity is correct
 function Correcto() {
 	puntaje = 1;
 	mostrarContinuar();
 }
 
-// Función que reproduce el audio
+// Function to play the audio
 function sonido(id) {
-	// Verificamos que no haya ningun audio reproduciendose, o sino lo detenemos
-
+	
+	// We check that there is no audio playing, and if there is, we stop it
 	let audioElements = document.getElementsByClassName("audio-element");
     
     for (let i = 0; i < audioElements.length; i++) {
@@ -110,7 +104,7 @@ function sonido(id) {
             audio.currentTime = 0;
         }
     }
-	// Reproducimos el audio que queremos
+	// Play the desired audio
 	let audio = document.getElementById("audio"+id);
 	console.log(audio);
 	audio.pause();
@@ -118,13 +112,13 @@ function sonido(id) {
 	audio.play();
 }
 
-// NO MOVER
+
 var input = document.getElementById('respuesta');
 input.addEventListener('input', function (e) {
 	calificar(this.value);
 });
 
-// Función de calificación
+// Grading function
 function calificar(valor) {
 	if (!valor || isNaN(valor)) {
 		ocultarContinuar();

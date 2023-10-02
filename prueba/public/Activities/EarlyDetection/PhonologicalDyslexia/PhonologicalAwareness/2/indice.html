@@ -20,9 +20,6 @@
 <body>
 	<div class="container w-75 contenedor">
 
-		<!-- Green Header -->
-		<div class="green-image"></div>
-
 		<!-- Button to change the font -->
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 mb-2">
 			<button type="button" class="btn btn-outline-dark" id="changeFont">
@@ -38,8 +35,8 @@
 		<!-- Megaphone icon and activity instruction -->
 		<div class="instruccion">
 			<div>
-				<a href="#" onmouseover="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
-						title="¡Escucha aquí!"></a>
+				<a href="#" onclick="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
+						title="¡Da clic para escuchar!"></a>
 				<audio id="audio0" class="audio-element" controls hidden="true">
 					<source src="audio0.mp3" type="audio/mpeg">
 				</audio>
@@ -54,7 +51,7 @@
 
 		<!-- Activity image -->
 		<div class="contenedorImagen">
-			<img src="imagenJirafa.png" alt="imagen de una jirafa" id="imagen1"></a>
+			<img src="imagenJirafa.png" alt="imagen de una jirafa" id="imagen1" title="Jirafa"></a>
 		</div>
 
 		<!-- Activity options -->
@@ -91,17 +88,14 @@
 
 		<!-- Here is the continue button -->
 		<div id="continuar">
-			<button id="btn-continuar" onmouseover="sonido(5)" title="Clic para continuar">Continuar</button>
-			<audio id="audio5" controls hidden="true">
-				<source src="audio5.mp3" type="audio/mpeg">
-			</audio>
+			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
 		</div>
 	</div>
 
 	<!-- Scripts -->
 	<script src="script.js"></script>
 	<!-- Bootstrap JS file -->
-	<script src="../../../../../Bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../../Bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

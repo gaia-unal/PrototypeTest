@@ -1,22 +1,22 @@
-// Definición de variables globales
+// Global variable definitions
 
-// Aquí queda el puntaje de esta actividad, 1 o 0
+// Activity score, either 1 or 0, goes here
 var puntaje = null;
 
+// Selected ID goes here
 var idSeleccion = null;
 
-// Poner en la segunda cadena (que está vacía) el número de la opción correcta
-// Aquí va la opción que es correcta para ser calificada
+// Put the correct option number here
+// The correct option for grading
 var idOpcionCorrecta = "opcion" + "1";
 
-//Contenedor solo para guiarse
+// Container only for guidance
 document.getElementsByClassName("contenedor")[0].style.border="solid black";
 
-// Botón de continuar
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
-
 boton.addEventListener('click', function() {
-	// Envía un mensaje al componente React en el padre
+	// Send a message to the React component in the parent
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });
@@ -59,12 +59,12 @@ function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 }
 
-// NO MOVER
+
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-// NO MOVER
+
 function procesarPuntaje() {
 	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
@@ -76,23 +76,21 @@ function procesarPuntaje() {
 		ocultarContinuar();
 	} else {
 		console.log("El puntaje es: ", puntaje);
-		// Aquí deberia enviarse el puntaje a una función global que procese el puntaje de toda la prueba
+		// The score should be sent to a global function here that processes the score for the entire test
 	}
 }
 
-// NO MOVER
+
 function Error() {
 	puntaje = 0;
 }
 
-// NO MOVER
 function Correcto() {
 	puntaje = 1;
 }
 
-// NO MOVER
 function sonido(id) {
-	// Verificamos que no haya ningun audio reproduciendose, o sino lo detenemos
+    // Check if any audio is currently playing and stop it if so
 
 	let audioElements = document.getElementsByClassName("audio-element");
     
@@ -104,7 +102,7 @@ function sonido(id) {
             audio.currentTime = 0;
         }
     }
-	// Reproducimos el audio que queremos 
+    // Play the desired audio
 	let audio = document.getElementById("audio"+id);
 	console.log(audio);
 	audio.pause();
@@ -112,7 +110,7 @@ function sonido(id) {
 	audio.play();
 }
 
-// Evento cuando se selecciona alguna de las opciones
+// Event when an option is selected
 function seleccionar(id){
 	
 	sonido(id);
@@ -133,7 +131,7 @@ function seleccionar(id){
 	calificar();
 }
 
-// NO MOVER
+// Grading function
 function calificar(){
 	if (idSeleccion == idOpcionCorrecta){
 		Correcto();
