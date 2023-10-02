@@ -1,5 +1,12 @@
+Tipo actividad: Encontrar letras específicas en medio de las palabras
 Grado: Primero
-Competencia: Competencia Fonológica y léxica 
-Tipo: Selección simple
-Categoría: Léxica
-Habilidades: Conciencia léxica, conocimiento de palabras, asociación de palabras
+Competencia: Competencia Fonológica
+Tipo plantilla: Selección simple
+Categoría: * Segmentación de sonidos iniciales
+* Segmentación de sonidos finales
+* Segmentación de sonidos medios
+Habilidades: * Atención auditiva
+* Atención visual
+* Pensamiento analítico
+* Alfabetización
+

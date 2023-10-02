@@ -1,45 +1,40 @@
 // Global variable definitions
-
-// Activity score, either 1 or 0, goes here
+// The 'puntaje' variable holds the activity's score
 var puntaje = null;
 
-// Selected ID goes here
-var idSeleccion = null;
+// Here goes the correct answer value
+var respuestaCorrectaDelInput = 2; 
 
-// Put the correct option number here
-// The correct option for grading
-var idOpcionCorrecta = "opcion" + "4";
-
-// Container only for guidance
-document.getElementsByClassName("contenedor")[0].style.border="solid black";
-
-// 'Continuar' button
+// Here, the actions of the 'continuar' button are defined
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function() {
-	// Send a message to the React component in the parent
+	// Envía un mensaje al componente React en el padre
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
   });
 
+// Only part of the container
+document.getElementsByClassName("contenedor")[0].style.border="solid black";
+
 // To change the font
+
+// Name of the activity's image
+const imageName = "imagenLuna";
 
 // Obtain the elements to which the font must be changed
 const changeFontButton = document.getElementById("changeFont");
 const textElement = document.getElementById("texto");
+const answerElement = document.getElementById("respuesta");
+
+// Obtain the elements to which the image must be changed
+const imageElement = document.getElementById("imagen1");
 
 // Define available fonts
 const fonts = ["Open-Dyslexic", "Arial"]
 let actualFont = 0;
 
 // Define the available images, for each type of font
-const images = [
-	["opcion1-Open-Dyslexic.png", "opcion1-Arial.png"],
-	["opcion2-Open-Dyslexic.png", "opcion2-Arial.png"],
-	["opcion3-Open-Dyslexic.png", "opcion3-Arial.png"],
-	["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"],
-	["opcion5-Open-Dyslexic.png", "opcion5-Arial.png"],
-	["opcion6-Open-Dyslexic.png", "opcion6-Arial.png"]
-];
+const images = [imageName + "-Open-Dyslexic.png", imageName + "-Arial.png"];
 let imagenActual = 0;
 
 // When the button is clicked
@@ -47,27 +42,28 @@ changeFontButton.addEventListener("click", () => {
 	// Change the text font of the required elements
     actualFont = (actualFont + 1) % fonts.length;
     textElement.style.fontFamily = fonts[actualFont];
+	answerElement.style.fontFamily = fonts[actualFont];
 	changeFontButton.style.fontFamily = fonts[actualFont];
 	boton.style.fontFamily = fonts[actualFont];
 
-	// Change the option images
-	imagenActual = (imagenActual + 1) % images[0].length;
-	for (let i = 0; i < images.length; i++) {
-	    document.getElementById("imageOption" + i).src = images[i][imagenActual];
-	}
+	// Change the required images
+	imagenActual = (imagenActual + 1) % images.length;
+    imageElement.src = images[imagenActual];
 });
 
+// Function to show the 'continuar' button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 }
 
-
+// Función para ocultar el botón continuar
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-
+// Function to hide the 'continuar' button
 function procesarPuntaje() {
+	console.log("Puntaje de la actividad: ", puntaje);
 	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
 		if (typeof parent.mostrarAlerta === "function") {
@@ -77,23 +73,27 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		console.log("El puntaje es: ", puntaje);
-		// The score should be sent to a global function here that processes the score for the entire test
+		// Here, the score is sent for global processing
+		window.parent.postMessage('Mensaje desde el iframe', '*');
 	}
 }
 
-
+// Function to set the score to 0 when the activity is incorrect
 function Error() {
 	puntaje = 0;
+	mostrarContinuar();
 }
 
+// Function to set the score to 1 when the activity is correct
 function Correcto() {
 	puntaje = 1;
+	mostrarContinuar();
 }
 
+// Function to play the audio
 function sonido(id) {
-    // Check if any audio is currently playing and stop it if so
-
+	
+	// We check that there is no audio playing, and if there is, we stop it
 	let audioElements = document.getElementsByClassName("audio-element");
     
     for (let i = 0; i < audioElements.length; i++) {
@@ -104,7 +104,7 @@ function sonido(id) {
             audio.currentTime = 0;
         }
     }
-    // Play the desired audio
+	// Play the desired audio
 	let audio = document.getElementById("audio"+id);
 	console.log(audio);
 	audio.pause();
@@ -112,31 +112,25 @@ function sonido(id) {
 	audio.play();
 }
 
-// Event when an option is selected
-function seleccionar(id){
-	
-	id = "opcion"+id;
-	console.log("El id del seleccionado es:", id);
-	
-	let opciones = document.getElementsByClassName("opciones");
 
-	for(let i = 0; i < opciones.length; i++){
-		let idOpcionActual = "opcion"+(i+1);
-		document.getElementById(idOpcionActual).style.border = "none";
-	}
-
-	document.getElementById(id).style.border = "2px solid #28a745";
-
-	idSeleccion = id;
-	mostrarContinuar();
-	calificar();
-}
+var input = document.getElementById('respuesta');
+input.addEventListener('input', function (e) {
+	calificar(this.value);
+});
 
 // Grading function
-function calificar(){
-	if (idSeleccion == idOpcionCorrecta){
+function calificar(valor) {
+	if (!valor || isNaN(valor)) {
+		ocultarContinuar();
+		return false;
+	}
+
+	if (valor == respuestaCorrectaDelInput) {
 		Correcto();
-	}else{
+		console.log('puntaje = 1')
+	} else {
 		Error();
+		console.log('puntaje = 0')
 	}
 }
+

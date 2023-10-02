@@ -1,7 +1,8 @@
-Tipo actividad: Seleccionar en orden las sílabas del nombre de una imagen
+Tipo actividad: Digitar la cantidad de sílabas que tiene una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
-Tipo plantilla: Selección ordenada
+Tipo plantilla: Digitar
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 * Segmentación silábica
+

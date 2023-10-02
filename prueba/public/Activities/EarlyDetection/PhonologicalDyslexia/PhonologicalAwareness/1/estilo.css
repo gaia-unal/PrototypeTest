@@ -1,8 +1,9 @@
 /* General styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 @font-face {
@@ -12,11 +13,11 @@ html, body {
 }
 
 /* Main container */
-.contenedor{
+.contenedor {
 	width: 60%;
 	height: auto;
 	margin-top: 4rem;
-	font-family: 'Open-Dyslexic', sans-serif; 
+	font-family: 'Open-Dyslexic', sans-serif;
 	overflow: hidden;
 	border: 2px solid black;
 }
@@ -49,31 +50,52 @@ html, body {
 }
 
 #texto {
- 	color: black;
+	color: black;
 	font-size: 2.5vw;
 }
 
 /* Activity image */
-.contenedorImagen, .contenedorInput {
+.contenedorImagen {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 2rem;
 }
 
 #imagen1 {
-	width: 40%;
+	width: 20%;
 }
 
-/* Answer input */
-#respuesta{
-	width: 30%;
-	font-family: 'Open-Dyslexic', sans-serif; 
-	font-size: 2vw; 
-	border: 2px solid #bb5b02; 
-	padding: 0.5rem;
+/* For response options */
+.contenedor-opciones {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	/* 4 columnas en pantallas grandes */
+	grid-gap: 20px;
+	/* Espacio entre las celdas */
+}
+
+/* Diseño de 2 columnas en pantallas más pequeñas */
+@media (max-width: 300px) {
+	.contenedor-opciones {
+		grid-template-columns: repeat(2, 1fr);
+		/* 2 columnas en pantallas más pequeñas */
+	}
+}
+
+#opcion1,
+#opcion2,
+#opcion3,
+#opcion4 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
-	margin-top: 3rem;
-	margin-bottom: 1rem;
+}
+
+.opciones img {
+	max-width: 90%;
+	height: auto;
 }
 
 /* Continue button */
@@ -81,7 +103,7 @@ html, body {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 #btn-continuar {
