@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		boton.style.fontSize = initialFontSize + 'vw';
 		accessibility.style.fontSize = initialFontSize + 'vw';
 
+		// Don't change
 		for (let i = 0; i < spans.length; i++) {
 			spans[i].style.fontSize = initialFontSize + 'vw';
 		}
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	decreaseFontButton.addEventListener("click", () => {
 		if (initialFontSize > 2) {
 			initialFontSize -= 0.1; // Decrease font size of text elements
-			initialWidth -= 3; // Decrease size of images (answer options)
+			initialWidth -= 3.8; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -133,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	increaseFontButton.addEventListener("click", () => {
 		if (initialFontSize < 3.8) {
 			initialFontSize += 0.1;
-			initialWidth += 3;
+			initialWidth += 3.8;
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
