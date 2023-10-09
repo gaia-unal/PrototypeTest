@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Para la construcción del pdf:
 1. yarn add @react-pdf/renderer
+2. yarn add react-modal

@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
+import Modal from 'react-modal';
+import ModalComponent from './ModalComponent';
 
 
 export const Test = ({ module, competence1, competence2 }) => {
@@ -14,11 +16,7 @@ export const Test = ({ module, competence1, competence2 }) => {
     setMostrarModal(true);
   };
 
-  // Función para descargar el reporte
-  const descargarReporte = () => {
-    // Aquí puedes agregar lógica para generar y descargar el reporte
-    alert("Descargando el reporte..."); // Solo un ejemplo, reemplaza con tu lógica real
-  };
+
 
   const domain = "http://localhost:3000";
 
@@ -136,11 +134,31 @@ export const Test = ({ module, competence1, competence2 }) => {
       {/* Modal */}
       {mostrarModal ? (
         // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
-        <PDFDownloadLink document={<ReportePDF resultados={results} competence1Score={competence1Score} competence2Score={competence2Score} testScore={testScore}/>} fileName="reporte.pdf">
-          {({ blob, url, loading, error }) =>
-            loading ? 'Cargando documento...' : 'Descargar reporte'
-          }
-        </PDFDownloadLink>
+        <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
+          <div style={{ padding: '20px' }}>
+            {/* Contenido dentro del modal */}
+            <PDFDownloadLink
+              document={
+                <ReportePDF
+                  resultados={results}
+                  competence1Score={competence1Score}
+                  competence2Score={competence2Score}
+                  testScore={testScore}
+                />
+              }
+              fileName="reporte.pdf"
+            >
+              {({ blob, url, loading, error }) => (
+                <div>
+                  <p className="message">¡Felicitaciones! Terminaste la prueba</p>
+                  <button className="descargar-button">
+                    {loading ? 'Cargando documento...' : 'Descargar reporte'}
+                  </button>
+                </div>
+              )}
+            </PDFDownloadLink>
+          </div>
+        </ModalComponent>
       ) : null}
     </div>
   );
