@@ -3,9 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
-import Modal from 'react-modal';
 import ModalComponent from './ModalComponent';
-
 
 export const Test = ({ module, competence1, competence2 }) => {
 
@@ -27,12 +25,41 @@ export const Test = ({ module, competence1, competence2 }) => {
     // domain + module + competence1 + "/4/indice.html",
     // domain + module + competence1 + "/5/indice.html",
 
-    // domain + module + competence2 + "/1/indice.html",
+    domain + module + competence2 + "/1/indice.html",
     // domain + module + competence2 + "/2/indice.html",
     // domain + module + competence2 + "/3/indice.html",
     // domain + module + competence2 + "/4/indice.html",
     // domain + module + competence2 + "/5/indice.html"
   ];
+
+  // Condicional para enviar el tipo de dislexia al informe según corresponda
+  var tipoDislexia = '';
+  var nameCompetence1 = '';
+  var nameCompetence2 = '';
+  var message1 = '';
+  var message2 = '';
+
+  if(module === "/Activities/EarlyDetection/PhonologicalDyslexia"){
+    tipoDislexia = 'Dislexia Fonológica';
+    nameCompetence1 = 'Conciencia Fonológica';
+    nameCompetence2 = 'Conocimiento de las letras';
+    message1 = "Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
+    message2 = "Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+  }
+  else {
+    tipoDislexia = 'Dislexia Superficial o Visual';
+    nameCompetence1 = 'Discriminación visual';
+    nameCompetence2 = 'Ortografía';
+    message1 = "Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
+    message2 = "La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+  }
+
+  // Acá se definen las variables donde se guardan los datos generales del estudiante:
+  var nameStudent = "María Paula Taborda Giraldo";
+  var applicationDate = "09/10/2023";
+  var age = '7 años';
+
+  // Acá defino las variables que van a llevar las rutas que van a aparecen en el reporte
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
   const iframeRef = useRef(null); // Se utiliza el hook useRef
@@ -123,7 +150,7 @@ export const Test = ({ module, competence1, competence2 }) => {
       // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
       window.removeEventListener('message', recibirMensajeDesdeIframe);
     };
-  }, [actividadActual, startTime, results]);
+  }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, testScore]);
 
   return (
     <div className='iframe-container'>
@@ -144,6 +171,14 @@ export const Test = ({ module, competence1, competence2 }) => {
                   competence1Score={competence1Score}
                   competence2Score={competence2Score}
                   testScore={testScore}
+                  tipoDislexia={tipoDislexia}
+                  nameStudent={nameStudent}
+                  applicationDate={applicationDate}
+                  age={age}
+                  nameCompetence1={nameCompetence1}
+                  nameCompetence2={nameCompetence2}
+                  message1={message1}
+                  message2={message2}
                 />
               }
               fileName="reporte.pdf"
