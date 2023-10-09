@@ -1,8 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Test.css';
+import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
+import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
+
 
 export const Test = ({ module, competence1, competence2 }) => {
+
+  const [mostrarModal, setMostrarModal] = useState(false);
+
+  // Función para mostrar el modal
+  const mostrarVentanaEmergente = () => {
+    setMostrarModal(true);
+  };
+
+  // Función para descargar el reporte
+  const descargarReporte = () => {
+    // Aquí puedes agregar lógica para generar y descargar el reporte
+    alert("Descargando el reporte..."); // Solo un ejemplo, reemplaza con tu lógica real
+  };
+
   const domain = "http://localhost:3000";
 
   const srcIframe = [
@@ -84,11 +101,17 @@ export const Test = ({ module, competence1, competence2 }) => {
           }
           else {
             // The test is over
+
             console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
             console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
             console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
             console.log("Resultados de cada actividad: ");
             console.log(JSON.stringify(currentResults));
+          }
+          if (actividadActual === srcIframe.length - 1) {
+            // Si la actividad actual es la última en srcIframe, muestra el modal
+            console.log("Aquí")
+            mostrarVentanaEmergente();
           }
         }
       }
@@ -96,7 +119,8 @@ export const Test = ({ module, competence1, competence2 }) => {
 
     // Con este event listener recibimos el mensaje desde el iframe
     window.addEventListener('message', recibirMensajeDesdeIframe);
-    
+
+
     return () => {
       // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
       window.removeEventListener('message', recibirMensajeDesdeIframe);
@@ -107,6 +131,17 @@ export const Test = ({ module, competence1, competence2 }) => {
     <div className='iframe-container'>
       {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
       <iframe ref={iframeRef} src={srcIframe[actividadActual]} title="Actividad" scrolling='no'></iframe>
+
+
+      {/* Modal */}
+      {mostrarModal ? (
+        // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
+        <PDFDownloadLink document={<ReportePDF resultados={results} competence1Score={competence1Score} competence2Score={competence2Score} testScore={testScore}/>} fileName="reporte.pdf">
+          {({ blob, url, loading, error }) =>
+            loading ? 'Cargando documento...' : 'Descargar reporte'
+          }
+        </PDFDownloadLink>
+      ) : null}
     </div>
   );
 }

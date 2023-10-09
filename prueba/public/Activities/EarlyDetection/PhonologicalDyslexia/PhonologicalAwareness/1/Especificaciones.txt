@@ -1,6 +1,8 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar una palabra de acuerdo a su representación gráfica
 Grado: Primero
-Competencia: Competencia Fonológica
+Competencia: Competencia Fonológica (Es lo mismo que Nivel en Diamante)
 Tipo plantilla: Selección simple
 Categoría: * Asociación palabra-sonido-gráfico * Léxico
 Habilidades: * Conciencia léxica * Asociación de palabras
