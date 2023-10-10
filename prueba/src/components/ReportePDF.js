@@ -217,17 +217,19 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
                 <Image style={styles.header} src={headerPDF} alt="Encabezado del PDF" />
 
                 <View style={styles.information}>
-                    {/* Información del informe, resultados de actividades, etc. */}
-                    {resultados.map((resultado, index) => (
-                        <View key={index} style={styles.content}>
-                            <Text>Actividad {index + 1}</Text>
-                            <Text>Puntaje: {resultado.score}</Text>
-                            <Text>Tiempo: {resultado.time} segundos</Text>
-                        </View>
-                    ))}
+                    <Text style={styles.subtitle}>{"\n"}{"\n"}Información por actividades</Text>
+                    <View style={{ columnCount: 2 }}>
+                        {resultados.map((resultado, index) => (
+                            <View key={index} style={styles.content}>
+                                <Text>Actividad {index + 1}: {resultado.nameActivity}</Text>
+                                <Text>Puntaje: {resultado.score}</Text>
+                                <Text>Tiempo: {resultado.time} segundos</Text>
+                            </View>
+                        ))}
+                    </View>
                 </View>
-                 {/* Pie del pdf */}
-                 <Image style={styles.footer} src={footPDF} alt="Pie del PDF" />
+                {/* Pie del pdf */}
+                <Image style={styles.footer} src={footPDF} alt="Pie del PDF" />
             </Page>
         </Document >
     );

@@ -19,18 +19,20 @@ export const Test = ({ module, competence1, competence2 }) => {
   const domain = "http://localhost:3000";
 
   const srcIframe = [
-    domain + module + competence1 + "/1/indice.html",
-    domain + module + competence1 + "/2/indice.html",
-    domain + module + competence1 + "/3/indice.html",
-    domain + module + competence1 + "/4/indice.html",
-    // domain + module + competence1 + "/5/indice.html",
+    { ruta: domain + module + competence1 + "/1/indice.html", nombre: "Seleccionar una palabra de acuerdo a su representación gráfica" },
+    { ruta: domain + module + competence1 + "/2/indice.html", nombre: "Encontrar letras específicas en medio de las palabras" },
+    { ruta: domain + module + competence1 + "/3/indice.html", nombre: "Seleccionar en orden las sílabas del nombre de una imagen" },
+    { ruta: domain + module + competence1 + "/4/indice.html", nombre: "Digitar la cantidad de sílabas que tiene una palabra" },
+    { ruta: domain + module + competence1 + "/5/indice.html", nombre: "Seleccionar la sílaba inicial de una palabra" },
 
-    domain + module + competence2 + "/1/indice.html",
-    // domain + module + competence2 + "/2/indice.html",
-    // domain + module + competence2 + "/3/indice.html",
-    // domain + module + competence2 + "/4/indice.html",
-    // domain + module + competence2 + "/5/indice.html"
+
+    { ruta: domain + module + competence2 + "/1/indice.html", nombre: "Seleccionar en orden las letras de una palabra dada" },
+    { ruta: domain + module + competence2 + "/2/indice.html", nombre: "Seleccionar el audio que corresponde al sonido de una letra dada" },
+    { ruta: domain + module + competence2 + "/3/indice.html", nombre: "Seleccionar en orden alfabético un conjunto de letras dado" },
+    { ruta: domain + module + competence2 + "/4/indice.html", nombre: "Digitar la palabra que corresponde a la tarjeta dada del alfabeto9" },
+    { ruta: domain + module + competence2 + "/5/indice.html", nombre: "Formar palabras a partir de un conjunto de letras dado" }
   ];
+
 
   // Condicional para enviar el tipo de dislexia al informe según corresponda
   var tipoDislexia = '';
@@ -39,19 +41,19 @@ export const Test = ({ module, competence1, competence2 }) => {
   var message1 = '';
   var message2 = '';
 
-  if(module === "/Activities/EarlyDetection/PhonologicalDyslexia"){
+  if (module === "/Activities/EarlyDetection/PhonologicalDyslexia") {
     tipoDislexia = 'Dislexia Fonológica';
     nameCompetence1 = 'Conciencia Fonológica';
     nameCompetence2 = 'Conocimiento de las letras';
-    message1 = "Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
-    message2 = "Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+    message1 = " Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
+    message2 = " Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
   }
   else {
     tipoDislexia = 'Dislexia Superficial o Visual';
     nameCompetence1 = 'Discriminación visual';
     nameCompetence2 = 'Ortografía';
-    message1 = "Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
-    message2 = "La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+    message1 = " Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
+    message2 = " La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
   }
 
   // Acá se definen las variables donde se guardan los datos generales del estudiante:
@@ -90,7 +92,8 @@ export const Test = ({ module, competence1, competence2 }) => {
           const elapsedTime = (currentTime - startTime) / 1000; // Seconds
           // Information of each activity
           const activitieResult = {
-            location: srcIframe[actividadActual],
+            nameActivity: srcIframe[actividadActual].nombre,
+            location: srcIframe[actividadActual].ruta,
             score: mensajeDesdeIframe,
             time: elapsedTime
           };
@@ -106,12 +109,12 @@ export const Test = ({ module, competence1, competence2 }) => {
           let cumulativeCompetence1Score = competence1Score;
           let cumulativeCompetence2Score = competence2Score;
 
-          if (srcIframe[actividadActual].includes("PhonologicalAwareness") || srcIframe[actividadActual].includes("VisualDiscrimination")) {
+          if (srcIframe[actividadActual].ruta.includes("PhonologicalAwareness") || srcIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
             cumulativeCompetence1Score += mensajeDesdeIframe;
             setCompetence1Score(cumulativeCompetence1Score);
           }
           else {
-            if (srcIframe[actividadActual].includes("LetterKnowledge") || srcIframe[actividadActual].includes("Orthography")) {
+            if (srcIframe[actividadActual].ruta.includes("LetterKnowledge") || srcIframe[actividadActual].ruta.includes("Orthography")) {
               cumulativeCompetence2Score += mensajeDesdeIframe;
               setCompetence2Score(cumulativeCompetence2Score);
             }
@@ -155,7 +158,7 @@ export const Test = ({ module, competence1, competence2 }) => {
   return (
     <div className='iframe-container'>
       {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
-      <iframe ref={iframeRef} src={srcIframe[actividadActual]} title="Actividad" scrolling='no'></iframe>
+      <iframe ref={iframeRef} src={srcIframe[actividadActual].ruta} title="Actividad" scrolling='no'></iframe>
 
 
       {/* Modal */}
