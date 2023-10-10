@@ -20,9 +20,9 @@ export const Test = ({ module, competence1, competence2 }) => {
 
   const srcIframe = [
     domain + module + competence1 + "/1/indice.html",
-    // domain + module + competence1 + "/2/indice.html",
-    // domain + module + competence1 + "/3/indice.html",
-    // domain + module + competence1 + "/4/indice.html",
+    domain + module + competence1 + "/2/indice.html",
+    domain + module + competence1 + "/3/indice.html",
+    domain + module + competence1 + "/4/indice.html",
     // domain + module + competence1 + "/5/indice.html",
 
     domain + module + competence2 + "/1/indice.html",

@@ -20,17 +20,59 @@
 <body>
 	<div class="container w-75 contenedor">
 		
-		<!-- Button to change the font -->
-		<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 mb-2">
-			<button type="button" class="btn btn-outline-dark" id="changeFont">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-font-fill"
-					viewBox="0 0 16 16">
-					<path
-						d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.057 4h5.886L11 6h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v6.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V4.755l-.293.01C5.856 4.808 5.68 4.905 5.5 6H5l.057-2z" />
-				</svg>
-				Cambiar fuente
-			</button>
-		</div>
+		<!-- Accessibility panel -->
+        <h6>
+            <button id="accessibilityButton" class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+                aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">
+                Panel de Accesibilidad
+            </button>
+        </h6>
+        <div class="row">
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <!-- Button to change the font -->
+                    <button type="button" class="btn btn-outline-dark" id="changeFont">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-font-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.057 4h5.886L11 6h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v6.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V4.755l-.293.01C5.856 4.808 5.68 4.905 5.5 6H5l.057-2z" />
+                        </svg>
+                        Cambiar fuente
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <!-- ButtonsÑ to change the font size -->
+                    <span>Tamaño de letra</span>
+                    <div>
+                        <button type="button" class="btn btn-outline-dark font-controls" id="decreaseFontSize">
+                            <span>A<sup>-</sup></span>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark font-controls" id="increaseFontSize">
+                            <span>A<sup>+</sup></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample3">
+                    <!-- Buttons to change the line spacing -->
+                    <span>Interlineado</span>
+                    <div>
+                        <button type="button" class="btn btn-outline-dark line-spacing" id="decreaseLineSpacing">
+                            <span><b>-</b></span>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark line-spacing" id="increaseLineSpacing">
+                            <span><b>+</b></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
 
 		<!-- Megaphone icon and activity instruction -->
 		<div class="instruccion">
@@ -115,7 +157,7 @@
 	<!-- Scripts -->
 	<script src="script.js"></script>
 	<!-- Bootstrap JS file -->
-	<script src="../../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../../../../../Bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
