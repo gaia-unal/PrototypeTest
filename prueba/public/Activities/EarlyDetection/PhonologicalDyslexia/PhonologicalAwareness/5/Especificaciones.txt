@@ -1,6 +1,6 @@
-Tipo actividad: Seleccionar una palabra de acuerdo a su representación gráfica
+Tipo actividad: Seleccionar la sílaba inicial de una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección simple
-Categoría: * Asociación palabra-sonido-gráfico * Léxico
-Habilidades: * Conciencia léxica * Asociación de palabras
+Categoría: * Manipulación de sílabas
+Habilidades: * Conciencia silábica
