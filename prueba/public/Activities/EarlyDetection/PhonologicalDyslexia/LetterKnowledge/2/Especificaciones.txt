@@ -1,3 +1,5 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar el audio que corresponde al sonido de una letra dada
 Grado: Primero
 Competencia: Conocimiento de las letras

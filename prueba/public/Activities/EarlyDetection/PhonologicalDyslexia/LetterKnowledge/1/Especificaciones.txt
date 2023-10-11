@@ -1,3 +1,5 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar en orden las letras de una palabra dada
 Grado: Primero
 Competencia: Conocimiento de las letras
