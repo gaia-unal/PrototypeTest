@@ -1,5 +1,7 @@
 Tipo_dificultad: Dislexia Fonológica
 Tipo_enfoque: Detección
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar la sílaba inicial de una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
