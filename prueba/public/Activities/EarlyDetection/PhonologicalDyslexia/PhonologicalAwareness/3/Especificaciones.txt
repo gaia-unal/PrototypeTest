@@ -1,3 +1,5 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar en orden las sílabas del nombre de una imagen
 Grado: Primero
 Competencia: Competencia Fonológica
