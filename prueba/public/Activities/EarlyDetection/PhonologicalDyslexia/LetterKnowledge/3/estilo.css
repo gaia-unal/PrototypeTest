@@ -22,13 +22,52 @@ body {
 	border: 2px solid black;
 }
 
-/* Button to change the font of the activity text */
-.bi.bi-file-font-fill {
-	width: 2vw;
+#texto {
+    color: black;
+    font-size: 2vw;
+    line-height: 1;
 }
 
+/* Accessiibility options */
+
+
+/* Button to change the font of the activity text */
+.bi.bi-file-font-fill {
+    width: 2vw;
+}
+
+
 .btn.btn-outline-dark {
-	font-size: 1.5vw;
+    font-size: 2vw;
+    padding: 1%;
+}
+
+
+/* Font size and line spacing controls */
+span {
+    font-size: 2vw;
+}
+
+
+div .font-controls {
+    padding: 2%;
+}
+
+
+svg {
+    display: inline;
+    font-size: 2vw;
+}
+
+
+.btn.btn-outline-dark.line-spacing {
+    padding: 1%;
+}
+
+
+/* Accessibility options */
+#accessibilityButton {
+    font-size: 2vw;
 }
 
 /* Activity instruction */
@@ -43,10 +82,6 @@ body {
 	width: 90%;
 }
 
-#texto {
-	color: black;
-	font-size: 2vw;
-}
 
 
 /* Distribution of answer options and numbering containers */
@@ -104,7 +139,7 @@ body {
 }
 
 .opciones img {
-	max-width: 80%;
+	width: 80%;
 	height: auto;
 }
 
@@ -139,14 +174,14 @@ body {
 }
 
 #btn-continuar {
-	width: 20%;
+	width: 30%;
 	background-color: #16be2c;
 	border-radius: 8px;
 	border: none;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-size: 1.5vw;
+	font-size: 2vw;
 	padding: 0.5rem 0rem;
 	text-decoration: none;
 	font-family: "Open-Dyslexic", sans-serif;
