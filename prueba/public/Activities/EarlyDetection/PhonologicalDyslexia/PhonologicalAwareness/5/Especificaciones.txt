@@ -1,6 +1,9 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Seleccionar la sílaba inicial de una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección simple
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
+
