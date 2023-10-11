@@ -1,3 +1,5 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Digitar la cantidad de sílabas que tiene una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
@@ -5,4 +7,3 @@ Tipo plantilla: Digitar
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 * Segmentación silábica
-

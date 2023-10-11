@@ -1,3 +1,5 @@
+Tipo dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Encontrar letras específicas en medio de las palabras
 Grado: Primero
 Competencia: Competencia Fonológica
