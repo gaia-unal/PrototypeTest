@@ -1,3 +1,5 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
 Tipo actividad: Digitar la palabra que corresponde a la tarjeta dada del alfabeto
 Grado: Primero
 Competencia: Competencia Fonológica
