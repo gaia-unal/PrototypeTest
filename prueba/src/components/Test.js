@@ -5,7 +5,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente 
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
 
-export const Test = ({ module, competence1, competence2 }) => {
+export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5 }) => {
 
   const [mostrarModal, setMostrarModal] = useState(false);
 
@@ -19,18 +19,18 @@ export const Test = ({ module, competence1, competence2 }) => {
   const domain = "http://localhost:3000";
 
   const srcIframe = [
-    { ruta: domain + module + competence1 + "/1/indice.html", nombre: "Seleccionar una palabra de acuerdo a su representación gráfica" },
-    { ruta: domain + module + competence1 + "/2/indice.html", nombre: "Encontrar letras específicas en medio de las palabras" },
-    { ruta: domain + module + competence1 + "/3/indice.html", nombre: "Seleccionar en orden las sílabas del nombre de una imagen" },
-    { ruta: domain + module + competence1 + "/4/indice.html", nombre: "Digitar la cantidad de sílabas que tiene una palabra" },
-    { ruta: domain + module + competence1 + "/5/indice.html", nombre: "Seleccionar la sílaba inicial de una palabra" },
+    { ruta: domain + module + competence1 + "/1/indice.html", nombre: nameActivityC1_1 },
+    { ruta: domain + module + competence1 + "/2/indice.html", nombre: nameActivityC1_2 },
+    { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
+    { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
+    { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
 
 
-    { ruta: domain + module + competence2 + "/1/indice.html", nombre: "Seleccionar en orden las letras de una palabra dada" },
-    { ruta: domain + module + competence2 + "/2/indice.html", nombre: "Seleccionar el audio que corresponde al sonido de una letra dada" },
-    { ruta: domain + module + competence2 + "/3/indice.html", nombre: "Seleccionar en orden alfabético un conjunto de letras dado" },
-    { ruta: domain + module + competence2 + "/4/indice.html", nombre: "Digitar la palabra que corresponde a la tarjeta dada del alfabeto9" },
-    { ruta: domain + module + competence2 + "/5/indice.html", nombre: "Formar palabras a partir de un conjunto de letras dado" }
+    { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
+    { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
+    { ruta: domain + module + competence2 + "/3/indice.html", nombre: nameActivityC2_3 },
+    { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
+    { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 },
   ];
 
 
