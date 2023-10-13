@@ -4,6 +4,7 @@ Tipo actividad: Encontrar letras específicas en medio de las palabras
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección simple
+Instrucción de la actividad: Selecciona la letra que hace el sonido "O" en la siguiente palabra
 Categoría: * Segmentación de sonidos iniciales
 * Segmentación de sonidos finales
 * Segmentación de sonidos medios

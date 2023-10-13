@@ -4,6 +4,7 @@ Tipo actividad: Digitar la cantidad de sílabas que tiene una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Digitar
+Instrucción de la actividad: Digita la cantidad de sílabas que tiene la palabra "Luna"
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 * Segmentación silábica

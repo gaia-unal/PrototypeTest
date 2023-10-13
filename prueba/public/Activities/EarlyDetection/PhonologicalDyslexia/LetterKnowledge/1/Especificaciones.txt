@@ -4,6 +4,7 @@ Tipo actividad: Seleccionar en orden las letras de una palabra dada
 Grado: Primero
 Competencia: Conocimiento de las letras
 Tipo plantilla: Selección ordenada
+Instrucción de la actividad: Selecciona en orden las letras para que formes la palabra "gato"
 Categoría: * Identificación de letras
 Habilidades: * Memoria visual
 * Pensamiento secuencial

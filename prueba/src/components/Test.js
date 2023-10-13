@@ -30,7 +30,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
     { ruta: domain + module + competence2 + "/3/indice.html", nombre: nameActivityC2_3 },
     { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
-    { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 },
+    { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 }
   ];
 
 

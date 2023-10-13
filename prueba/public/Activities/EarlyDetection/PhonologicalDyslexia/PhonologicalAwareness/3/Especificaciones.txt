@@ -4,6 +4,7 @@ Tipo actividad: Seleccionar en orden las sílabas del nombre de una imagen
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección ordenada
+Instrucción de la actividad: Selecciona en orden las sílabas de la palabra "Hamburguesa"
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 * Segmentación silábica
