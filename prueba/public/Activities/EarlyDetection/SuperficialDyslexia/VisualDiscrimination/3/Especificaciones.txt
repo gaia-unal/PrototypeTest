@@ -1,0 +1,9 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
+Grado: Primero
+Competencia: Discriminación visual
+Tipo plantilla: Selección Múltiple
+Tipo_actividad: Seleccionar todos los elementos que se encuentren hacia la izquierda, o hacia la derecha
+Instrucción_actividad: Selecciona todos los carros que vayan hacia la derecha
+Categoría: * Discriminación izquierda-derecha
+Habilidades: * Lateralidad
