@@ -4,6 +4,7 @@ Tipo actividad: Seleccionar en orden alfabético un conjunto de letras dado
 Grado: Primero
 Competencia: Conocimiento de las letras
 Tipo plantilla: Selección ordenada
+Instrucción: Selecciona en orden alfabético las siguientes letras:
 Categoría: * Orden alfabético
 Habilidades: * Memoria secuencial
 * Atención visual

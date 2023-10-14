@@ -1,9 +1,13 @@
-Tipo_dificultad: Dislexia Fonológica
+Tipo dificultad: Dislexia Fonológica
 Tipo_enfoque: Detección
+Tipo actividad: Selecciona la letra que le falta a la palabra: __________
 Grado: Primero
-Competencia: Discriminación visual
-Tipo plantilla: Selección Múltiple
-Tipo_actividad: Selección múltiple, Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros).
-Instrucción_actividad: Selecciona todas las letras M de las siguientes
-Categoría: * Reconocimiento de letras * Reconocimiento de símbolos * Reconocimiento de números
-Habilidades: * Atención visual * Memoria visual * Reconocimiento del alfabeto
+Competencia: Discriminación Visual
+Tipo plantilla: Selección simple
+Instrucción: Selecciona abajo la letra que le hace falta a la palabra ___________
+Categoría: * Inserción de letras
+* Reconocimiento de letras
+Habilidades: * Reconocimiento del alfabeto
+* Atención visual
+
+

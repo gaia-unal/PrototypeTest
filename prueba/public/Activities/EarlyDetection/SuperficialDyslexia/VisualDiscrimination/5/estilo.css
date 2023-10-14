@@ -22,55 +22,54 @@ body {
 	border: 2px solid black;
 }
 
-
 /* Accessiibility options */
 
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-    width: 2vw;
+	width: 2vw;
 }
 
 
 .btn.btn-outline-dark {
-    font-size: 2vw;
-    padding: 1%;
+	font-size: 2vw;
+	padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 
 div .font-controls {
-    padding: 2%;
+	padding: 2%;
 }
 
 
 svg {
-    display: inline;
-    font-size: 2vw;
+	display: inline;
+	font-size: 2vw;
 }
 
 
 .btn.btn-outline-dark.line-spacing {
-    padding: 1%;
+	padding: 1%;
 }
 
 
 /* Accessibility options */
 #accessibilityButton {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 /* Activity instruction */
 .instruccion {
 	display: grid;
 	grid-template-columns: 10% 90%;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 #icono-bocina {
@@ -83,34 +82,28 @@ svg {
     line-height: 1;
 }
 
-/* Activity image */
-.contenedorImagen {
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#imagen1 {
-	width: 75%;
-	margin-bottom: 5%;
-}
 
 /* For response options */
 .contenedor-opciones {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	/* 6 columnas en pantallas grandes */
+	/* 4 columnas en pantallas grandes */
+	grid-gap: 20px;
 	/* Espacio entre las celdas */
 }
 
+/* Diseño de 2 columnas en pantallas más pequeñas */
+@media (max-width: 300px) {
+	.contenedor-opciones {
+		grid-template-columns: repeat(2, 1fr);
+		/* 2 columnas en pantallas más pequeñas */
+	}
+}
 
 #opcion1,
 #opcion2,
 #opcion3,
-#opcion4,
-#opcion5,
-#opcion6 {
+#opcion4 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -118,7 +111,7 @@ svg {
 }
 
 .opciones img {
-	width: 50%;
+	width: 90%;
 	height: auto;
 }
 

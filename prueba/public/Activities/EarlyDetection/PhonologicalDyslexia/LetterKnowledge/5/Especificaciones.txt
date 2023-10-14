@@ -4,6 +4,7 @@ Tipo actividad: Formar palabras a partir de un conjunto de letras dado
 Grado: Primero
 Competencia: Conocimiento de las letras
 Tipo plantilla: Digitar
+Instrucción: Forma una palabra con las siguientes letras (no puedes incluir más letras):
 Categoría: * Comprensión de combinaciones de letras
 Habilidades: * Memoria de trabajo
 * Razonamiento lógico

@@ -6,6 +6,7 @@ Tipo actividad: Seleccionar la sílaba inicial de una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección simple
+Instrucción: Selecciona la primera sílaba de la palabra:
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 
