@@ -2,7 +2,7 @@
 var puntaje = 0.01;
 
 // Add the IDs of the correct options as an array
-var opcionesCorrectas = ["opcion1", "opcion7"];
+var opcionesCorrectas = ["opcion1", "opcion3", "opcion5"];
 
 // Variables to store the values of correct and incorrect options
 var valorBueno = 1 / opcionesCorrectas.length;
@@ -41,19 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const fonts = ["Open-Dyslexic", "Arial"]
 	let actualFont = 0;
 
-	// Define the available images, for each type of font
-	const images = [
-		["letra1-Open-Dyslexic.png", "letra1-Arial.png"],
-		["letra2-Open-Dyslexic.png", "letra2-Arial.png"],
-		["letra3-Open-Dyslexic.png", "letra3-Arial.png"],
-		["letra4-Open-Dyslexic.png", "letra4-Arial.png"],
-		["letra5-Open-Dyslexic.png", "letra5-Arial.png"],
-		["letra6-Open-Dyslexic.png", "letra6-Arial.png"],
-		["letra7-Open-Dyslexic.png", "letra7-Arial.png"],
-		["letra8-Open-Dyslexic.png", "letra8-Arial.png"]
-	];
-	let imagenActual = 0;
-
 	// When the button is clicked
 	changeFontButton.addEventListener("click", () => {
 		// Change the text font of the required elements
@@ -67,11 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			spans[i].style.fontFamily = fonts[actualFont];
 		}
 
-		// Change the option images
-		imagenActual = (imagenActual + 1) % images[0].length;
-		for (let i = 0; i < images.length; i++) {
-			document.getElementById("imageOption" + i).src = images[i][imagenActual];
-		}
 	});
 
 	// To change the font-size
