@@ -29,6 +29,9 @@ export const App = () => {
           <Route path="inicio/superficial/deteccion" element={<SuperficialDetectionEsmeralda></SuperficialDetectionEsmeralda>}></Route>
           <Route path="inicio/superficial/apoyo" element={<SuperficialHelpEsmeralda></SuperficialHelpEsmeralda>}></Route>
 
+          {/* Detection Tests */}
+
+          {/* Phonological Dyslexia */}
           <Route path="inicio/fonologica/deteccion/test1" element={
             <Test
               // Props indicate the type of test (phonological dyslexia or superficial dyslexia)
@@ -50,6 +53,7 @@ export const App = () => {
             />
           } />
 
+          {/* Superficial Dyslexia */}
           <Route path="inicio/superficial/deteccion/test1" element={
             <Test
               module="/Activities/EarlyDetection/SuperficialDyslexia"
@@ -61,13 +65,32 @@ export const App = () => {
               nameActivityC1_4="Seleccionar todos los elementos de un color específico"
               nameActivityC1_5="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
 
+              competence2="/Orthography"
+              nameActivityC2_1=""
+              nameActivityC2_2=""
+              nameActivityC2_3=""
+              nameActivityC2_4=""
+              nameActivityC2_5=""
+            />
+          } />
 
-              // Temporales
-              nameActivityC1_6="Selecciona la letra que le falta a la palabra: __________"
-              nameActivityC1_7="Seleccionar la letra que se puede remover de una palabra"
-              nameActivityC1_8=""
-              nameActivityC1_9=""
-              nameActivityC1_10=""
+
+          {/* Attention Tests */}
+
+          {/* Phonological Dyslexia */}
+
+
+          {/* Superficial Dyslexia */}
+          <Route path="inicio/superficial/apoyo/test1" element={
+            <Test
+              module="/Activities/EarlyAttention/SuperficialDyslexia"
+
+              competence1="/VisualDiscrimination"
+              nameActivityC1_1="Selecciona la letra que le falta a la palabra: __________"
+              nameActivityC1_2="Seleccionar la letra que se puede remover de una palabra"
+              nameActivityC1_3=""
+              nameActivityC1_4=""
+              nameActivityC1_5=""
 
               competence2="/Orthography"
               nameActivityC2_1=""
@@ -77,6 +100,7 @@ export const App = () => {
               nameActivityC2_5=""
             />
           } />
+
         </Route>
 
         <Route path="/esmeralda" element={<Navigate to='/esmeralda/inicio' />}></Route>

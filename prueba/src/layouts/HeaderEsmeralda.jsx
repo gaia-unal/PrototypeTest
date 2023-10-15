@@ -1,6 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.js'
 import '../styles/HeaderEsmeralda.css'
 import logo from '../logo.png'
 import { NavLink, Link, Outlet } from 'react-router-dom'

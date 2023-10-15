@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
@@ -24,14 +23,6 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
     { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
     { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
-
-    // Temporales
-    { ruta: domain + module + competence1 + "/6/indice.html", nombre: nameActivityC1_6 },
-    { ruta: domain + module + competence1 + "/7/indice.html", nombre: nameActivityC1_7 },
-    { ruta: domain + module + competence1 + "/8/indice.html", nombre: nameActivityC1_8 },
-    { ruta: domain + module + competence1 + "/9/indice.html", nombre: nameActivityC1_9 },
-    { ruta: domain + module + competence1 + "/10/indice.html", nombre: nameActivityC1_10 },
-
 
     { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
     { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
