@@ -92,21 +92,11 @@ svg {
 	/* Espacio entre las celdas */
 }
 
-/* For response options */
-.contenedor-opciones {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	/* 3 columnas para la primera fila */
-	grid-gap: 20px;
-	/* Espacio entre las celdas */
-  }
-  
-
 /* Diseño de 2 columnas en pantallas más pequeñas */
 @media (max-width: 300px) {
 	.contenedor-opciones {
 		grid-template-columns: repeat(2, 1fr);
-		/* 1 columnas en pantallas más pequeñas */
+		/* 2 columnas en pantallas más pequeñas */
 	}
 }
 
@@ -115,7 +105,9 @@ svg {
 #opcion3,
 #opcion4,
 #opcion5,
-#opcion6 {
+#opcion6,
+#opcion7,
+#opcion8 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -123,7 +115,7 @@ svg {
 }
 
 .opciones img {
-	width: 55%;
+	width: 60%;
 	height: auto;
 }
 

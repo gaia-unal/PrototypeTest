@@ -1,0 +1,11 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Atención
+Grado: Primero
+Competencia: Discriminación visual
+Tipo plantilla: Selección Múltiple
+Tipo_actividad: Seleccionar todos los elementos de un color específico
+Instrucción_actividad: Selecciona todos los elementos de color rojo
+Categoría: * Distinción de colores
+Habilidades: * Atención visual
+* Reconocimiento de los colores
+
