@@ -168,7 +168,7 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		console.log("El puntaje es: ", puntaje);
+		// console.log("El puntaje es: ", puntaje);
 		// The score should be sent to a global function here that processes the score for the entire test
 	}
 }
@@ -197,7 +197,7 @@ function sonido(id) {
 	}
 	// Play the desired audio
 	let audio = document.getElementById("audio" + id);
-	console.log(audio);
+	// console.log(audio);
 	audio.pause();
 	audio.currentTime = 0;
 	audio.play();
@@ -207,7 +207,7 @@ function sonido(id) {
 function seleccionar(id) {
 
 	id = "opcion" + id;
-	console.log("El id del seleccionado es:", id);
+	// console.log("El id del seleccionado es:", id);
 
 	let opciones = document.getElementsByClassName("opciones");
 

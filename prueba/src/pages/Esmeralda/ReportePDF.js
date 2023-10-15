@@ -1,11 +1,11 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
-import imagenGuiaResultados from "../assets/imagenGuiaResultados.png"
-import headerPDF from '../assets/headerPDF.png';
-import footPDF from '../assets/footPDF.png'
-import orangeHeart from '../assets/orangeHeart.png';
-import blueHeart from '../assets/blueHeart.png';
-import greenHeart from '../assets/greenHeart.png';
+import imagenGuiaResultados from "../../assets/imagenGuiaResultados.png"
+import headerPDF from '../../assets/headerPDF.png';
+import footPDF from '../../assets/footPDF.png'
+import orangeHeart from '../../assets/orangeHeart.png';
+import blueHeart from '../../assets/blueHeart.png';
+import greenHeart from '../../assets/greenHeart.png';
 
 
 const styles = StyleSheet.create({

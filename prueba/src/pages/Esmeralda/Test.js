@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Test.css';
+import '../../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';

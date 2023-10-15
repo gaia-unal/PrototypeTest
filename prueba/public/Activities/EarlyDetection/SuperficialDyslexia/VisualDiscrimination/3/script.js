@@ -158,7 +158,7 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		console.log("El puntaje es: ", puntaje);
+		// console.log("El puntaje es: ", puntaje);
 		// Here, the score should be sent to be processed globally
 		// parent.enviarPuntaje(puntaje);
 	}
@@ -180,7 +180,7 @@ function sonido(id) {
 	}
 	// Play the desired audio
 	let audio = document.getElementById("audio" + id);
-	console.log(audio);
+	// console.log(audio);
 	audio.pause();
 	audio.currentTime = 0;
 	audio.play();
@@ -225,5 +225,5 @@ function calificar() {
 	if (puntaje < 0) {
 		puntaje = 0;
 	}
-	console.log("El puntaje es: ", puntaje);
+	// console.log("El puntaje es: ", puntaje);
 }

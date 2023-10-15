@@ -153,7 +153,7 @@ function ocultarContinuar() {
 
 // Function to process the activity's score
 function procesarPuntaje() {
-	console.log("Puntaje de la actividad: ", puntaje);
+	// console.log("Puntaje de la actividad: ", puntaje);
 	if (puntaje == null) {
 		var texto = 'Por favor completa la actividad';
 		if (typeof parent.mostrarAlerta === "function") {
@@ -196,7 +196,7 @@ function sonido(id) {
 	}
 	// Play the desired audio
 	let audio = document.getElementById("audio" + id);
-	console.log(audio);
+	// console.log(audio);
 	audio.pause();
 	audio.currentTime = 0;
 	audio.play();
@@ -218,9 +218,9 @@ function calificar(valor) {
 
 	if (valor == respuestaCorrectaDelInput) {
 		Correcto();
-		console.log('puntaje = 1')
+		// console.log('puntaje = 1')
 	} else {
 		Error();
-		console.log('puntaje = 0')
+		// console.log('puntaje = 0')
 	}
 }

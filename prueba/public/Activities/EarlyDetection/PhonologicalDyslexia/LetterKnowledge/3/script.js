@@ -187,7 +187,7 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		console.log("El puntaje es: ", puntaje);
+		// console.log("El puntaje es: ", puntaje);
 		// Aquí se envía el puntaje para que se procese de forma global
 	}
 }
@@ -208,7 +208,7 @@ function sonido(id) {
 	}
 	// Play the desired audio
 	let audio = document.getElementById("audio" + id);
-	console.log(audio);
+	// console.log(audio);
 	audio.pause();
 	audio.currentTime = 0;
 	audio.play();
@@ -270,13 +270,13 @@ function seleccionar(id) {
 // Function for when there is an error
 function Error() {
 	puntaje = 0;
-	console.log('el puntaje es ', puntaje);
+	// console.log('el puntaje es ', puntaje);
 }
 
 // Function for when the answer is correct
 function Correcto() {
 	puntaje = 1;
-	console.log('el puntaje es ', puntaje);
+	// console.log('el puntaje es ', puntaje);
 }
 
 // Scoring function
