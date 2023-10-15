@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Only part of the container
-document.getElementsByClassName("contenedor")[0].style.border = "solid black";
+// document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
 
 // Function to show the 'continuar' button

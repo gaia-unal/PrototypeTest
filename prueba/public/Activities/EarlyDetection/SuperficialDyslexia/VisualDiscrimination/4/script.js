@@ -15,7 +15,7 @@ var seleccionadas = Array();
 var idSeleccion = null;
 
 // Border to set limits in the activity
-document.getElementsByClassName("contenedor")[0].style.border = "solid black";
+// document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
 // Continue button
 var boton = document.getElementById('btn-continuar');

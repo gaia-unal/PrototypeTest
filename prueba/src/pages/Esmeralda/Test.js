@@ -18,16 +18,16 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   const domain = "http://localhost:3000";
 
   const srcIframe = [
-    { ruta: domain + module + competence1 + "/1/indice.html", nombre: nameActivityC1_1 },
-    { ruta: domain + module + competence1 + "/2/indice.html", nombre: nameActivityC1_2 },
-    { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
-    { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
-    { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
+    // { ruta: domain + module + competence1 + "/1/indice.html", nombre: nameActivityC1_1 },
+    // { ruta: domain + module + competence1 + "/2/indice.html", nombre: nameActivityC1_2 },
+    // { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
+    // { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
+    // { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
 
-    { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
-    { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
-    { ruta: domain + module + competence2 + "/3/indice.html", nombre: nameActivityC2_3 },
-    { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
+    // { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
+    // { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
+    // { ruta: domain + module + competence2 + "/3/indice.html", nombre: nameActivityC2_3 },
+    // { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
     { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 }
   ];
 

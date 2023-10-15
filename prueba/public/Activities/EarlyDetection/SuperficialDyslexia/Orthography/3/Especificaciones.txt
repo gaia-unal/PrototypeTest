@@ -1,0 +1,17 @@
+Tipo_dificultad: Dislexia Superficial
+Tipo_enfoque: Detección
+Tipo actividad: Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen
+Grado: Primero
+Competencia: Competencia Ortográfica
+Tipo plantilla: Selección simple
+Instrucción de la actividad: ¿Cómo se escribe la palabra Queso?
+Categorías:
+    * Formación de palabras con consonantes y vocales
+    * Diferencias entre c y q
+    * Diferencias entre sonidos (fuertes y débiles) de la r
+    * Mayúsculas y minúsculas
+Habilidades:
+    * Atención visual
+    * Vocabulario
+    * Conocimiento léxico
+    * Conocimiento mayúsculas y minúsculas

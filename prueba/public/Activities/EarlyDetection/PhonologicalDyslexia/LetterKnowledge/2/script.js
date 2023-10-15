@@ -11,7 +11,7 @@ var idSeleccion = null;
 var idOpcionCorrecta = "opcion" + "1";
 
 // Container only for guidance
-document.getElementsByClassName("contenedor")[0].style.border = "solid black";
+// document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
 // 'Continuar' button
 var boton = document.getElementById('btn-continuar');

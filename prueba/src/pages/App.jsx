@@ -66,11 +66,11 @@ export const App = () => {
               nameActivityC1_5="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
 
               competence2="/Orthography"
-              nameActivityC2_1=""
-              nameActivityC2_2=""
-              nameActivityC2_3=""
-              nameActivityC2_4=""
-              nameActivityC2_5=""
+              nameActivityC2_1="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_2="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_3="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_4="Seleccionar la oración que está escrita correctamente"
+              nameActivityC2_5="Seleccionar la oración que está escrita correctamente"
             />
           } />
 
