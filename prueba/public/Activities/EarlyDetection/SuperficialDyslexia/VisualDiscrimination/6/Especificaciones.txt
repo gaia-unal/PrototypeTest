@@ -1,0 +1,13 @@
+Tipo dificultad: Dislexia Fonológica
+Tipo_enfoque: Atención
+Tipo actividad: Selecciona la letra que le falta a la palabra: __________
+Grado: Primero
+Competencia: Discriminación Visual
+Tipo plantilla: Selección simple
+Instrucción: Selecciona abajo la letra que le hace falta a la palabra ___________
+Categoría: * Inserción de letras
+* Reconocimiento de letras
+Habilidades: * Reconocimiento del alfabeto
+* Atención visual
+
+

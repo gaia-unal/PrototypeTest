@@ -5,7 +5,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente 
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
 
-export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5 }) => {
+export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC1_6, nameActivityC1_7, nameActivityC1_8, nameActivityC1_9, nameActivityC1_10 }) => {
 
   const [mostrarModal, setMostrarModal] = useState(false);
 
@@ -24,6 +24,13 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
     { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
     { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
+
+    // Temporales
+    { ruta: domain + module + competence1 + "/6/indice.html", nombre: nameActivityC1_6 },
+    { ruta: domain + module + competence1 + "/7/indice.html", nombre: nameActivityC1_7 },
+    { ruta: domain + module + competence1 + "/8/indice.html", nombre: nameActivityC1_8 },
+    { ruta: domain + module + competence1 + "/9/indice.html", nombre: nameActivityC1_9 },
+    { ruta: domain + module + competence1 + "/10/indice.html", nombre: nameActivityC1_10 },
 
 
     { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },

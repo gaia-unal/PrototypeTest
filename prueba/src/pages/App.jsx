@@ -55,11 +55,15 @@ export const App = () => {
               module="/Activities/EarlyDetection/SuperficialDyslexia"
 
               competence1="/VisualDiscrimination"
-              nameActivityC1_1=""
-              nameActivityC1_2=""
-              nameActivityC1_3=""
-              nameActivityC1_4=""
-              nameActivityC1_5=""
+              nameActivityC1_1="Seleccionar la letra que le falta a la palabra: __________"
+              nameActivityC1_2="Seleccionar la letra que se puede remover de una palabra"
+              nameActivityC1_3="Seleccionar todos los elementos que se encuentren hacia la izquierda, o hacia la derecha"
+              nameActivityC1_4="Seleccionar todos los elementos de un color específico"
+              nameActivityC1_5="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
+
+
+              // Temporales
+              nameActivityC1_6=""
 
               competence2="/Orthography"
               nameActivityC2_1=""
