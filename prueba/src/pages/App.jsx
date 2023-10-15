@@ -64,7 +64,7 @@ export const App = () => {
 
               // Temporales
               nameActivityC1_6="Selecciona la letra que le falta a la palabra: __________"
-              nameActivityC1_7=""
+              nameActivityC1_7="Seleccionar la letra que se puede remover de una palabra"
               nameActivityC1_8=""
               nameActivityC1_9=""
               nameActivityC1_10=""
