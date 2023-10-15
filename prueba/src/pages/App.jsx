@@ -63,7 +63,11 @@ export const App = () => {
 
 
               // Temporales
-              nameActivityC1_6=""
+              nameActivityC1_6="Selecciona la letra que le falta a la palabra: __________"
+              nameActivityC1_7=""
+              nameActivityC1_8=""
+              nameActivityC1_9=""
+              nameActivityC1_10=""
 
               competence2="/Orthography"
               nameActivityC2_1=""
