@@ -1,12 +1,12 @@
 Tipo_dificultad: Dislexia Fonológica
-Tipo_enfoque: Detección
+Tipo_enfoque: Atención
 Tipo_dificultad: Dislexia Fonológica
 Tipo_enfoque: Detección
 Tipo actividad: Seleccionar la sílaba inicial de una palabra
 Grado: Primero
 Competencia: Competencia Fonológica
 Tipo plantilla: Selección simple
-Instrucción: Selecciona la primera sílaba de la palabra Mariposa
+Instrucción: Selecciona la primera sílaba de la palabra Oreja
 Categoría: * Manipulación de sílabas
 Habilidades: * Conciencia silábica
 

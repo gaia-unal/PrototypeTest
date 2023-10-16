@@ -86,7 +86,30 @@ export const App = () => {
           {/* Attention Tests */}
 
           {/* Phonological Dyslexia */}
+          <Route path="inicio/fonologica/apoyo/test1" element={
+            <Test
+              // Props indicate the type of test (phonological dyslexia or superficial dyslexia)
+              module="/Activities/EarlyAttention/PhonologicalDyslexia"
 
+              competence1="/PhonologicalAwareness"
+              nameActivityC1_1="Seleccionar una palabra de acuerdo a su representación gráfica"
+              nameActivityC1_2="Encontrar letras específicas en medio de las palabras"
+              nameActivityC1_3="Seleccionar en orden las sílabas del nombre de una imagen"
+              nameActivityC1_4="Digitar la cantidad de sílabas que tiene una palabra"
+              nameActivityC1_5="Seleccionar la sílaba inicial de una palabra"
+              nameActivityC1_6="Seleccionar en orden las sílabas del nombre de una imagen"
+              nameActivityC1_7="Encontrar letras específicas en medio de las palabras"
+
+              competence2="/LetterKnowledge"
+              nameActivityC2_1=""
+              nameActivityC2_2=""
+              nameActivityC2_3=""
+              nameActivityC2_4=""
+              nameActivityC2_5=""
+              nameActivityC2_6=""
+              nameActivityC2_7=""
+            />
+          } />
 
           {/* Superficial Dyslexia */}
           <Route path="inicio/superficial/apoyo/test1" element={
