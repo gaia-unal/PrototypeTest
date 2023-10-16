@@ -203,7 +203,6 @@ function sonido(id) {
 // Event when an option is selected
 function seleccionar(id) {
 
-	sonido(id);
 	id = "opcion" + id;
 	// console.log("El id del seleccionado es:", id);
 

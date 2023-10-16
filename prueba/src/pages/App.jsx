@@ -43,6 +43,8 @@ export const App = () => {
               nameActivityC1_3="Seleccionar en orden las sílabas del nombre de una imagen"
               nameActivityC1_4="Digitar la cantidad de sílabas que tiene una palabra"
               nameActivityC1_5="Seleccionar la sílaba inicial de una palabra"
+              nameActivityC1_6="Encontrar letras específicas en medio de las palabras"
+              nameActivityC1_7="Seleccionar una palabra de acuerdo a su representación gráfica"
 
               competence2="/LetterKnowledge"
               nameActivityC2_1="Seleccionar en orden las letras de una palabra dada"
@@ -50,6 +52,8 @@ export const App = () => {
               nameActivityC2_3="Seleccionar en orden alfabético un conjunto de letras dado"
               nameActivityC2_4="Digitar la palabra que corresponde a la tarjeta dada del alfabeto"
               nameActivityC2_5="Formar palabras a partir de un conjunto de letras dado"
+              nameActivityC2_6=""
+              nameActivityC2_7=""
             />
           } />
 
@@ -64,6 +68,8 @@ export const App = () => {
               nameActivityC1_3="Seleccionar todos los elementos que se encuentren hacia la izquierda, o hacia la derecha"
               nameActivityC1_4="Seleccionar todos los elementos de un color específico"
               nameActivityC1_5="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
+              nameActivityC1_6=""
+              nameActivityC1_7=""
 
               competence2="/Orthography"
               nameActivityC2_1="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
@@ -71,7 +77,8 @@ export const App = () => {
               nameActivityC2_3="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
               nameActivityC2_4="Seleccionar la oración que está escrita correctamente"
               nameActivityC2_5="Seleccionar la oración que está escrita correctamente"
-              nameActivityC2_6=""
+              nameActivityC2_6="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_7="Seleccionar la oración que está escrita correctamente"
             />
           } />
 
@@ -92,13 +99,17 @@ export const App = () => {
               nameActivityC1_3=""
               nameActivityC1_4=""
               nameActivityC1_5=""
+              nameActivityC1_6=""
+              nameActivityC1_7=""
 
               competence2="/Orthography"
-              nameActivityC2_1=""
-              nameActivityC2_2=""
-              nameActivityC2_3=""
-              nameActivityC2_4=""
-              nameActivityC2_5=""
+              nameActivityC2_1="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_2="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_3="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
+              nameActivityC2_4="Seleccionar la oración que está escrita correctamente"
+              nameActivityC2_5="Seleccionar la oración que está escrita correctamente"
+              nameActivityC2_6="Seleccionar la oración que está escrita correctamente"
+              nameActivityC2_7="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
             />
           } />
 

@@ -1,0 +1,17 @@
+Tipo_dificultad: Dislexia Superficial
+Tipo_enfoque: Atención
+Tipo actividad: Seleccionar la oración que está escrita correctamente
+Grado: Primero
+Competencia: Competencia Ortográfica
+Tipo plantilla: Selección simple
+Instrucción de la actividad: Selecciona la oración que está escrita correctamente
+Categorías:
+    * Uso de mayúsculas y minúsculas
+    * Formación de oraciones coherentes
+Habilidades:
+    * Atención visual
+    * Razonamiento lógico
+    * Conocimiento mayúsculas y minúsculas
+    * Interpretación
+    * Procesamiento del lenguaje
+    * Pensamiento analítico

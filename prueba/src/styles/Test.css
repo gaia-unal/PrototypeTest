@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%; /* Takes up the entire width of the screen */
-    height: 280vh; /* Takes the full height of the screen, and a little more, for lower resolution screens */
+    height: 285vh; /* Takes the full height of the screen, and a little more, for lower resolution screens */
     overflow: hidden; /* Hide scroll bars if the content is larger */
     display: flex;
     justify-content: center;

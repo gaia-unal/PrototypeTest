@@ -142,6 +142,7 @@ svg {
 .opciones img {
 	width: 90%;
 	height: auto;
+	cursor: pointer;
 }
 
 /* Continue button */
