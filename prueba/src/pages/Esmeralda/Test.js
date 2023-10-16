@@ -24,7 +24,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     // { ruta: domain + module + competence1 + "/4/indice.html", nombre: nameActivityC1_4 },
     // { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
     // { ruta: domain + module + competence1 + "/6/indice.html", nombre: nameActivityC1_6 },
-    // { ruta: domain + module + competence1 + "/7/indice.html", nombre: nameActivityC1_7 },
+    { ruta: domain + module + competence1 + "/7/indice.html", nombre: nameActivityC1_7 },
 
     // { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
     // { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
