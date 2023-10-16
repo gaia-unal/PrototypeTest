@@ -90,7 +90,7 @@ svg {
 
 #imagen1 {
 	width: 35%;
-	padding: 30px;
+	margin-bottom: 3%;
 }
 
 /* For response options */
@@ -124,6 +124,7 @@ svg {
 .opciones img {
 	width: 70%;
 	height: auto;
+	cursor: pointer;
 }
 
 /* Continue button */

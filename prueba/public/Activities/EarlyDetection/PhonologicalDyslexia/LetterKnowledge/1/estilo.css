@@ -84,6 +84,7 @@ svg {
 #imagen1 {
 	width: 15%;
 	margin-bottom: 2rem;
+	cursor: pointer;
 }
 
 /* Distribution of answer options and numbering containers */
@@ -143,6 +144,7 @@ svg {
 .opciones img {
 	width: 30%;
 	height: auto;
+	cursor: pointer;
 }
 
 /* Styles for numbering containers */

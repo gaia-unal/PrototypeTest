@@ -123,6 +123,7 @@ svg {
 .opciones img {
 	width: 80%;
 	height: auto;
+	cursor: pointer;
 }
 
 /* Continue button */

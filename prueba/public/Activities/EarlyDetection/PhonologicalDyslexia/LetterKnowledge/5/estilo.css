@@ -1,8 +1,9 @@
 /* General styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 @font-face {
@@ -12,11 +13,11 @@ html, body {
 }
 
 /* Main container */
-.contenedor{
+.contenedor {
 	width: 60%;
 	height: auto;
 	margin-top: 4rem;
-	font-family: 'Open-Dyslexic', sans-serif; 
+	font-family: 'Open-Dyslexic', sans-serif;
 	overflow: hidden;
 }
 
@@ -26,41 +27,41 @@ html, body {
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-    width: 2vw;
+	width: 2vw;
 }
 
 
 .btn.btn-outline-dark {
-    font-size: 2vw;
-    padding: 1%;
+	font-size: 2vw;
+	padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 
 div .font-controls {
-    padding: 2%;
+	padding: 2%;
 }
 
 
 svg {
-    display: inline;
-    font-size: 2vw;
+	display: inline;
+	font-size: 2vw;
 }
 
 
 .btn.btn-outline-dark.line-spacing {
-    padding: 1%;
+	padding: 1%;
 }
 
 
 /* Accessibility options */
 #accessibilityButton {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 /* Activity instruction */
@@ -76,17 +77,19 @@ svg {
 }
 
 #texto {
-    color: black;
-    font-size: 2vw;
-    line-height: 1;
+	color: black;
+	font-size: 2vw;
+	line-height: 1;
 }
 
 /* Distribution of answer options and numbering containers */
 
 .opciones-respuesta {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* 4 columns */
-	grid-gap: 20px; /* Space between elements */
+	grid-template-columns: repeat(3, 1fr);
+	/* 4 columns */
+	grid-gap: 20px;
+	/* Space between elements */
 	justify-items: center;
 }
 
@@ -110,23 +113,25 @@ svg {
 }
 
 .opciones img {
-width: 80%;
-height: auto;
+	width: 80%;
+	height: auto;
+	cursor: pointer;
 }
 
 /* Activity image */
-.contenedorImagen, .contenedorInput {
-display: flex;
-justify-content: center;
-align-items: center;
+.contenedorImagen,
+.contenedorInput {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Answer input */
-#respuesta{
+#respuesta {
 	width: 30%;
-	font-family: 'Open-Dyslexic', sans-serif; 
-	font-size: 1.5vw; 
-	border: 2px solid #bb5b02; 
+	font-family: 'Open-Dyslexic', sans-serif;
+	font-size: 1.5vw;
+	border: 2px solid #bb5b02;
 	padding: 0.5rem;
 	text-align: center;
 	margin-top: 2rem;

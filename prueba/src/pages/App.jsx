@@ -71,6 +71,7 @@ export const App = () => {
               nameActivityC2_3="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
               nameActivityC2_4="Seleccionar la oración que está escrita correctamente"
               nameActivityC2_5="Seleccionar la oración que está escrita correctamente"
+              nameActivityC2_6=""
             />
           } />
 

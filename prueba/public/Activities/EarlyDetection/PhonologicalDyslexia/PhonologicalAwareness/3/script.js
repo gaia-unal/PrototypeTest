@@ -253,7 +253,8 @@ function seleccionar(id) {
 		let indice = seleccionadas.indexOf(id);
 		seleccionadas.splice(indice, 1);
 		renumerarOpciones();
-	} else { // If it's not selected, I put a border around it and store it in the array		document.getElementById(id).style.border = "2px solid #00FF00";
+	} else { // If it's not selected, I put a border around it and store it in the array		
+		document.getElementById(id).style.border = "2px solid #00FF00";
 		seleccionadas.push(id);
 		renumerarOpciones();
 	}
