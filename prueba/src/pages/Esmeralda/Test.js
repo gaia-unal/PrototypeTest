@@ -3,6 +3,7 @@ import '../../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
+import { GeneralDataInput } from './GeneralDataInput';
 
 export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC1_6, nameActivityC1_7, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC2_6, nameActivityC2_7 }) => {
 
@@ -58,10 +59,14 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     message2 = " La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
   }
 
-  // Acá se definen las variables donde se guardan los datos generales del estudiante:
-  var nameStudent = "María Paula Taborda Giraldo";
-  var applicationDate = "09/10/2023";
-  var age = '7 años';
+  // The states where the student's general data is saved are defined here:
+
+  const [isDataEntered, setIsDataEntered] = useState(false); // To know if the data has already been entered and the test can be shown
+
+  const [nameStudent, setNameStudent] = useState("");
+  const date = new Date();
+  const applicationDate = date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+  const [age, setAge] = useState("");
 
   // Acá defino las variables que van a llevar las rutas que van a aparecen en el reporte
 
@@ -81,125 +86,151 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
     // efecto secundario recibirMensajeDesdeIframe
-    const recibirMensajeDesdeIframe = (event) => {
-      if (event.source === iframeRef.current.contentWindow) {
-        const mensajeDesdeIframe = event.data;
+    // Antes de usar iframeRef, verifica que no sea null
+    if (iframeRef.current) {
+      // Accede a las propiedades o métodos del iframe
+      const recibirMensajeDesdeIframe = (event) => {
+        if (event.source === iframeRef.current.contentWindow) {
+          const mensajeDesdeIframe = event.data;
 
-        // Verifica el mensaje y avanza a la siguiente actividad si es necesario
-        // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
-        // índice de la siguiente actividad y se actualiza el puntaje global
-        if (typeof mensajeDesdeIframe === "number") {
-          // Time elapsed to perform the activity
-          const currentTime = new Date();
-          const elapsedTime = (currentTime - startTime) / 1000; // Seconds
-          // Information of each activity
-          const activitieResult = {
-            nameActivity: srcIframe[actividadActual].nombre,
-            location: srcIframe[actividadActual].ruta,
-            score: mensajeDesdeIframe,
-            time: elapsedTime
-          };
-          const currentResults = [...results, activitieResult];
-          // Activity information is saved
-          setResults(currentResults);
+          // Verifica el mensaje y avanza a la siguiente actividad si es necesario
+          // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
+          // índice de la siguiente actividad y se actualiza el puntaje global
+          if (typeof mensajeDesdeIframe === "number") {
+            // Time elapsed to perform the activity
+            const currentTime = new Date();
+            const elapsedTime = (currentTime - startTime) / 1000; // Seconds
+            // Information of each activity
+            const activitieResult = {
+              nameActivity: srcIframe[actividadActual].nombre,
+              location: srcIframe[actividadActual].ruta,
+              score: mensajeDesdeIframe,
+              time: elapsedTime
+            };
+            const currentResults = [...results, activitieResult];
+            // Activity information is saved
+            setResults(currentResults);
 
-          // Global score is updated
-          let cumulativeScore = testScore + mensajeDesdeIframe;
-          setTestScore(cumulativeScore);
+            // Global score is updated
+            let cumulativeScore = testScore + mensajeDesdeIframe;
+            setTestScore(cumulativeScore);
 
-          // Competence score is updated
-          let cumulativeCompetence1Score = competence1Score;
-          let cumulativeCompetence2Score = competence2Score;
+            // Competence score is updated
+            let cumulativeCompetence1Score = competence1Score;
+            let cumulativeCompetence2Score = competence2Score;
 
-          if (srcIframe[actividadActual].ruta.includes("PhonologicalAwareness") || srcIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
-            cumulativeCompetence1Score += mensajeDesdeIframe;
-            setCompetence1Score(cumulativeCompetence1Score);
-          }
-          else {
-            if (srcIframe[actividadActual].ruta.includes("LetterKnowledge") || srcIframe[actividadActual].ruta.includes("Orthography")) {
-              cumulativeCompetence2Score += mensajeDesdeIframe;
-              setCompetence2Score(cumulativeCompetence2Score);
+            if (srcIframe[actividadActual].ruta.includes("PhonologicalAwareness") || srcIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
+              cumulativeCompetence1Score += mensajeDesdeIframe;
+              setCompetence1Score(cumulativeCompetence1Score);
+            }
+            else {
+              if (srcIframe[actividadActual].ruta.includes("LetterKnowledge") || srcIframe[actividadActual].ruta.includes("Orthography")) {
+                cumulativeCompetence2Score += mensajeDesdeIframe;
+                setCompetence2Score(cumulativeCompetence2Score);
+              }
+            }
+
+            const siguienteActividad = actividadActual + 1;
+
+            if (siguienteActividad < srcIframe.length) {
+              setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
+              // el estado que tiene el índice de la actividad actual
+              setStartTime(new Date()); // Update startTime for the next activity
+            }
+            else {
+              // The test is over
+
+              console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
+              console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
+              console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
+              console.log("Resultados de cada actividad: ");
+              console.log(JSON.stringify(currentResults));
+            }
+            if (actividadActual === srcIframe.length - 1) {
+              // Si la actividad actual es la última en srcIframe, muestra el modal
+              console.log("Aquí")
+              mostrarVentanaEmergente();
             }
           }
-
-          const siguienteActividad = actividadActual + 1;
-
-          if (siguienteActividad < srcIframe.length) {
-            setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
-            // el estado que tiene el índice de la actividad actual
-            setStartTime(new Date()); // Update startTime for the next activity
-          }
-          else {
-            // The test is over
-
-            console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
-            console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
-            console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
-            console.log("Resultados de cada actividad: ");
-            console.log(JSON.stringify(currentResults));
-          }
-          if (actividadActual === srcIframe.length - 1) {
-            // Si la actividad actual es la última en srcIframe, muestra el modal
-            console.log("Aquí")
-            mostrarVentanaEmergente();
-          }
         }
-      }
-    };
-
-    // Con este event listener recibimos el mensaje desde el iframe
-    window.addEventListener('message', recibirMensajeDesdeIframe);
+      };
 
 
-    return () => {
-      // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
-      window.removeEventListener('message', recibirMensajeDesdeIframe);
-    };
+      // Con este event listener recibimos el mensaje desde el iframe
+      window.addEventListener('message', recibirMensajeDesdeIframe);
+
+
+      return () => {
+        // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
+        window.removeEventListener('message', recibirMensajeDesdeIframe);
+      };
+
+    }
+
   }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, testScore]);
 
+  // The general data entered by the student is saved
+  const saveData = (name, age) => {
+    setNameStudent(name)
+    setAge(age)
+    setIsDataEntered(true)
+  }
+
   return (
-    <div className='iframe-container'>
-      {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
-      <iframe ref={iframeRef} src={srcIframe[actividadActual].ruta} title="Actividad" scrolling='no'></iframe>
+    <>
+      {!isDataEntered && (
+        <GeneralDataInput
+          saveData={saveData}
+        />
+      )}
+
+      {/* The activities are shown and the fields to enter general data are hidden */}
+      {isDataEntered && (
+        <div className='iframe-container'>
+          {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
+          <iframe ref={iframeRef} src={srcIframe[actividadActual].ruta} title="Actividad" scrolling='no'></iframe>
 
 
-      {/* Modal */}
-      {mostrarModal ? (
-        // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
-        <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
-          <div style={{ padding: '20px' }}>
-            {/* Contenido dentro del modal */}
-            <PDFDownloadLink
-              document={
-                <ReportePDF
-                  resultados={results}
-                  competence1Score={competence1Score}
-                  competence2Score={competence2Score}
-                  testScore={testScore}
-                  tipoDislexia={tipoDislexia}
-                  nameStudent={nameStudent}
-                  applicationDate={applicationDate}
-                  age={age}
-                  nameCompetence1={nameCompetence1}
-                  nameCompetence2={nameCompetence2}
-                  message1={message1}
-                  message2={message2}
-                />
-              }
-              fileName="reporte.pdf"
-            >
-              {({ blob, url, loading, error }) => (
-                <div>
-                  <p className="message">¡Felicitaciones! Terminaste la prueba</p>
-                  <button className="descargar-button">
-                    {loading ? 'Cargando documento...' : 'Descargar reporte'}
-                  </button>
-                </div>
-              )}
-            </PDFDownloadLink>
-          </div>
-        </ModalComponent>
-      ) : null}
-    </div>
+          {/* Modal */}
+          {mostrarModal ? (
+            // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
+            <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
+              <div style={{ padding: '20px' }}>
+                {/* Contenido dentro del modal */}
+                <PDFDownloadLink
+                  document={
+                    <ReportePDF
+                      resultados={results}
+                      competence1Score={competence1Score}
+                      competence2Score={competence2Score}
+                      testScore={testScore}
+                      tipoDislexia={tipoDislexia}
+                      nameStudent={nameStudent}
+                      applicationDate={applicationDate}
+                      age={age + ' años'}
+                      nameCompetence1={nameCompetence1}
+                      nameCompetence2={nameCompetence2}
+                      message1={message1}
+                      message2={message2}
+                    />
+                  }
+                  fileName="reporte.pdf"
+                >
+                  {({ blob, url, loading, error }) => (
+                    <div>
+                      <p className="message">¡Felicitaciones! Terminaste la prueba</p>
+                      <button className="descargar-button">
+                        {loading ? 'Cargando documento...' : 'Descargar reporte'}
+                      </button>
+                    </div>
+                  )}
+                </PDFDownloadLink>
+              </div>
+            </ModalComponent>
+          ) : null}
+        </div>
+      )}
+
+    </>
   );
 }

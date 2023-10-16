@@ -1,50 +1,59 @@
 .iframe-container {
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Takes up the entire width of the screen */
-    height: 285vh; /* Takes the full height of the screen, and a little more, for lower resolution screens */
-    overflow: hidden; /* Hide scroll bars if the content is larger */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align it close to the top (near the header) */
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Takes up the entire width of the screen */
+  height: 285vh;
+  /* Takes the full height of the screen, and a little more, for lower resolution screens */
+  overflow: hidden;
+  /* Hide scroll bars if the content is larger */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Align it close to the top (near the header) */
+  overflow: hidden;
 }
 
 
 iframe {
-    width: 80%;
-    height: 80%;
-    border: none; /* Removes the default iframe border, if any */
+  width: 80%;
+  height: 80%;
+  border: none;
+  /* Removes the default iframe border, if any */
 }
 
 .descargar-button {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-    background-color: #007BFF; /* Cambia el color de fondo del botón */
-    color: #fff; /* Cambia el color del texto del botón */
-    padding: 10px;
-    border: none; /* Quita el borde del botón si lo deseas */
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .descargar-button:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse sobre el botón */
-  }
-  
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  background-color: #007BFF;
+  /* Cambia el color de fondo del botón */
+  color: #fff;
+  /* Cambia el color del texto del botón */
+  padding: 10px;
+  border: none;
+  /* Quita el borde del botón si lo deseas */
+  border-radius: 5px;
+  cursor: pointer;
+}
 
- .message {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    color: black;
-    font-size: larger;
-    font-weight: bold;
+.descargar-button:hover {
+  background-color: #0056b3;
+  /* Cambia el color de fondo al pasar el mouse sobre el botón */
+}
 
- }
+
+.message {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+
+}
