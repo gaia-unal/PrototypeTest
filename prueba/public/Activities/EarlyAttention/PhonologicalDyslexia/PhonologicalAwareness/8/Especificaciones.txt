@@ -1,0 +1,9 @@
+Tipo dificultad: Dislexia Fonológica
+Tipo_enfoque: Atención
+Tipo actividad: Conoce el abecedario
+Grado: Primero
+Competencia: Conocimiento de las letras
+Tipo plantilla: Exploración
+Instrucción de la actividad: Conoce el abecedario
+Categoría: * Identificación de letras * Correspondencia letra-sonido * Orden alfabético
+Habilidades: * Reconocimiento del alfabeto * Asociación letra-sonido
