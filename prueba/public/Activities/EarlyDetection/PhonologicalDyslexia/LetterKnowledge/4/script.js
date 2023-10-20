@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Change the required images
 		imagenActual = (imagenActual + 1) % images.length;
 		imageElement.src = images[imagenActual];
+
+		changeHeight();
 	});
 
 	// To change the font-size
@@ -81,6 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// Images
 		document.getElementById("imagen1").style.width = initialWidth + '%';
+
+		changeHeight();
 	};
 
 	// Decrease font size
@@ -123,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Change line-height of the activity instruction
 			textElement.style.lineHeight = initialLineHeight;
+
+			changeHeight();
 		}
 	});
 
@@ -134,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Change line-height of the activity instruction
 			textElement.style.lineHeight = initialLineHeight;
+
+			changeHeight();
 		}
 	});
 
@@ -142,10 +150,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // Only part of the container
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
+// Function that sends the height of the current content of the activity to the iframe
+// Delay height calculation in milliseconds
+function changeHeight(delay = 0) {
+	setTimeout(() => {
+		const iframeHeight = document.documentElement.scrollHeight;
+		window.parent.postMessage({ type: 'iframeHeightChange', height: iframeHeight }, '*');
+	}, delay);
+}
+
 
 // Function to show the 'continuar' button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
+	changeHeight();
 }
 
 // Function to hide the 'continuar' button

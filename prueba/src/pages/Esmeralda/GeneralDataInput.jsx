@@ -14,26 +14,26 @@ export const GeneralDataInput = ({ saveData }) => {
   return (
     <form onSubmit={onSubmit} className="mt-5">
       <div className='container w-50'>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">Nombre</span>
           </div>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Ingresa tu nombre"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Edad</span>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">Edad</span>
           </div>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             placeholder="Ingresa tu edad"
             value={userAge}
             onChange={(e) => setUserAge(e.target.value)}

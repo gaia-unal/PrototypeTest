@@ -26,16 +26,16 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     // { ruta: domain + module + competence1 + "/5/indice.html", nombre: nameActivityC1_5 },
     // { ruta: domain + module + competence1 + "/6/indice.html", nombre: nameActivityC1_6 },
     // { ruta: domain + module + competence1 + "/7/indice.html", nombre: nameActivityC1_7 },
-    { ruta: domain + module + competence1 + "/8/indice.html", nombre: nameActivityC1_7 },
+    // { ruta: domain + module + competence1 + "/8/indice.html", nombre: nameActivityC1_7 },
     // { ruta: domain + module + competence1 + "/9/indice.html", nombre: nameActivityC1_7 },
 
     // { ruta: domain + module + competence2 + "/1/indice.html", nombre: nameActivityC2_1 },
     // { ruta: domain + module + competence2 + "/2/indice.html", nombre: nameActivityC2_2 },
     // { ruta: domain + module + competence2 + "/3/indice.html", nombre: nameActivityC2_3 },
-    // { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
-    // { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 },
+    { ruta: domain + module + competence2 + "/4/indice.html", nombre: nameActivityC2_4 },
+    { ruta: domain + module + competence2 + "/5/indice.html", nombre: nameActivityC2_5 },
     // { ruta: domain + module + competence2 + "/6/indice.html", nombre: nameActivityC2_6 },
-    // { ruta: domain + module + competence2 + "/7/indice.html", nombre: nameActivityC2_7 }
+    { ruta: domain + module + competence2 + "/7/indice.html", nombre: nameActivityC2_7 }
   ];
 
 
@@ -75,6 +75,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
   const iframeRef = useRef(null); // Se utiliza el hook useRef
   //Se utiliza para crear una referencia mutable que puede apuntar a un elemento del DOM o a cualquier otro valor mutable dentro del componente.
+  const [iframeHeight, setIframeHeight] = useState(0);
 
   const [testScore, setTestScore] = useState(0); // A state is used to keep the overall score of the test
   // A state is used to manage the score of each competence
@@ -85,9 +86,20 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   // Time at which the first activity starts
   const [startTime, setStartTime] = useState(new Date());
 
+  // Function that sets the height of the iframe when each activity is loaded
+  const handleIframeLoad = () => {
+    if (iframeRef.current) {
+      const iframeDocument = iframeRef.current.contentDocument || iframeRef.current.contentWindow.document;
+      const iframeContentHeight = iframeDocument.documentElement.scrollHeight;
+      setIframeHeight(iframeContentHeight + 'px');
+    }
+  };
+
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
     // efecto secundario recibirMensajeDesdeIframe
+
+
     // Antes de usar iframeRef, verifica que no sea null
     if (iframeRef.current) {
       // Accede a las propiedades o métodos del iframe
@@ -150,23 +162,31 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
             }
             if (actividadActual === srcIframe.length - 1) {
               // Si la actividad actual es la última en srcIframe, muestra el modal
-              console.log("Aquí")
               mostrarVentanaEmergente();
             }
           }
         }
       };
 
+      // When a change occurs within the activity that increases the size of the 
+      // content, this message will be received
+      const handleMessage = (event) => {
+        if (event.data && event.data.type === 'iframeHeightChange') {
+          setIframeHeight(event.data.height);
+        }
+      };
 
-      // Con este event listener recibimos el mensaje desde el iframe
+      window.addEventListener('message', handleMessage);
+
+      // With this event listener we receive the score from the iframe
       window.addEventListener('message', recibirMensajeDesdeIframe);
 
 
       return () => {
         // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
         window.removeEventListener('message', recibirMensajeDesdeIframe);
+        window.removeEventListener('message', handleMessage);
       };
-
     }
 
   }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, testScore]);
@@ -188,49 +208,62 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
       {/* The activities are shown and the fields to enter general data are hidden */}
       {isDataEntered && (
-        <div className='iframe-container'>
+        <>
           {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
-          <iframe ref={iframeRef} src={srcIframe[actividadActual].ruta} title="Actividad" scrolling='no'></iframe>
+
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+
+            <iframe
+              src={srcIframe[actividadActual].ruta}
+              frameBorder="0"
+              style={{ width: '90%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
+              ref={iframeRef}
+              title="Actividad"
+              scrolling='no'
+              onLoad={handleIframeLoad}></iframe>
+          </div>
 
 
           {/* Modal */}
-          {mostrarModal ? (
-            // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
-            <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
-              <div style={{ padding: '20px' }}>
-                {/* Contenido dentro del modal */}
-                <PDFDownloadLink
-                  document={
-                    <ReportePDF
-                      resultados={results}
-                      competence1Score={competence1Score}
-                      competence2Score={competence2Score}
-                      testScore={testScore}
-                      tipoDislexia={tipoDislexia}
-                      nameStudent={nameStudent}
-                      applicationDate={applicationDate}
-                      age={age + ' años'}
-                      nameCompetence1={nameCompetence1}
-                      nameCompetence2={nameCompetence2}
-                      message1={message1}
-                      message2={message2}
-                    />
-                  }
-                  fileName="reporte.pdf"
-                >
-                  {({ blob, url, loading, error }) => (
-                    <div>
-                      <p className="message">¡Felicitaciones! Terminaste la prueba</p>
-                      <button className="descargar-button">
-                        {loading ? 'Cargando documento...' : 'Descargar reporte'}
-                      </button>
-                    </div>
-                  )}
-                </PDFDownloadLink>
-              </div>
-            </ModalComponent>
-          ) : null}
-        </div>
+          <div>
+            {mostrarModal ? (
+              // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
+              <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
+                <div style={{ padding: '20px' }}>
+                  {/* Contenido dentro del modal */}
+                  <PDFDownloadLink
+                    document={
+                      <ReportePDF
+                        resultados={results}
+                        competence1Score={competence1Score}
+                        competence2Score={competence2Score}
+                        testScore={testScore}
+                        tipoDislexia={tipoDislexia}
+                        nameStudent={nameStudent}
+                        applicationDate={applicationDate}
+                        age={age + ' años'}
+                        nameCompetence1={nameCompetence1}
+                        nameCompetence2={nameCompetence2}
+                        message1={message1}
+                        message2={message2}
+                      />
+                    }
+                    fileName="reporte.pdf"
+                  >
+                    {({ blob, url, loading, error }) => (
+                      <div>
+                        <p className="message">¡Felicitaciones! Terminaste la prueba</p>
+                        <button className="descargar-button">
+                          {loading ? 'Cargando documento...' : 'Descargar reporte'}
+                        </button>
+                      </div>
+                    )}
+                  </PDFDownloadLink>
+                </div>
+              </ModalComponent>
+            ) : null}
+          </div>
+        </>
       )}
 
     </>

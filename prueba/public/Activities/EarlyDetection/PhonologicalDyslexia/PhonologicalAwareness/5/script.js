@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		for (let i = 0; i < images.length; i++) {
 			document.getElementById("imageOption" + i).src = images[i][imagenActual];
 		}
+
+		changeHeight();
 	});
 
 	// To change the font-size
@@ -91,6 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		for (let i = 0; i < 4; i++) {
 			document.getElementById("imageOption" + i).style.width = initialWidth + '%';
 		}
+
+		changeHeight();
 	};
 
 	// Decrease font size
@@ -133,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Change line-height of the activity instruction
 			textElement.style.lineHeight = initialLineHeight;
+
+			changeHeight();
 		}
 	});
 
@@ -144,15 +150,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Change line-height of the activity instruction
 			textElement.style.lineHeight = initialLineHeight;
+
+			changeHeight();
 		}
 	});
 
 
 });
 
+// Function that sends the height of the current content of the activity to the iframe
+// Delay height calculation in milliseconds
+function changeHeight(delay = 0) {
+	setTimeout(() => {
+		const iframeHeight = document.documentElement.scrollHeight;
+		window.parent.postMessage({ type: 'iframeHeightChange', height: iframeHeight }, '*');
+	}, delay);
+}
+
 
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
+	changeHeight();
 }
 
 
