@@ -4,10 +4,20 @@ import '../../styles/GeneralDataInput.css'
 export const GeneralDataInput = ({ saveData }) => {
 
   const [userName, setUserName] = useState("")
-  const [userAge, setUserAge] = useState("")
+  const [dateOfBirth, setDateOfBirth] = useState("")
 
   const onSubmit = (event) => {
     event.preventDefault()
+
+    // Age is calculated
+    let currentDate = new Date();
+    let birthDate = new Date(dateOfBirth);
+    let userAge = currentDate.getFullYear() - birthDate.getFullYear()
+    let monthDifference = currentDate.getMonth() - birthDate.getMonth()
+
+    if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < birthDate.getDate())) {
+      userAge -= 1
+    }
 
     saveData(userName, userAge)
   }
@@ -35,14 +45,14 @@ export const GeneralDataInput = ({ saveData }) => {
 
           <div className="input-group mb-3">
             <div className="input-group-prepend">
-              <span className="input-group-text" id="inputGroup-sizing-default">Edad</span>
+              <span className="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
             </div>
             <input
-              type="number"
+              type="date"
               className="form-control"
               placeholder="Ingresa tu edad"
-              value={userAge}
-              onChange={(e) => setUserAge(e.target.value)}
+              value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
             />
           </div>
         </div>
@@ -50,7 +60,7 @@ export const GeneralDataInput = ({ saveData }) => {
         <div className="card-footer text-center">
           <button
             className='btn btn-success'
-            disabled={userName === "" || userAge === "" || userAge <= 0 || userAge > 20}
+            disabled={userName === "" || dateOfBirth === "" || dateOfBirth <= 0 || dateOfBirth > 20}
           >
             Iniciar Prueba
           </button>
