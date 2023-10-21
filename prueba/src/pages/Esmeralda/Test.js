@@ -211,12 +211,11 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
         <>
           {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
 
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-
+          <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
             <iframe
               src={srcIframe[actividadActual].ruta}
               frameBorder="0"
-              style={{ width: '90%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
+              style={{ width: '80%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
               ref={iframeRef}
               title="Actividad"
               scrolling='no'

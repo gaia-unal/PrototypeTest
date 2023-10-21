@@ -3,6 +3,8 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	justify-content: center;
 }
 
 @font-face {
@@ -13,7 +15,7 @@ body {
 
 /* Main container */
 .contenedor {
-	width: 60%;
+	width: 90%;
 	height: auto;
 	margin-top: 4rem;
 	font-family: 'Open-Dyslexic', sans-serif;

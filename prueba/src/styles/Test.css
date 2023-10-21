@@ -1,3 +1,13 @@
+.iframe-div {
+  background-color: #E0DEEB;
+}
+
+iframe {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 4rem;
+}
+
 .descargar-button {
   display: flex;
   justify-content: center;

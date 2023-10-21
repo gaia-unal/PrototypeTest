@@ -13,17 +13,7 @@ export const HeaderEsmeralda = () => {
             <img src={logo} alt="Logo" width="30" height="auto" className="d-inline-block align-text-top" />
           </Link>
           <Link className="navbar-brand">Esmeralda</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                {/* For NavLink we do have to define a route */}
-                <NavLink to="/esmeralda/inicio" className="nav-link active" aria-current="page">Inicio</NavLink>
-              </li>
-            </ul>
-          </div>
+          <div></div>
         </div>
       </nav>
 
