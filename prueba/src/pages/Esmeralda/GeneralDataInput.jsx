@@ -23,8 +23,8 @@ export const GeneralDataInput = ({ saveData }) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-5 container w-75">
-      <div className="card">
+    <form onSubmit={onSubmit} className="mt-5">
+      <div className="card container w-75">
         <div className="card-header text-center">
           <h3>Datos Generales</h3>
         </div>

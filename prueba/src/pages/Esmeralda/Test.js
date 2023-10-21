@@ -264,7 +264,6 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
           </div>
         </>
       )}
-
     </>
   );
 }

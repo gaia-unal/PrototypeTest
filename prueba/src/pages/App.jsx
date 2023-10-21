@@ -3,12 +3,9 @@ import { HeaderEsmeralda } from '../layouts/HeaderEsmeralda';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Home } from './Home';
 import { HomeEsmeralda } from './Esmeralda/HomeEsmeralda';
-import { PhonologicalDetectionEsmeralda } from './Esmeralda/PhonologicalDetectionEsmeralda';
-import { PhonologicalHelpEsmeralda } from './Esmeralda/PhonologicalHelpEsmeralda';
 import { DyslexiaPhonologicalHome } from './Esmeralda/DyslexiaPhonologicalHome';
 import { DyslexiaSuperficialHome } from './Esmeralda/DyslexiaSuperficialHome';
-import { SuperficialDetectionEsmeralda } from './Esmeralda/SuperficialDetectionEsmeralda';
-import { SuperficialHelpEsmeralda } from './Esmeralda/SuperficialHelpEsmeralda';
+import { AttentionResource } from './Esmeralda/AttentionResource';
 
 export const App = () => {
   return (
@@ -22,17 +19,14 @@ export const App = () => {
           <Route path="inicio" element={<HomeEsmeralda></HomeEsmeralda>}></Route>
 
           <Route path="inicio/fonologica" element={<DyslexiaPhonologicalHome></DyslexiaPhonologicalHome>}></Route>
-          <Route path="inicio/fonologica/deteccion" element={<PhonologicalDetectionEsmeralda></PhonologicalDetectionEsmeralda>}></Route>
-          <Route path="inicio/fonologica/apoyo" element={<PhonologicalHelpEsmeralda></PhonologicalHelpEsmeralda>}></Route>
 
           <Route path="inicio/superficial" element={<DyslexiaSuperficialHome></DyslexiaSuperficialHome>}></Route>
-          <Route path="inicio/superficial/deteccion" element={<SuperficialDetectionEsmeralda></SuperficialDetectionEsmeralda>}></Route>
-          <Route path="inicio/superficial/apoyo" element={<SuperficialHelpEsmeralda></SuperficialHelpEsmeralda>}></Route>
+
 
           {/* Detection Tests */}
 
           {/* Phonological Dyslexia */}
-          <Route path="inicio/fonologica/deteccion/test1" element={
+          <Route path="inicio/fonologica/test1" element={
             <Test
               // Props indicate the type of test (phonological dyslexia or superficial dyslexia)
               module="/Activities/EarlyDetection/PhonologicalDyslexia"
@@ -58,7 +52,7 @@ export const App = () => {
           } />
 
           {/* Superficial Dyslexia */}
-          <Route path="inicio/superficial/deteccion/test1" element={
+          <Route path="inicio/superficial/test1" element={
             <Test
               module="/Activities/EarlyDetection/SuperficialDyslexia"
 
@@ -83,59 +77,33 @@ export const App = () => {
           } />
 
 
-          {/* Attention Tests */}
+          {/* Attention Resources */}
 
           {/* Phonological Dyslexia */}
-          <Route path="inicio/fonologica/apoyo/test1" element={
-            <Test
-              // Props indicate the type of test (phonological dyslexia or superficial dyslexia)
-              module="/Activities/EarlyAttention/PhonologicalDyslexia"
-
-              competence1="/PhonologicalAwareness"
-              nameActivityC1_1="Seleccionar una palabra de acuerdo a su representación gráfica"
-              nameActivityC1_2="Encontrar letras específicas en medio de las palabras"
-              nameActivityC1_3="Seleccionar en orden las sílabas del nombre de una imagen"
-              nameActivityC1_4="Digitar la cantidad de sílabas que tiene una palabra"
-              nameActivityC1_5="Seleccionar la sílaba inicial de una palabra"
-              nameActivityC1_6="Seleccionar en orden las sílabas del nombre de una imagen"
-              nameActivityC1_7="Encontrar letras específicas en medio de las palabras"
-
-              competence2="/LetterKnowledge"
-              nameActivityC2_1=""
-              nameActivityC2_2=""
-              nameActivityC2_3=""
-              nameActivityC2_4=""
-              nameActivityC2_5=""
-              nameActivityC2_6=""
-              nameActivityC2_7=""
-            />
-          } />
+          <Route path="inicio/fonologica/resource1"
+            element={
+              <AttentionResource
+                route='/Activities/EarlyAttention/PhonologicalDyslexia/PhonologicalAwareness'
+              />
+            }>
+          </Route>
 
           {/* Superficial Dyslexia */}
-          <Route path="inicio/superficial/apoyo/test1" element={
-            <Test
-              module="/Activities/EarlyAttention/SuperficialDyslexia"
+          <Route path="inicio/superficial/resource1"
+            element={
+              <AttentionResource
+                route='/Activities/EarlyAttention/SuperficialDyslexia/VisualDiscrimination'
+              />
+            }>
+          </Route>
 
-              competence1="/VisualDiscrimination"
-              nameActivityC1_1="Selecciona la letra que le falta a la palabra: __________"
-              nameActivityC1_2="Seleccionar la letra que se puede remover de una palabra"
-              nameActivityC1_3=""
-              nameActivityC1_4=""
-              nameActivityC1_5=""
-              nameActivityC1_6=""
-              nameActivityC1_7=""
-
-              competence2="/Orthography"
-              nameActivityC2_1="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
-              nameActivityC2_2="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
-              nameActivityC2_3="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
-              nameActivityC2_4="Seleccionar la oración que está escrita correctamente"
-              nameActivityC2_5="Seleccionar la oración que está escrita correctamente"
-              nameActivityC2_6="Seleccionar la oración que está escrita correctamente"
-              nameActivityC2_7="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"
-            />
-          } />
-
+          <Route path="inicio/superficial/resource2"
+            element={
+              <AttentionResource
+                route='/Activities/EarlyAttention/SuperficialDyslexia/Orthography'
+              />
+            }>
+          </Route>
         </Route>
 
         <Route path="/esmeralda" element={<Navigate to='/esmeralda/inicio' />}></Route>
