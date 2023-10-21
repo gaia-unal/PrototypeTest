@@ -3,6 +3,7 @@ import coverDetection from '../../assets/coverDetection.png'
 import coverPhonological from '../../assets/coverPhonological.png'
 import coverLetterKnw from '../../assets/coverLetterKnw.png'
 import { AttentionResourcesList } from "./AttentionResourcesList";
+import { BackButton } from "../../components/BackButton";
 
 export const DyslexiaPhonologicalHome = () => {
 
@@ -32,6 +33,8 @@ export const DyslexiaPhonologicalHome = () => {
 
   return (
     <>
+      <BackButton />
+      
       <DetectionTestsList
         tests={detectionTests}
       />

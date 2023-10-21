@@ -4,6 +4,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente 
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
 import { GeneralDataInput } from './GeneralDataInput';
+import { BackButton } from '../../components/BackButton';
 
 export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC1_6, nameActivityC1_7, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC2_6, nameActivityC2_7 }) => {
 
@@ -201,9 +202,12 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   return (
     <>
       {!isDataEntered && (
-        <GeneralDataInput
-          saveData={saveData}
-        />
+        <>
+          <BackButton />
+          <GeneralDataInput
+            saveData={saveData}
+          />
+        </>
       )}
 
       {/* The activities are shown and the fields to enter general data are hidden */}

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ModalComponent from './ModalComponent';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export const AttentionResource = ({ route }) => {
 
@@ -20,6 +20,7 @@ export const AttentionResource = ({ route }) => {
   const iframeRef = useRef(null);
   const [iframeHeight, setIframeHeight] = useState(0);
   const [mostrarModal, setMostrarModal] = useState(false);
+  let navigate = useNavigate();
 
   // Función para mostrar el modal
   const mostrarVentanaEmergente = () => {
@@ -103,11 +104,9 @@ export const AttentionResource = ({ route }) => {
             <div style={{ padding: '20px' }}>
               <div>
                 <p className="message">¡Felicitaciones! Ya terminaste</p>
-                <NavLink to='/esmeralda/inicio'>
-                  <button className="descargar-button">
+                  <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
                     Volver al inicio
                   </button>
-                </NavLink>
               </div>
             </div>
           </ModalComponent>
