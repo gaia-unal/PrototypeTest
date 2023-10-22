@@ -212,7 +212,7 @@ var indiceLetraActual = 0;
 function seleccionar() {
 
 	reproducirSonido();
-	if (indiceLetraActual < 27) {
+	if (indiceLetraActual < 26) {
 		mostrarContinuar();  // Muestra el botón "Atrás" si es necesario 
 	}
 	if (indiceLetraActual > 0) {
