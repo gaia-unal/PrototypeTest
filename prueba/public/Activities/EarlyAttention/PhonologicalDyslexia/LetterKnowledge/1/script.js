@@ -6,11 +6,14 @@ var idActual = '';
 
 
 
-// Container only for guidance
-document.getElementsByClassName("contenedor")[0].style.border = "solid black";
+// // Container only for guidance
+// document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
 // 'Continuar' button
 var boton = document.getElementById('btn-continuar');
+
+// Ocultar el botón "Atrás" inicialmente
+var botonAtras = document.getElementById("botonAtras");
 
 boton.addEventListener('click', function () {
 	// Send a message to the React component in the parent
@@ -39,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		textElement.style.fontFamily = fonts[actualFont];
 		changeFontButton.style.fontFamily = fonts[actualFont];
 		boton.style.fontFamily = fonts[actualFont];
+		botonAtras.style.fontFamily = fonts[actualFont];
 		accessibility.style.fontFamily = fonts[actualFont];
 
 		for (let i = 0; i < spans.length; i++) {
@@ -59,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		changeFontButton.style.fontSize = initialFontSize + 'vw';
 		textElement.style.fontSize = initialFontSize + 'vw';
 		boton.style.fontSize = initialFontSize + 'vw';
+		botonAtras.style.fontSize =  initialFontSize + 'vw';
 		accessibility.style.fontSize = initialFontSize + 'vw';
 
 		// Don't change
@@ -143,77 +148,112 @@ function mostrarContinuar() {
 	changeHeight();
 }
 
+function mostrarBotonAtras() {
+    document.getElementById('atras').style.display = "flex";
+	changeHeight();
+}
+
 
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-function reproducirSonido() {
-    // Detener cualquier otro audio que esté sonando
-    const todosLosAudios = document.querySelectorAll(".audio-element");
-    todosLosAudios.forEach((audioElement) => {
-        audioElement.pause();
-    });
+function ocultarBotonAtras() {
+	document.getElementById('atras').style.display = "none";
+}
 
-    // Reproducir el audio actual
-    const audio = document.getElementById("audio");
-    audio.play();
+function reproducirSonido() {
+	// Detener cualquier otro audio que esté sonando
+	const todosLosAudios = document.querySelectorAll(".audio-element");
+	todosLosAudios.forEach((audioElement) => {
+		audioElement.pause();
+	});
+
+	// Reproducir el audio actual
+	const audio = document.getElementById("audio");
+	audio.play();
 }
 
 // Definir las imágenes y nombres de archivo de las letras
 const letras = [
-    { imagen: "2.png", audio: "audio2.mp3" },
-    { imagen: "3.png", audio: "audio3.mp3" },
-    { imagen: "4.png", audio: "audio4.mp3" },
-    { imagen: "5.png", audio: "audio5.mp3" },
-    { imagen: "6.png", audio: "audio6.mp3" },
-    { imagen: "7.png", audio: "audio7.mp3" },
-    { imagen: "8.png", audio: "audio8.mp3" },
-    { imagen: "9.png", audio: "audio9.mp3" },
-    { imagen: "10.png", audio: "audio10.mp3" },
-    { imagen: "11.png", audio: "audio11.mp3" },
-    { imagen: "12.png", audio: "audio12.mp3" },
-    { imagen: "13.png", audio: "audio13.mp3" },
-    { imagen: "14.png", audio: "audio14.mp3" },
-    { imagen: "15.png", audio: "audio15.mp3" },
-    { imagen: "16.png", audio: "audio16.mp3" },
-    { imagen: "17.png", audio: "audio17.mp3" },
-    { imagen: "18.png", audio: "audio18.mp3" },
-    { imagen: "19.png", audio: "audio19.mp3" },
-    { imagen: "20.png", audio: "audio20.mp3" },
-    { imagen: "21.png", audio: "audio21.mp3" },
-    { imagen: "22.png", audio: "audio22.mp3" },
-    { imagen: "23.png", audio: "audio23.mp3" },
-    { imagen: "24.png", audio: "audio24.mp3" },
-    { imagen: "25.png", audio: "audio25.mp3" },
-    { imagen: "26.png", audio: "audio26.mp3" },
-    { imagen: "27.png", audio: "audio27.mp3" }
+	{ imagen: "A.png", audio: "audio1.mp3" },
+	{ imagen: "B.png", audio: "audio2.mp3" },
+	{ imagen: "C.png", audio: "audio3.mp3" },
+	{ imagen: "D.png", audio: "audio4.mp3" },
+	{ imagen: "E.png", audio: "audio5.mp3" },
+	{ imagen: "F.png", audio: "audio6.mp3" },
+	{ imagen: "G.png", audio: "audio7.mp3" },
+	{ imagen: "H.png", audio: "audio8.mp3" },
+	{ imagen: "I.png", audio: "audio9.mp3" },
+	{ imagen: "J.png", audio: "audio10.mp3" },
+	{ imagen: "K.png", audio: "audio11.mp3" },
+	{ imagen: "L.png", audio: "audio12.mp3" },
+	{ imagen: "M.png", audio: "audio13.mp3" },
+	{ imagen: "N.png", audio: "audio14.mp3" },
+	{ imagen: "Ñ.png", audio: "audio15.mp3" },
+	{ imagen: "O.png", audio: "audio16.mp3" },
+	{ imagen: "P.png", audio: "audio17.mp3" },
+	{ imagen: "Q.png", audio: "audio18.mp3" },
+	{ imagen: "R.png", audio: "audio19.mp3" },
+	{ imagen: "S.png", audio: "audio20.mp3" },
+	{ imagen: "T.png", audio: "audio21.mp3" },
+	{ imagen: "U.png", audio: "audio22.mp3" },
+	{ imagen: "V.png", audio: "audio23.mp3" },
+	{ imagen: "W.png", audio: "audio24.mp3" },
+	{ imagen: "X.png", audio: "audio25.mp3" },
+	{ imagen: "Y.png", audio: "audio26.mp3" },
+	{ imagen: "Z.png", audio: "audio27.mp3" }
 ];
 
-let indiceLetraActual = 0;
+
+var indiceLetraActual = 0;
 
 // Event when an option is selected
 function seleccionar() {
 
 	reproducirSonido();
-	mostrarContinuar();
+	if (indiceLetraActual < 27) {
+		mostrarContinuar();  // Muestra el botón "Atrás" si es necesario 
+	}
+	if (indiceLetraActual > 0) {
+		mostrarBotonAtras(); // Muestra el botón "Atrás" si es necesario
+	}
 }
 
-function cambiarLetra() {
-    if (indiceLetraActual < letras.length) {
+// Function to show the before letter
+function irAtras() {
+    if (indiceLetraActual > 0) {
         const imagen = document.getElementById("imagen");
         const audio = document.getElementById("audio");
 
-        // Cambia la imagen y el audio a la siguiente letra
-        imagen.src = letras[indiceLetraActual].imagen;
-        audio.src = letras[indiceLetraActual].audio;
+        // Cambia la imagen y el audio a la letra en el índice especificado
+        imagen.src = letras[indiceLetraActual - 1].imagen;
+        audio.src = letras[indiceLetraActual - 1].audio;
+
+        // Decrementa el índice después de cambiar la imagen y el audio
+        indiceLetraActual--;
+
+        ocultarContinuar();
+        ocultarBotonAtras();
+    }
+}
+
+function cambiarLetra() {
+	if (indiceLetraActual < letras.length) {
+		const imagen = document.getElementById("imagen");
+		const audio = document.getElementById("audio");
+
+		// Cambia la imagen y el audio a la siguiente letra
+		imagen.src = letras[indiceLetraActual + 1].imagen;
+		audio.src = letras[indiceLetraActual + 1].audio;
 
 
-        // Incrementa el índice para la próxima vez
-        indiceLetraActual++;
+		// Incrementa el índice para la próxima vez
+		indiceLetraActual++;
 
 		ocultarContinuar();
-    }
+		ocultarBotonAtras();
+	}
 }
 
 

@@ -88,6 +88,14 @@ export const App = () => {
             }>
           </Route>
 
+          <Route path="inicio/fonologica/resource2"
+            element={
+              <AttentionResource
+                route='/Activities/EarlyAttention/PhonologicalDyslexia/LetterKnowledge'
+              />
+            }>
+          </Route>
+
           {/* Superficial Dyslexia */}
           <Route path="inicio/superficial/resource1"
             element={
@@ -96,6 +104,7 @@ export const App = () => {
               />
             }>
           </Route>
+
 
           <Route path="inicio/superficial/resource2"
             element={
