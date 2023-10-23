@@ -9,24 +9,34 @@ var idActual = '';
 // // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 28;
+
 // 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 
 // Ocultar el botón "Atrás" inicialmente
 var botonAtras = document.getElementById("botonAtras");
 
-boton.addEventListener('click', function () {
-	// Send a message to the React component in the parent
-	window.parent.postMessage('1', '*');
-});
-
 
 var botonSiguienteActividad = document.getElementById("botonSiguiente");
 botonSiguienteActividad.addEventListener('click', function () {
-	// Send a message to the React parent component
-	procesarPuntaje();
-	window.parent.postMessage(1, '*');
+	mostrarModal();
 });
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(1, '*');
+	}
+});
+
 
 function procesarPuntaje() {
 	// Here, the score is sent for global processing
@@ -76,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		changeFontButton.style.fontSize = initialFontSize + 'vw';
 		textElement.style.fontSize = initialFontSize + 'vw';
 		boton.style.fontSize = initialFontSize + 'vw';
-		botonAtras.style.fontSize =  initialFontSize + 'vw';
+		botonAtras.style.fontSize = initialFontSize + 'vw';
 		accessibility.style.fontSize = initialFontSize + 'vw';
 
 		// Don't change
@@ -162,12 +172,12 @@ function mostrarContinuar() {
 }
 
 function mostrarBotonAtras() {
-    document.getElementById('atras').style.display = "flex";
+	document.getElementById('atras').style.display = "flex";
 	changeHeight();
 }
 
 function mostrarBotonSiguienteActividad() {
-    document.getElementById('siguienteActividad').style.display = "flex";
+	document.getElementById('siguienteActividad').style.display = "flex";
 	changeHeight();
 }
 
@@ -240,28 +250,28 @@ function seleccionar() {
 	if (indiceLetraActual > 0) {
 		mostrarBotonAtras(); // Muestra el botón "Atrás" si es necesario
 	}
-	if(indiceLetraActual == 26) {
+	if (indiceLetraActual == 26) {
 		mostrarBotonSiguienteActividad();
 	}
 }
 
 // Function to show the before letter
 function irAtras() {
-    if (indiceLetraActual > 0) {
-        const imagen = document.getElementById("imagen");
-        const audio = document.getElementById("audio");
+	if (indiceLetraActual > 0) {
+		const imagen = document.getElementById("imagen");
+		const audio = document.getElementById("audio");
 
-        // Cambia la imagen y el audio a la letra en el índice especificado
-        imagen.src = letras[indiceLetraActual - 1].imagen;
-        audio.src = letras[indiceLetraActual - 1].audio;
+		// Cambia la imagen y el audio a la letra en el índice especificado
+		imagen.src = letras[indiceLetraActual - 1].imagen;
+		audio.src = letras[indiceLetraActual - 1].audio;
 
-        // Decrementa el índice después de cambiar la imagen y el audio
-        indiceLetraActual--;
+		// Decrementa el índice después de cambiar la imagen y el audio
+		indiceLetraActual--;
 
-        ocultarContinuar();
-        ocultarBotonAtras();
+		ocultarContinuar();
+		ocultarBotonAtras();
 		ocultarBotonSiguienteActividad();
-    }
+	}
 }
 
 function cambiarLetra() {
@@ -281,6 +291,23 @@ function cambiarLetra() {
 		ocultarBotonAtras();
 		ocultarBotonSiguienteActividad();
 	}
+}
+
+// Function to show the modal
+function mostrarModal() {
+	console.log("Llegamos aquí");
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	mensaje = "¡Muy bien! Has practicado el abecedario 😊";
+	botonContinuarModal.textContent = 'Continuar';
+	textoBoton = 'Continuar';
+	reproducirSonido(audio1Modal);
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
 }
 
 

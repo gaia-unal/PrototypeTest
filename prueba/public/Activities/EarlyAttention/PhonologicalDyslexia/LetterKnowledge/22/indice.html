@@ -108,6 +108,32 @@
 		<div id="continuar">
 			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
 		</div>
+
+		
+		<!-- Modal to show if the answer is correct or incorrect -->
+		<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="resultadoModalLabel">Resultado</h5>
+					</div>
+					<div class="modal-body" id="resultadoMensaje">
+
+					</div>
+					<div class="modal-footer">
+						<button id="boton-continuar-modal" type="button" class="btn btn-primary"
+							data-bs-dismiss="modal"> </button>
+						<audio id="audio1" class="audio-element" controls hidden="true">
+							<source src="audio1.mp3" type="audio/mpeg">
+						</audio>
+						<audio id="audio2" class="audio-element" controls hidden="true">
+							<source src="audio2.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- Scripts -->
