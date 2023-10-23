@@ -10,6 +10,13 @@ var idSeleccion = null;
 // The correct option for grading
 var idOpcionCorrecta = "opcion" + "2";
 
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 6;
+var audio2Modal = 7;
+
 // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 

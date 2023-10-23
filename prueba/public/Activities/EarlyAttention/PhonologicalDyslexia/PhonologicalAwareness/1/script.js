@@ -6,6 +6,13 @@ var puntaje = null;
 // Selected ID goes here
 var idSeleccion = null;
 
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 7;
+var audio2Modal = 8;
+
 // Put the correct option number here
 // The correct option for grading
 var idOpcionCorrecta = "opcion" + "4";
@@ -16,26 +23,34 @@ var idOpcionCorrecta = "opcion" + "4";
 // 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Send a message to the React component in the parent
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 // Accessibility functions
 
 document.addEventListener("DOMContentLoaded", () => {
 	// To change the font
-	
+
 	// Obtain the elements to which the font must be changed
 	const changeFontButton = document.getElementById("changeFont");
 	const textElement = document.getElementById("texto");
 	const spans = document.querySelectorAll("span");
 	const accessibility = document.getElementById("accessibilityButton");
-	
+
 	// Define available fonts
 	const fonts = ["Open-Dyslexic", "Arial"]
 	let actualFont = 0;
-	
+
 	// Define the available images, for each type of font
 	const images = [
 		["opcion1-Open-Dyslexic.png", "opcion1-Arial.png"],
@@ -44,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"]
 	];
 	let imagenActual = 0;
-	
+
 	// When the button is clicked
 	changeFontButton.addEventListener("click", () => {
 		actualFont = (actualFont + 1) % fonts.length;
@@ -58,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		for (let i = 0; i < spans.length; i++) {
 			spans[i].style.fontFamily = fonts[actualFont];
 		}
-	
+
 		// Change the option images
 		imagenActual = (imagenActual + 1) % images[0].length;
 		for (let i = 0; i < images.length; i++) {
@@ -125,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change line spacing
 
 	let initialLineHeight = 1;
-	
+
 	const decreaseLSpacing = document.getElementById("decreaseLineSpacing");
 
 	decreaseLSpacing.addEventListener("click", () => {
-		if(initialLineHeight > 1) {
+		if (initialLineHeight > 1) {
 			initialLineHeight -= 0.5;
 
 			// Change line-height of the activity instruction
@@ -139,9 +154,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	const increaseLSpacing = document.getElementById("increaseLineSpacing");
-	
+
 	increaseLSpacing.addEventListener("click", () => {
-		if(initialLineHeight < 3.5) {
+		if (initialLineHeight < 3.5) {
 			initialLineHeight += 0.5;
 
 			// Change line-height of the activity instruction
@@ -245,4 +260,27 @@ function calificar() {
 	} else {
 		Error();
 	}
+}
+
+function mostrarModal() {
+	console.log("Llegamos aquí");
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! araña es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
 }

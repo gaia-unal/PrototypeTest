@@ -24,8 +24,7 @@
 		<h6>
 			<button id="accessibilityButton" class="btn btn-secondary" type="button" data-bs-toggle="collapse"
 				data-bs-target=".multi-collapse" aria-expanded="false"
-				aria-controls="multiCollapseExample1 multiCollapseExample2"
-				onClick="changeHeight(340)">
+				aria-controls="multiCollapseExample1 multiCollapseExample2" onClick="changeHeight(340)">
 				Panel de Accesibilidad
 			</button>
 		</h6>
@@ -51,7 +50,8 @@
 						<button type="button" class="btn btn-outline-dark font-controls" id="decreaseFontSize">
 							<span>A<sup>-</sup></span>
 						</button>
-						<button type="button" class="btn btn-outline-dark font-controls" id="increaseFontSize" onClick="changeHeight()">
+						<button type="button" class="btn btn-outline-dark font-controls" id="increaseFontSize"
+							onClick="changeHeight()">
 							<span>A<sup>+</sup></span>
 						</button>
 					</div>
@@ -126,6 +126,31 @@
 		<!-- Here is the continue button -->
 		<div id="continuar">
 			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
+		</div>
+		<!-- Modal to show if the answer is correct or incorrect -->
+		<!-- Modal to show if the answer is correct or incorrect -->
+		<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="resultadoModalLabel">Resultado</h5>
+					</div>
+					<div class="modal-body" id="resultadoMensaje">
+
+					</div>
+					<div class="modal-footer">
+						<button id="boton-continuar-modal" type="button" class="btn btn-primary"
+							data-bs-dismiss="modal"> </button>
+						<audio id="audio6" class="audio-element" controls hidden="true">
+							<source src="audio6.mp3" type="audio/mpeg">
+						</audio>
+						<audio id="audio7" class="audio-element" controls hidden="true">
+							<source src="audio7.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

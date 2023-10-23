@@ -5,12 +5,27 @@ var puntaje = null;
 // Here goes the correct answer value
 var respuestaCorrectaDelInput = 2;
 
-// Here, the actions of the 'continuar' button are defined
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 4;
+var audio2Modal = 5;
+
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Envía un mensaje al componente React en el padre
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 // Accessibility functions
@@ -240,4 +255,30 @@ function calificar(valor) {
 		// console.log('puntaje = 0')
 	}
 }
+
+
+// Function to show the modal
+function mostrarModal() {
+	console.log("Llegamos aquí");
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! araña es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
+}
+
 
