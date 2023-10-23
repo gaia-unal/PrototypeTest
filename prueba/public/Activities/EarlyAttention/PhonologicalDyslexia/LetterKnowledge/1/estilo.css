@@ -123,7 +123,7 @@ svg {
 
 #botonAtras {
 	width: 30%;
-	background-color: #16be2c;
+	background-color: #e4861a;
 	border-radius: 8px;
 	border: none;
 	display: inline-block;
@@ -138,7 +138,35 @@ svg {
 }
 
 #botonAtras:hover {
-	background-color: #0d791b;
+	background-color: #d65e18;
+}
+
+
+/* Atrás button */
+#siguienteActividad {
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+#botonSiguiente {
+	width: 30%;
+	background-color: #1f92d4;
+	border-radius: 8px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 2vw;
+	padding: 0.5rem 0rem;
+	text-decoration: none;
+	font-family: "Open-Dyslexic", sans-serif;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+#botonSiguiente:hover {
+	background-color: #0b3a66;
 }
 
 

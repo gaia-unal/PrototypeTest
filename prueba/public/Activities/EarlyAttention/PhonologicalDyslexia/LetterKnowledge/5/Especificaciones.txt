@@ -1,0 +1,11 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Atención
+Tipo actividad: Digitar la palabra que corresponde a la tarjeta dada del alfabeto
+Grado: Primero
+Competencia: Conocimiento de las letras
+Tipo plantilla: Digitar
+Categoría: * Correspondencia letra-palabra
+Instrucción: Escribe la palabra que piensas cuando ves esta tarjeta del alfabeto:
+Habilidades: * Atención visual
+* Pensamiento analítico
+

@@ -20,6 +20,19 @@ boton.addEventListener('click', function () {
 	window.parent.postMessage('1', '*');
 });
 
+
+var botonSiguienteActividad = document.getElementById("botonSiguiente");
+botonSiguienteActividad.addEventListener('click', function () {
+	// Send a message to the React parent component
+	procesarPuntaje();
+	window.parent.postMessage(1, '*');
+});
+
+function procesarPuntaje() {
+	// Here, the score is sent for global processing
+	window.parent.postMessage('Mensaje desde el iframe', '*');
+};
+
 // Accessibility functions
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -153,6 +166,11 @@ function mostrarBotonAtras() {
 	changeHeight();
 }
 
+function mostrarBotonSiguienteActividad() {
+    document.getElementById('siguienteActividad').style.display = "flex";
+	changeHeight();
+}
+
 
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
@@ -160,6 +178,10 @@ function ocultarContinuar() {
 
 function ocultarBotonAtras() {
 	document.getElementById('atras').style.display = "none";
+}
+
+function ocultarBotonSiguienteActividad() {
+	document.getElementById('siguienteActividad').style.display = "none";
 }
 
 function reproducirSonido() {
@@ -218,6 +240,9 @@ function seleccionar() {
 	if (indiceLetraActual > 0) {
 		mostrarBotonAtras(); // Muestra el botón "Atrás" si es necesario
 	}
+	if(indiceLetraActual == 26) {
+		mostrarBotonSiguienteActividad();
+	}
 }
 
 // Function to show the before letter
@@ -235,6 +260,7 @@ function irAtras() {
 
         ocultarContinuar();
         ocultarBotonAtras();
+		ocultarBotonSiguienteActividad();
     }
 }
 
@@ -253,6 +279,7 @@ function cambiarLetra() {
 
 		ocultarContinuar();
 		ocultarBotonAtras();
+		ocultarBotonSiguienteActividad();
 	}
 }
 

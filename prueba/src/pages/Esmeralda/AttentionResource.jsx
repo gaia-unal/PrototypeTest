@@ -6,15 +6,53 @@ export const AttentionResource = ({ route }) => {
 
   const domain = "http://localhost:3000";
 
-  const srcIframe = [
-    { ruta: domain + route + "/1/indice.html" },
-    { ruta: domain + route + "/2/indice.html" },
-    { ruta: domain + route + "/3/indice.html" },
-    { ruta: domain + route + "/4/indice.html" },
-    { ruta: domain + route + "/5/indice.html" },
-    { ruta: domain + route + "/6/indice.html" },
-    { ruta: domain + route + "/7/indice.html" }
-  ];
+  var srcIframe = [];
+
+  if (route === '/Activities/EarlyAttention/PhonologicalDyslexia/LetterKnowledge') {
+    srcIframe = [
+      { ruta: domain + route + "/1/indice.html" },
+      { ruta: domain + route + "/2/indice.html" },
+      { ruta: domain + route + "/3/indice.html" },
+      { ruta: domain + route + "/4/indice.html" },
+      { ruta: domain + route + "/5/indice.html" },
+      { ruta: domain + route + "/6/indice.html" },
+      { ruta: domain + route + "/7/indice.html" },
+      { ruta: domain + route + "/8/indice.html" },
+      { ruta: domain + route + "/9/indice.html" },
+      { ruta: domain + route + "/10/indice.html" },
+      { ruta: domain + route + "/11/indice.html" },
+      { ruta: domain + route + "/12/indice.html" },
+      { ruta: domain + route + "/13/indice.html" },
+      { ruta: domain + route + "/14/indice.html" },
+      { ruta: domain + route + "/15/indice.html" },
+      { ruta: domain + route + "/16/indice.html" },
+      { ruta: domain + route + "/17/indice.html" },
+      { ruta: domain + route + "/18/indice.html" },
+      { ruta: domain + route + "/19/indice.html" },
+      { ruta: domain + route + "/20/indice.html" },
+      { ruta: domain + route + "/21/indice.html" },
+      { ruta: domain + route + "/22/indice.html" },
+      { ruta: domain + route + "/23/indice.html" },
+      { ruta: domain + route + "/24/indice.html" },
+      { ruta: domain + route + "/25/indice.html" },
+      { ruta: domain + route + "/26/indice.html" },
+      { ruta: domain + route + "/27/indice.html" },
+      { ruta: domain + route + "/28/indice.html" },
+    ];
+  }
+  // The number of activities in the rest of competences is 7
+  else {
+    srcIframe = [
+      { ruta: domain + route + "/1/indice.html" },
+      { ruta: domain + route + "/2/indice.html" },
+      { ruta: domain + route + "/3/indice.html" },
+      { ruta: domain + route + "/4/indice.html" },
+      { ruta: domain + route + "/5/indice.html" },
+      { ruta: domain + route + "/6/indice.html" },
+      { ruta: domain + route + "/7/indice.html" },
+    ];
+  }
+
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
   const iframeRef = useRef(null);
@@ -104,9 +142,9 @@ export const AttentionResource = ({ route }) => {
             <div style={{ padding: '20px' }}>
               <div>
                 <p className="message">¡Felicitaciones! Ya terminaste</p>
-                  <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
-                    Volver al inicio
-                  </button>
+                <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
+                  Volver al inicio
+                </button>
               </div>
             </div>
           </ModalComponent>
