@@ -1,0 +1,9 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
+Grado: Primero
+Competencia: Discriminación visual
+Tipo plantilla: Selección Múltiple
+Tipo_actividad: Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros).
+Instrucción_actividad: Selecciona todas las n de las siguientes letras
+Categoría: * Reconocimiento de letras * Reconocimiento de símbolos * Reconocimiento de números
+Habilidades: * Atención visual * Memoria visual * Reconocimiento del alfabeto

@@ -1,0 +1,11 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Detección
+Tipo actividad: Seleccionar el audio que corresponde al sonido de una letra dada
+Grado: Primero
+Competencia: Conocimiento de las letras
+Tipo plantilla: Selección simple
+Instrucción: Escucha atentamente y selecciona el audio que hace el sonido de la letra 'C'
+Categoría: * Correspondencia letra-sonido
+Habilidades: * Atención auditiva
+* Asociación letra-sonido
+

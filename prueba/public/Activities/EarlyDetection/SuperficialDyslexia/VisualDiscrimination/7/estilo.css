@@ -1,0 +1,149 @@
+/* General styles */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+@font-face {
+	font-family: 'Open-Dyslexic';
+	/* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
+	src: url('http://localhost:3000/fonts/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+/* Main container */
+.contenedor {
+	width: 90%;
+	height: auto;
+	margin-top: 4rem;
+	font-family: 'Open-Dyslexic', sans-serif;
+	overflow: hidden;
+}
+
+/* Accessiibility options */
+
+
+/* Button to change the font of the activity text */
+.bi.bi-file-font-fill {
+	width: 2vw;
+}
+
+
+.btn.btn-outline-dark {
+	font-size: 2vw;
+	padding: 1%;
+}
+
+
+/* Font size and line spacing controls */
+span {
+	font-size: 2vw;
+}
+
+
+div .font-controls {
+	padding: 2%;
+}
+
+
+svg {
+	display: inline;
+	font-size: 2vw;
+}
+
+
+.btn.btn-outline-dark.line-spacing {
+	padding: 1%;
+}
+
+
+/* Accessibility options */
+#accessibilityButton {
+	font-size: 2vw;
+}
+
+/* Activity instruction */
+.instruccion {
+	display: grid;
+	grid-template-columns: 10% 90%;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+#icono-bocina {
+	width: 90%;
+}
+
+#texto {
+    color: black;
+    font-size: 2vw;
+    line-height: 1;
+}
+
+
+/* For response options */
+.contenedor-opciones {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	/* 4 columnas en pantallas grandes */
+	grid-gap: 20px;
+	/* Espacio entre las celdas */
+}
+
+/* Diseño de 2 columnas en pantallas más pequeñas */
+@media (max-width: 300px) {
+	.contenedor-opciones {
+		grid-template-columns: repeat(2, 1fr);
+		/* 2 columnas en pantallas más pequeñas */
+	}
+}
+
+#opcion1,
+#opcion2,
+#opcion3,
+#opcion4,
+#opcion5,
+#opcion6,
+#opcion7,
+#opcion8 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.opciones img {
+	width: 90%;
+	height: auto;
+	cursor: pointer;
+}
+
+/* Continue button */
+#continuar {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+#btn-continuar {
+	width: 30%;
+	background-color: #16be2c;
+	border-radius: 8px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 2vw;
+	padding: 0.5rem 0rem;
+	text-decoration: none;
+	font-family: "Open-Dyslexic", sans-serif;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+#btn-continuar:hover {
+	background-color: #0d791b;
+}

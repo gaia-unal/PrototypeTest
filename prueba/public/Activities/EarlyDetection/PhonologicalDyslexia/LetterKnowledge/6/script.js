@@ -8,7 +8,7 @@ var idSeleccion = null;
 
 // Put the correct option number here
 // The correct option for grading
-var idOpcionCorrecta = "opcion" + "2";
+var idOpcionCorrecta = "opcion" + "4";
 
 // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
@@ -23,47 +23,35 @@ boton.addEventListener('click', function () {
 
 // Accessibility functions
 
+// Accessibility functions
+
 document.addEventListener("DOMContentLoaded", () => {
 	// To change the font
-
+	
 	// Obtain the elements to which the font must be changed
 	const changeFontButton = document.getElementById("changeFont");
 	const textElement = document.getElementById("texto");
 	const spans = document.querySelectorAll("span");
 	const accessibility = document.getElementById("accessibilityButton");
-
+	
 	// Define available fonts
 	const fonts = ["Open-Dyslexic", "Arial"]
 	let actualFont = 0;
-
-
-	// Change the image
-
-	// Name of the activity's image
-	const imageName = "imagenFlorero";
-
-	// Obtain the elements to which the image must be changed
-	const imageElement = document.getElementById("imagen1");
-
-	// Define the available images, for each type of font
-	const imagenes = [imageName + "-Open-Dyslexic.png", imageName + "-Arial.png"];
-	let currentImage = 0;
-
+	
 	// Define the available images, for each type of font
 	const images = [
 		["opcion1-Open-Dyslexic.png", "opcion1-Arial.png"],
 		["opcion2-Open-Dyslexic.png", "opcion2-Arial.png"],
 		["opcion3-Open-Dyslexic.png", "opcion3-Arial.png"],
-		["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"],
-		["opcion5-Open-Dyslexic.png", "opcion5-Arial.png"],
-		["opcion6-Open-Dyslexic.png", "opcion6-Arial.png"]
+		["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"]
 	];
 	let imagenActual = 0;
-
+	
 	// When the button is clicked
 	changeFontButton.addEventListener("click", () => {
-		// Change the text font of the required elements
 		actualFont = (actualFont + 1) % fonts.length;
+
+		// Change the text font of the required elements
 		textElement.style.fontFamily = fonts[actualFont];
 		changeFontButton.style.fontFamily = fonts[actualFont];
 		boton.style.fontFamily = fonts[actualFont];
@@ -72,11 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		for (let i = 0; i < spans.length; i++) {
 			spans[i].style.fontFamily = fonts[actualFont];
 		}
-
-		// Change the required images
-		currentImage = (currentImage + 1) % imagenes.length;
-		imageElement.src = imagenes[currentImage];
-
+	
 		// Change the option images
 		imagenActual = (imagenActual + 1) % images[0].length;
 		for (let i = 0; i < images.length; i++) {
@@ -89,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font-size
 
 	let initialFontSize = 2; // Initial font size that text elements have in the activity
-	let initialWidth = 50; // Initial width of answer options
+	let initialWidth = 80; // Initial width of answer options
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
@@ -105,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		// Images
-		for (let i = 0; i < 6; i++) {
+		for (let i = 0; i < 4; i++) {
 			document.getElementById("imageOption" + i).style.width = initialWidth + '%';
 		}
 
@@ -119,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	decreaseFontButton.addEventListener("click", () => {
 		if (initialFontSize > 2) {
 			initialFontSize -= 0.1; // Decrease font size of text elements
-			initialWidth -= 2.7; // Decrease size of images (answer options)
+			initialWidth -= 1.1; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -133,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	increaseFontButton.addEventListener("click", () => {
 		if (initialFontSize < 3.8) {
 			initialFontSize += 0.1;
-			initialWidth += 2.7;
+			initialWidth += 1.1;
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -202,7 +186,7 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		// console.log("El puntaje es: ", puntaje);
+		console.log("El puntaje es: ", puntaje);
 		// The score should be sent to a global function here that processes the score for the entire test
 	}
 }

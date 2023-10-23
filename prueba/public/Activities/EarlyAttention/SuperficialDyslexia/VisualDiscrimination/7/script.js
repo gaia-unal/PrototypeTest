@@ -1,25 +1,30 @@
 // Global variable definitions
+var puntaje = 0.01;
 
-// Activity score, either 1 or 0, goes here
-var puntaje = null;
+// Add the IDs of the correct options as an array
+var opcionesCorrectas = ["opcion1", "opcion3", "opcion8"];
 
-// Selected ID goes here
+// Variables to store the values of correct and incorrect options
+var valorBueno = 1 / opcionesCorrectas.length;
+var valorMalo = valorBueno / 2;
+
+// Array to store selected options
+var seleccionadas = Array();
+
+// Variable to store the ID of the just-selected option
 var idSeleccion = null;
 
-// Put the correct option number here
-// The correct option for grading
-var idOpcionCorrecta = "opcion" + "2";
+// Border to set limits in the activity
+document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
-// Container only for guidance
-// document.getElementsByClassName("contenedor")[0].style.border = "solid black";
-
-// 'Continuar' button
+// Continue button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
 	// Send a message to the React component in the parent
 	procesarPuntaje();
 	window.parent.postMessage(puntaje, '*');
 });
+
 
 // Accessibility functions
 
@@ -36,27 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	const fonts = ["Open-Dyslexic", "Arial"]
 	let actualFont = 0;
 
-
-	// Change the image
-
-	// Name of the activity's image
-	const imageName = "imagenFlorero";
-
-	// Obtain the elements to which the image must be changed
-	const imageElement = document.getElementById("imagen1");
-
-	// Define the available images, for each type of font
-	const imagenes = [imageName + "-Open-Dyslexic.png", imageName + "-Arial.png"];
-	let currentImage = 0;
-
 	// Define the available images, for each type of font
 	const images = [
-		["opcion1-Open-Dyslexic.png", "opcion1-Arial.png"],
-		["opcion2-Open-Dyslexic.png", "opcion2-Arial.png"],
-		["opcion3-Open-Dyslexic.png", "opcion3-Arial.png"],
-		["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"],
-		["opcion5-Open-Dyslexic.png", "opcion5-Arial.png"],
-		["opcion6-Open-Dyslexic.png", "opcion6-Arial.png"]
+		["letra1-Open-Dyslexic.png", "letra1-Arial.png"],
+		["letra2-Open-Dyslexic.png", "letra2-Arial.png"],
+		["letra3-Open-Dyslexic.png", "letra3-Arial.png"],
+		["letra4-Open-Dyslexic.png", "letra4-Arial.png"],
+		["letra5-Open-Dyslexic.png", "letra5-Arial.png"],
+		["letra6-Open-Dyslexic.png", "letra6-Arial.png"],
+		["letra7-Open-Dyslexic.png", "letra7-Arial.png"],
+		["letra8-Open-Dyslexic.png", "letra8-Arial.png"]
 	];
 	let imagenActual = 0;
 
@@ -73,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			spans[i].style.fontFamily = fonts[actualFont];
 		}
 
-		// Change the required images
-		currentImage = (currentImage + 1) % imagenes.length;
-		imageElement.src = imagenes[currentImage];
-
 		// Change the option images
 		imagenActual = (imagenActual + 1) % images[0].length;
 		for (let i = 0; i < images.length; i++) {
@@ -89,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font-size
 
 	let initialFontSize = 2; // Initial font size that text elements have in the activity
-	let initialWidth = 50; // Initial width of answer options
+	let initialWidth = 90; // Initial width of answer options
+
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
@@ -105,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		// Images
-		for (let i = 0; i < 6; i++) {
+		for (let i = 0; i < 7; i++) {
 			document.getElementById("imageOption" + i).style.width = initialWidth + '%';
 		}
 
@@ -119,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	decreaseFontButton.addEventListener("click", () => {
 		if (initialFontSize > 2) {
 			initialFontSize -= 0.1; // Decrease font size of text elements
-			initialWidth -= 2.7; // Decrease size of images (answer options)
+			initialWidth -= 0.5; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -133,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	increaseFontButton.addEventListener("click", () => {
 		if (initialFontSize < 3.8) {
 			initialFontSize += 0.1;
-			initialWidth += 2.7;
+			initialWidth += 0.5;
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -181,17 +172,18 @@ function changeHeight(delay = 0) {
 }
 
 
+// Function to show the continue button
 function mostrarContinuar() {
 	document.getElementById('continuar').style.display = "flex";
 	changeHeight();
 }
 
-
+// Function to hide the continue button
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-
+// Function to process the score
 function procesarPuntaje() {
 	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
@@ -203,19 +195,12 @@ function procesarPuntaje() {
 		ocultarContinuar();
 	} else {
 		// console.log("El puntaje es: ", puntaje);
-		// The score should be sent to a global function here that processes the score for the entire test
+		// Here, the score should be sent to be processed globally
+		// parent.enviarPuntaje(puntaje);
 	}
 }
 
-
-function Error() {
-	puntaje = 0;
-}
-
-function Correcto() {
-	puntaje = 1;
-}
-
+// Function to play the audio
 function sonido(id) {
 	// Check if any audio is currently playing and stop it if so
 
@@ -237,32 +222,44 @@ function sonido(id) {
 	audio.play();
 }
 
-// Event when an option is selected
+// Function to select options
 function seleccionar(id) {
-
-	sonido(id);
 	id = "opcion" + id;
 	// console.log("El id del seleccionado es:", id);
 
-	let opciones = document.getElementsByClassName("opciones");
-
-	for (let i = 0; i < opciones.length; i++) {
-		let idOpcionActual = "opcion" + (i + 1);
-		document.getElementById(idOpcionActual).style.border = "none";
+	// If it's already selected and they click it again, we'll remove the selection
+	if (seleccionadas.includes(id)) {
+		document.getElementById(id).style.border = "none";
+		let indice = seleccionadas.indexOf(id);
+		seleccionadas.splice(indice, 1);
+	} else { 	// If it's not selected, we'll add the border and save it in the array
+		document.getElementById(id).style.border = "solid green";
+		seleccionadas.push(id);
 	}
 
-	document.getElementById(id).style.border = "2px solid #28a745";
+	// console.log("Las opciones seleccionadas hasta el momento son", seleccionadas);
+	if (seleccionadas.length > 0) {
+		mostrarContinuar();
+		calificar();
+	} else {
+		ocultarContinuar();
+	}
 
-	idSeleccion = id;
-	mostrarContinuar();
-	calificar();
 }
 
-// Grading function
+// Function to grade
 function calificar() {
-	if (idSeleccion == idOpcionCorrecta) {
-		Correcto();
-	} else {
-		Error();
+	puntaje = 0.0;
+	let correctas = 0;
+	for (let i = 0; i < opcionesCorrectas.length; i++) {
+		if (seleccionadas.includes(opcionesCorrectas[i])) {
+			puntaje += valorBueno;
+			correctas += 1;
+		}
 	}
+	puntaje = puntaje - ((valorMalo) * (seleccionadas.length - correctas));
+	if (puntaje < 0) {
+		puntaje = 0;
+	}
+	// console.log("El puntaje es: ", puntaje);
 }
