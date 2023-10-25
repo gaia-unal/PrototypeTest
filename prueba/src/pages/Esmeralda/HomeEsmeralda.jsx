@@ -8,7 +8,7 @@ export const HomeEsmeralda = () => {
     <>
       <NavLink to='/' style={{textDecoration: 'none'}}>
         <div className='container d-flex flex-row-reverse mt-2'>
-          <button className='btn btn-success'>Volver al inicio</button>
+          <button className='btn btn-success' title="Regresa al inicio">Volver al inicio</button>
         </div>
       </NavLink>
 
@@ -17,7 +17,7 @@ export const HomeEsmeralda = () => {
           <div className='col d-flex justify-content-center'>
             <div className='card'>
               <NavLink to="fonologica">
-                <img src={coverPhonological} className='card-img-top' alt='Imagen de Dislexia Fonológica' />
+                <img src={coverPhonological} className='card-img-top' alt='Imagen de Dislexia Fonológica' title="Imagen de Dislexia Fonológica"/>
               </NavLink>
               <div className='card-body'>
                 <p className='card-text text-center'>
@@ -29,7 +29,7 @@ export const HomeEsmeralda = () => {
           <div className='col d-flex justify-content-center'>
             <div className='card'>
               <NavLink to="superficial">
-                <img src={coverSuperficial} className='card-img-top' alt='Imagen de Dislexia Superficial' />
+                <img src={coverSuperficial} className='card-img-top' alt='Imagen de Dislexia Superficial' title="Imagen de Dislexia Superficial"/>
               </NavLink>
               <div className='card-body'>
                 <p className='card-text text-center'>

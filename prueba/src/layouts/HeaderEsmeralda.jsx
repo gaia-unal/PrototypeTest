@@ -7,12 +7,12 @@ export const HeaderEsmeralda = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg header-container">
-        <div className="container-fluid header-container">
+        <div className="container-fluid header-container contenedorLogoNombre">
           {/* Link elements are used for options that do not lead to any route */}
           <Link className="navbar-brand">
-            <img src={logo} alt="Logo" width="30" height="auto" className="d-inline-block align-text-top" />
+            <img src={logo} alt="Logo" width="35" height="auto" title="Esmeralda" className="d-inline-block align-text-top" />
+            <Link className="nombreEsmeralda" title="Esmeralda">Esmeralda</Link>
           </Link>
-          <Link className="navbar-brand">Esmeralda</Link>
           <div></div>
         </div>
       </nav>

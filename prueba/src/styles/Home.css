@@ -1,6 +1,12 @@
-.content {
+/* .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: 2%;
-}
+} */
+
+body {
+    background-color: rgb(226, 253, 236);
+  }  
 
 .logo {
     width: 15%;
@@ -20,4 +26,28 @@
 .module-img {
     width: 50%;
     margin-bottom: 0.5rem;
+}
+
+@font-face {
+	font-family: 'Open-Dyslexic';
+	/* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
+	src: url('http://localhost:3000/fonts/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+.texto {
+    font-family: 'Open-Dyslexic', Arial;
+    padding-top: 1%;
+    font-size: 200%;
+    color: black;
+}
+
+.navbar {
+    background-color: #95ebd1;
+}
+
+.title {
+    margin-top: 8%;
+    font-family: 'Open-Dyslexic', Arial;
+    color: #085e44;
+
 }
