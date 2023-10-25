@@ -1,16 +1,14 @@
-
 // Global variable definitions
 
-
 var idActual = '';
-
-
 
 // // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
 // Message of the button in the modal
 var textoBoton = "";
+
+var audioModal = false;
 
 // Number of the audios to the modal
 var audio1Modal = 28;
@@ -200,10 +198,16 @@ function reproducirSonido() {
 	todosLosAudios.forEach((audioElement) => {
 		audioElement.pause();
 	});
-
-	// Reproducir el audio actual
-	const audio = document.getElementById("audio");
-	audio.play();
+	if (audioModal) {
+		// Reproducir el audio actual
+		const audio = document.getElementById("audio28");
+		audio.play();
+	}
+	else {
+		// Reproducir el audio actual
+		const audio = document.getElementById("audio");
+		audio.play();
+	}
 }
 
 // Definir las imágenes y nombres de archivo de las letras
@@ -295,6 +299,7 @@ function cambiarLetra() {
 
 // Function to show the modal
 function mostrarModal() {
+	audioModal = true;
 	console.log("Llegamos aquí");
 	var mensaje = "";
 	var resultadoMensaje = document.getElementById("resultadoMensaje");
@@ -304,10 +309,8 @@ function mostrarModal() {
 	mensaje = "¡Muy bien! Has practicado el abecedario 😊";
 	botonContinuarModal.textContent = 'Continuar';
 	textoBoton = 'Continuar';
-	reproducirSonido(audio1Modal);
+	reproducirSonido();
 
 	resultadoMensaje.textContent = mensaje;
 	miModal.show();
 }
-
-
