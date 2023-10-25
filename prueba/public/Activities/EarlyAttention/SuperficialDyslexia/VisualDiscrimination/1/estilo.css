@@ -92,8 +92,9 @@ svg {
 }
 
 #imagen1 {
-	width: 75%;
-	margin-bottom: 5%;
+	width: 60%;
+	margin-bottom: 2%;
+	margin-top: -5%;
 }
 
 /* For response options */
