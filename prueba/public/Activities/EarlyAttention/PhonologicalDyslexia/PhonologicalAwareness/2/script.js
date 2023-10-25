@@ -10,8 +10,8 @@ var idSeleccion = null;
 var textoBoton = "";
 
 // Number of the audios to the modal
-var audio1Modal = 1;
-var audio2Modal = 2;
+var audio1Modal = 3;
+var audio2Modal = 4;
 
 // Put the correct option number here
 // The correct option for grading

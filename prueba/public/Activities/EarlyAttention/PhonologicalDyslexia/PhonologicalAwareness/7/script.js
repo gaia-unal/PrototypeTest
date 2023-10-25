@@ -273,7 +273,7 @@ function mostrarModal() {
 	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
 
 	if (puntaje === 1) {
-		mensaje = "¡Muy bien! araña es la respuesta correcta 😊";
+		mensaje = "¡Muy bien! La letra D es la respuesta correcta 😊";
 		botonContinuarModal.textContent = 'Continuar';
 		textoBoton = 'Continuar';
 		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"

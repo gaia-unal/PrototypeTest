@@ -44,14 +44,13 @@ boton2.addEventListener('click', function () {
 
 // Function to show the modal
 function mostrarModal() {
-	console.log("Llegamos aquí");
 	var mensaje = "";
 	var resultadoMensaje = document.getElementById("resultadoMensaje");
 	var botonContinuarModal = document.getElementById("boton-continuar-modal");
 	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
 
 	if (puntaje === 1) {
-		mensaje = "¡Muy bien! araña es la respuesta correcta 😊";
+		mensaje = "¡Muy bien! Esa es la respuesta correcta 😊";
 		botonContinuarModal.textContent = 'Continuar';
 		textoBoton = 'Continuar';
 		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
