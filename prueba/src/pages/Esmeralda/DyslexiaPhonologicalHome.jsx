@@ -4,6 +4,7 @@ import coverPhonological from '../../assets/coverPhonological.png'
 import coverLetterKnw from '../../assets/coverLetterKnw.png'
 import { AttentionResourcesList } from "./AttentionResourcesList";
 import { BackButton } from "../../components/BackButton";
+import { Footer } from '../../layouts/Footer';
 
 export const DyslexiaPhonologicalHome = () => {
 
@@ -42,6 +43,8 @@ export const DyslexiaPhonologicalHome = () => {
       <AttentionResourcesList
         tests={attentionResources}
       />
+
+      <Footer/>
     </>
   )
 }

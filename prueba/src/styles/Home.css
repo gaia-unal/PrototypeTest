@@ -13,16 +13,6 @@ body {
     height: auto;
 }
 
-.app-name {
-    font-size: 5vw;
-    color: blue;
-}
-
-.title {
-    font-size: 4vw;
-    color: blueviolet;
-}
-
 .module-img {
     width: 50%;
     margin-bottom: 0.5rem;
@@ -37,7 +27,7 @@ body {
 .texto {
     font-family: 'Open-Dyslexic', Arial;
     padding-top: 1%;
-    font-size: 200%;
+    font-size: 2rem;
     color: black;
 }
 

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 import '../../styles/DetectionTestsList.css'
 
+
 export const DetectionTestsList = ({ tests }) => {
   return (
     <>

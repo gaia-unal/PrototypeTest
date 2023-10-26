@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import '../../styles/HomeEsmeralda.css'
 import coverPhonological from '../../assets/ImagenDislexiaFonológica.png'
 import coverSuperficial from '../../assets/ImagenDislexiaVisual.png'
+import { Footer } from '../../layouts/Footer';
 
 export const HomeEsmeralda = () => {
   return (
@@ -40,6 +41,7 @@ export const HomeEsmeralda = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

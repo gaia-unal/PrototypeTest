@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import { Footer } from '../../layouts/Footer';
 
 export const AttentionResourcesList = ({ tests }) => {
   return (

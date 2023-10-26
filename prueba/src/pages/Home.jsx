@@ -4,6 +4,7 @@ import logoPrincipal from '../assets/logo-app.png'
 import diamante from '../assets/1.png'
 import esmeralda from '../assets/2.png'
 import amatista from '../assets/3.png'
+import { Footer } from '../layouts/Footer';
 
 export const Home = () => {
   return (
@@ -59,6 +60,8 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   )
 }

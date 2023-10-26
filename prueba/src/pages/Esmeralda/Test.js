@@ -5,6 +5,7 @@ import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
 import { GeneralDataInput } from './GeneralDataInput';
 import { BackButton } from '../../components/BackButton';
+import { Footer } from '../../layouts/Footer';
 
 export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC1_6, nameActivityC1_7, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC2_6, nameActivityC2_7 }) => {
 
@@ -264,6 +265,9 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
               </ModalComponent>
             ) : null}
           </div>
+
+
+          <Footer />
         </>
       )}
     </>
