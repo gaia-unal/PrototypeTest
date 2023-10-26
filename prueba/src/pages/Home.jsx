@@ -11,15 +11,17 @@ export const Home = () => {
 
       <nav className="navbar" style={{ padding: '10px', height: '90px' }}>
         <div className="container-fluid">
-          <a className="navbar-brand texto" href="#">
-            <img
-              src={logoPrincipal}
-              alt="Logo"
-              style={{ width: '15%', marginRight: '5%' }}
-              className="d-inline-block align-text-top"
-            />
-            Piedras preciosas
-          </a>
+          <Link style={{ textDecoration: 'none' }}>
+            <a className="navbar-brand texto">
+              <img
+                src={logoPrincipal}
+                alt="Logo"
+                style={{ width: '15%', marginRight: '5%' }}
+                className="d-inline-block align-text-top"
+              />
+              Piedras preciosas
+            </a>
+          </Link>
         </div>
       </nav>
 
@@ -38,7 +40,7 @@ export const Home = () => {
           <div className="col">
             {/* Discalculia */}
             <Link to={'https://gaia.manizales.unal.edu.co/diamante/'}>
-              <img className='module-img' src={diamante} style={{ width: '45%'}} alt="Imagen de un diamante" title="Herramienta Diamante" />
+              <img className='module-img' src={diamante} style={{ width: '45%' }} alt="Imagen de un diamante" title="Herramienta Diamante" />
             </Link>
           </div>
         </div>
@@ -46,7 +48,7 @@ export const Home = () => {
           <div className="col">
             {/* Dislexia */}
             <NavLink to="/esmeralda/inicio">
-              <img className='module-img' src={esmeralda} style={{ width: '45%'}} alt="Imagen de una esmeralda" title="Herramienta Esmeralda" />
+              <img className='module-img' src={esmeralda} style={{ width: '45%' }} alt="Imagen de una esmeralda" title="Herramienta Esmeralda" />
             </NavLink>
           </div>
         </div>
@@ -54,7 +56,7 @@ export const Home = () => {
           <div className="col">
             {/* Disgrafía */}
             <Link>
-              <img className='module-img' src={amatista} style={{ width: '45%'}} alt="Imagen de una amatista" title="Herramienta Amatista" />
+              <img className='module-img' src={amatista} style={{ width: '45%' }} alt="Imagen de una amatista" title="Herramienta Amatista" />
             </Link>
           </div>
         </div>
