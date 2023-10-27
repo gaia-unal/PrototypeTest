@@ -7,6 +7,7 @@ import { DyslexiaPhonologicalHome } from './Esmeralda/DyslexiaPhonologicalHome';
 import { DyslexiaSuperficialHome } from './Esmeralda/DyslexiaSuperficialHome';
 import { AttentionResource } from './Esmeralda/AttentionResource';
 import { Demo } from './Esmeralda/Demo';
+import { HomeAmatista } from './Amatista/HomeAmatista';
 
 export const App = () => {
   return (
@@ -116,6 +117,8 @@ export const App = () => {
             }>
           </Route>
         </Route>
+
+        <Route path='/amatista' element={<HomeAmatista></HomeAmatista>}></Route>
 
         <Route path="/esmeralda" element={<Navigate to='/esmeralda/inicio' />}></Route>
         <Route path="/*" element={<Navigate to='/' />}></Route>

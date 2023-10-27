@@ -9,8 +9,8 @@
 }
 
 .nombreEsmeralda {
-    font-size: 150%;
     font-family: 'Open-Dyslexic', Arial;
+    font-size: 3vw;
     color: white;
     text-align: left; /* Alinea el texto hacia la izquierda */
     text-decoration: none;

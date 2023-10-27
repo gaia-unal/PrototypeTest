@@ -6,7 +6,12 @@
 
 body {
     background-color: rgb(226, 253, 236);
-  }  
+}
+
+h4 {
+    line-height: 2.5rem;
+    font-size: 2vw;
+}
 
 .logo {
     width: 15%;
@@ -14,20 +19,24 @@ body {
 }
 
 .module-img {
-    width: 50%;
+    width: 99%;
     margin-bottom: 0.5rem;
 }
 
+.module-container {
+    align-items: center;
+}
+
 @font-face {
-	font-family: 'Open-Dyslexic';
-	/* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
-	src: url('http://localhost:3000/fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-family: 'Open-Dyslexic';
+    /* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
+    src: url('http://localhost:3000/fonts/OpenDyslexic-Regular.otf') format('opentype');
 }
 
 .texto {
-    font-family: 'Open-Dyslexic', Arial;
+    font-family: 'sans-serif';
     padding-top: 1%;
-    font-size: 2rem;
+    font-size: 3vw;
     color: black;
 }
 
@@ -36,8 +45,11 @@ body {
 }
 
 .title {
-    margin-top: 8%;
-    font-family: 'Open-Dyslexic', Arial;
+    margin-top: 5%;
+    font-family: 'sans-serif';
     color: #085e44;
+}
 
+.app-description {
+    margin-top: 10%;
 }

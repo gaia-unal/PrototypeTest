@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import '../../styles/HomeEsmeralda.css'
 import coverPhonological from '../../assets/ImagenDislexiaFonológica.png'
 import coverSuperficial from '../../assets/ImagenDislexiaVisual.png'
+import esmeralda from '../../assets/2.png'
 
 export const HomeEsmeralda = () => {
   return (
@@ -11,6 +12,11 @@ export const HomeEsmeralda = () => {
           <button className='btn btn-success' title="Regresa al inicio">Volver al inicio</button>
         </div>
       </NavLink>
+
+      <div className='container w-75 container-module-description'>
+        <img src={esmeralda} alt="Logo de Esmeralda" className='img-logo' />
+        <h4 className='text-center'>Apoyo al docente a realizar una identificación temprana de la Dislexia en el aula de clase</h4>
+      </div>
 
       <NavLink to='demo'>
         <button>Demo</button>
