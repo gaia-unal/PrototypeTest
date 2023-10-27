@@ -263,7 +263,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                       </div>
                     )}
                   </PDFDownloadLink>
-                  <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
+                  <button className="return-button mt-2" onClick={() => navigate(-(srcIframe.length))}>
                     Volver al inicio
                   </button>
                 </div>

@@ -8,15 +8,14 @@ iframe {
   border-radius: 4rem;
 }
 
-.descargar-button {
+.descargar-button,
+.return-button {
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
   margin: auto;
-  background-color: #007BFF;
-  /* Cambia el color de fondo del botón */
   color: #fff;
   /* Cambia el color del texto del botón */
   padding: 10px;
@@ -26,11 +25,23 @@ iframe {
   cursor: pointer;
 }
 
+.descargar-button {
+  background-color: #007BFF;
+  /* Cambia el color de fondo del botón */
+}
+
 .descargar-button:hover {
   background-color: #0056b3;
   /* Cambia el color de fondo al pasar el mouse sobre el botón */
 }
 
+.return-button {
+  background-color: #2125fab7;
+}
+
+.return-button:hover {
+  background-color: #0004ffb7;
+}
 
 .message {
   display: flex;
