@@ -88,50 +88,45 @@
 
 			<!-- Activity instruction -->
 			<a href="#" onclick="sonido(0)" style="text-decoration:none; outline:none;">
-				<h2 id="texto" title="¡Da clic para escuchar!">Selecciona la letra que hace el sonido ___ en la
-					siguiente palabra
+				<h2 id="texto" title="¡Da clic para escuchar!">Selecciona la primera sílaba de la palabra:
 				</h2>
 			</a>
+		</div>
+
+		<!-- Activity image -->
+		<div class="contenedorImagen">
+			<img src="imagenOreja.png" alt="imagen de una oreja" id="imagen1">
 		</div>
 
 		<!-- Activity options -->
 		<div class="contenedor-opciones">
 			<div id="opcion1">
 				<a onclick="seleccionar(1)" class="opciones" id="1"><img src="opcion1-Open-Dyslexic.png"
-						id="imageOption0" height="32" alt="Letra 'S'" title="¿Reconoces su sonido?"></a>
+						id="imageOption0" height="32" alt="sílaba RE" title="Clic para escuchar"></a>
+				<audio id="audio1" class="audio-element" controls hidden="true">
+					<source src="audio1.mp3" type="audio/mpeg">
+				</audio>
 			</div>
 			<div id="opcion2">
 				<a onclick="seleccionar(2)" class="opciones" id="2"><img src="opcion2-Open-Dyslexic.png"
-						id="imageOption1" height="32" alt="Letra 'A'" title="¿Reconoces su sonido?"></a>
+						id="imageOption1" height="32" alt="sílaba O" title="Clic para escuchar"></a>
+				<audio id="audio2" class="audio-element" controls hidden="true">
+					<source src="audio2.mp3" type="audio/mpeg">
+				</audio>
 			</div>
 			<div id="opcion3">
 				<a onclick="seleccionar(3)" class="opciones" id="3"><img src="opcion3-Open-Dyslexic.png"
-						id="imageOption2" height="32" alt="Letra 'N'" title="¿Reconoces su sonido?"></a>
+						id="imageOption2" height="32" alt="sílaba JA" title="Clic para escuchar"></a>
+				<audio id="audio3" class="audio-element" controls hidden="true">
+					<source src="audio3.mp3" type="audio/mpeg">
+				</audio>
 			</div>
-			<div id="opcion4">
-				<a onclick="seleccionar(4)" class="opciones" id="4"><img src="opcion4-Open-Dyslexic.png"
-						id="imageOption3" height="32" alt="Letra 'D'" title="¿Reconoces su sonido?"></a>
-			</div>
-			<div id="opcion5">
-				<a onclick="seleccionar(5)" class="opciones" id="5"><img src="opcion5-Open-Dyslexic.png"
-						id="imageOption4" height="32" alt="Letra 'Í'" title="¿Reconoces su sonido?"></a>
-			</div>
-			<div id="opcion6">
-				<a onclick="seleccionar(6)" class="opciones" id="6"><img src="opcion6-Open-Dyslexic.png"
-						id="imageOption5" height="32" alt="Letra 'A'" title="¿Reconoces su sonido?"></a>
-			</div>
-		</div>
-
-		<!-- Activity image -->
-		<div class="contenedorImagen">
-			<img src="imagenSandia.png" alt="imagen de media sandía" id="imagen1">
 		</div>
 
 		<!-- Here is the continue button -->
 		<div id="continuar">
 			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
 		</div>
-
 		<!-- Modal to show if the answer is correct or incorrect -->
 		<!-- Modal to show if the answer is correct or incorrect -->
 		<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel"
@@ -147,11 +142,11 @@
 					<div class="modal-footer">
 						<button id="boton-continuar-modal" type="button" class="btn btn-primary"
 							data-bs-dismiss="modal"> </button>
-						<audio id="audio4" class="audio-element" controls hidden="true">
-							<source src="audio4.mp3" type="audio/mpeg">
+						<audio id="audio6" class="audio-element" controls hidden="true">
+							<source src="audio6.mp3" type="audio/mpeg">
 						</audio>
-						<audio id="audio5" class="audio-element" controls hidden="true">
-							<source src="audio5.mp3" type="audio/mpeg">
+						<audio id="audio7" class="audio-element" controls hidden="true">
+							<source src="audio7.mp3" type="audio/mpeg">
 						</audio>
 					</div>
 				</div>

@@ -1,8 +1,7 @@
 /* General styles */
-html,
-body {
-	margin: 0;
-	padding: 0;
+html, body {
+    margin: 0;
+    padding: 0;
 	display: flex;
 	justify-content: center;
 }
@@ -14,11 +13,11 @@ body {
 }
 
 /* Main container */
-.contenedor {
+.contenedor{
 	width: 90%;
 	height: auto;
 	margin-top: 4rem;
-	font-family: 'Open-Dyslexic', sans-serif;
+	font-family: 'Open-Dyslexic', sans-serif; 
 	overflow: hidden;
 }
 
@@ -68,7 +67,8 @@ svg {
 .instruccion {
 	display: grid;
 	grid-template-columns: 10% 90%;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 #icono-bocina {
@@ -82,49 +82,27 @@ svg {
 }
 
 /* Activity image */
-.contenedorImagen {
+.contenedorImagen, .contenedorInput {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 #imagen1 {
-	width: 15%;
-	margin-bottom: 3%;
-}
-
-/* For response options */
-.contenedor-opciones {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	/* 4 columnas en pantallas grandes */
-	grid-gap: 10px;
-	/* Espacio entre las celdas */
-}
-
-
-/* Two-column layout on smaller screens */
-@media (max-width: 300px) {
-	.contenedor-opciones {
-		grid-template-columns: repeat(2, 1fr);
-		/* 2 columns on smaller screens */
-	}
-}
-
-#opcion1,
-#opcion2,
-#opcion3,
-#opcion4 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
-
-.opciones img {
-	width: 40%;
-	height: auto;
+	width: 30%;
 	cursor: pointer;
+}
+
+/* Answer input */
+#respuesta{
+	width: 30%;
+	font-family: 'Open-Dyslexic', sans-serif; 
+	font-size: 2vw; 
+	border: 2px solid #bb5b02; 
+	padding: 0.5rem;
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
 }
 
 /* Continue button */

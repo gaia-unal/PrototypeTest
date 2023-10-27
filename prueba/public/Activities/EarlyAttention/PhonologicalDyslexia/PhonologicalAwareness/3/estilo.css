@@ -27,49 +27,49 @@ body {
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-    width: 2vw;
+	width: 2vw;
 }
 
 
 .btn.btn-outline-dark {
-    font-size: 2vw;
-    padding: 1%;
+	font-size: 2vw;
+	padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 
 div .font-controls {
-    padding: 2%;
+	padding: 2%;
 }
 
 
 svg {
-    display: inline;
-    font-size: 2vw;
+	display: inline;
+	font-size: 2vw;
 }
 
 
 .btn.btn-outline-dark.line-spacing {
-    padding: 1%;
+	padding: 1%;
 }
 
 
 /* Accessibility options */
 #accessibilityButton {
-    font-size: 2vw;
+	font-size: 2vw;
 }
 
 /* Activity instruction */
 .instruccion {
 	display: grid;
 	grid-template-columns: 10% 90%;
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 #icono-bocina {
@@ -78,11 +78,17 @@ svg {
 
 #texto {
     color: black;
-    font-size: 2vw;
+    font-size: 3vw;
     line-height: 1;
 }
 
-/* Activity image */
+#reto {
+	color: black;
+    font-size: 3vw;
+    line-height: 1;
+}
+
+
 .contenedorImagen {
 	display: flex;
 	justify-content: center;
@@ -90,90 +96,19 @@ svg {
 }
 
 #imagen1 {
-	width: 30%;
-	margin-bottom: 2rem;
-}
-
-/* Distribution of answer options and numbering containers */
-
-.opciones-respuesta {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* 4 columns */
-	grid-gap: 20px; /* Space between elements */
-	justify-items: center;
-}
-
-/* Centering images */
-.opciones-respuesta div {
-	text-align: center;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 500px) {
-	.opciones-respuesta {
-		grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-	}
-
-	/* Give correct order to the response images and their numbering containers */
-	#opcion1 {
-		order: 5;
-	}
-
-	#opcion2 {
-		order: 2;
-	}
-
-	#opcion3 {
-		order: 1;
-	}
-
-	#opcion4 {
-		order: 6;
-	}
-
-	#contenedorNumeracionOpcion1 {
-		order: 7;
-	}
-
-	#contenedorNumeracionOpcion2 {
-		order: 4;
-	}
-
-	#contenedorNumeracionOpcion3 {
-		order: 3;
-	}
-
-	#contenedorNumeracionOpcion4 {
-		order: 8;
-	}
-}
-
-.opciones img {
 	width: 70%;
-	height: auto;
-	cursor: pointer;
 }
 
-/* Styles for numbering containers */
-.contenedorNumeracion {
-	background-color: #57ebbe;
-	margin: 5%;
-	border-radius: 100%;
-	border: 2px solid rgb(34, 102, 68);
-	width: 45%;
-	/* Ajusta el ancho y alto según tus necesidades */
-	height: auto;
-	font-size: 2vw;
-	/* Ajusta el tamaño del número */
-	font-weight: bold;
-	/* Opcional: ajusta el peso de la fuente */
-	color: #302f2f;
-	/* Opcional: ajusta el color del número */
-}
-
-.contenedorNumeracion p {
-	margin: 20%;
-	font-size: 2vw;
+/* Answer input */
+#respuesta {
+	width: 30%;
+	font-family: 'Open-Dyslexic', sans-serif;
+	font-size: 1.5vw;
+	border: 2px solid #bb5b02;
+	padding: 0.5rem;
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 }
 
 /* Continue button */
@@ -203,3 +138,22 @@ svg {
 #btn-continuar:hover {
 	background-color: #0d791b;
 }
+
+/* Estilo para el checkbox */
+.checkbox-container {
+	display: flex;
+	align-items: center;
+	margin: 10px;
+  }
+  
+  .checkbox-label {
+	font-size: 16px; /* Cambia el tamaño de la etiqueta del checkbox */
+	margin-left: 10px; /* Añade un espacio entre la etiqueta y el checkbox */
+  }
+  
+  .checkbox-input {
+	width: 24px; /* Cambia el ancho de la casilla de verificación */
+	height: 24px; /* Cambia la altura de la casilla de verificación */
+	margin: 0; /* Elimina el espacio alrededor del checkbox */
+  }
+  

@@ -22,7 +22,6 @@ body {
 	overflow: hidden;
 }
 
-
 /* Accessiibility options */
 
 
@@ -70,7 +69,6 @@ svg {
 	display: grid;
 	grid-template-columns: 10% 90%;
 	margin-top: 1rem;
-	margin-bottom: 1rem;
 }
 
 #icono-bocina {
@@ -85,32 +83,38 @@ svg {
 
 /* Activity image */
 .contenedorImagen {
-	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 1.5rem;
 }
 
 #imagen1 {
-	width: 30%;
+	width: 15%;
+	margin-bottom: 3%;
 }
 
 /* For response options */
 .contenedor-opciones {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	/* 6 columnas en pantallas grandes */
+	grid-template-columns: repeat(3, 1fr);
+	/* 4 columnas en pantallas grandes */
+	grid-gap: 10px;
 	/* Espacio entre las celdas */
 }
 
 
+/* Two-column layout on smaller screens */
+@media (max-width: 300px) {
+	.contenedor-opciones {
+		grid-template-columns: repeat(2, 1fr);
+		/* 2 columns on smaller screens */
+	}
+}
+
 #opcion1,
 #opcion2,
 #opcion3,
-#opcion4,
-#opcion5,
-#opcion6 {
+#opcion4 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -118,7 +122,7 @@ svg {
 }
 
 .opciones img {
-	width: 50%;
+	width: 40%;
 	height: auto;
 	cursor: pointer;
 }

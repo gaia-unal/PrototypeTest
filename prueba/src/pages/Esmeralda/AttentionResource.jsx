@@ -47,10 +47,13 @@ export const AttentionResource = ({ route }) => {
       { ruta: domain + route + "/1/indice.html" },
       { ruta: domain + route + "/2/indice.html" },
       { ruta: domain + route + "/3/indice.html" },
-      { ruta: domain + route + "/4/indice.html" },
-      { ruta: domain + route + "/5/indice.html" },
-      { ruta: domain + route + "/6/indice.html" },
-      { ruta: domain + route + "/7/indice.html" },
+      // { ruta: domain + route + "/4/indice.html" },
+      // { ruta: domain + route + "/5/indice.html" },
+      // { ruta: domain + route + "/6/indice.html" },
+      // { ruta: domain + route + "/7/indice.html" },
+      // { ruta: domain + route + "/8/indice.html" },
+      // { ruta: domain + route + "/9/indice.html" },
+      // { ruta: domain + route + "/10/indice.html" },
     ];
   }
 

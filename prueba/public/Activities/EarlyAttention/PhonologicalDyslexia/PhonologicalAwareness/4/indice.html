@@ -9,7 +9,7 @@
 	Change the * for the proficiency that the activity assesses, and the # for the grade level
 	For example, if it is a phonological awareness activity for grade 1, write Phonological Activity Gr 1
 	-->
-	<title>Actividad Conciencia fonológica Gr 1</title>
+	<title>***** Actividad Fonológica Gr 1</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="estilo.css">
@@ -44,7 +44,7 @@
 			</div>
 			<div class="col">
 				<div class="collapse multi-collapse" id="multiCollapseExample2">
-					<!-- Buttons to change the font size -->
+					<!-- ButtonsÑ to change the font size -->
 					<span>Tamaño de letra</span>
 					<div>
 						<button type="button" class="btn btn-outline-dark font-controls" id="decreaseFontSize">
@@ -88,29 +88,69 @@
 
 			<!-- Activity instruction -->
 			<a href="#" onclick="sonido(0)" style="text-decoration:none; outline:none;">
-				<h2 id="texto" title="¡Da clic para escuchar!">Digita la cantidad de sílabas que tiene la palabra
+				<h2 id="texto" title="¡Da clic para escuchar!">Selecciona en orden las sílabas de la palabra:
 				</h2>
 			</a>
 		</div>
 
 		<!-- Activity image -->
-		<div>
-			<a class="contenedorImagen" onclick="sonido(1)"><img src="imagenMano-Open-Dyslexic.png"
-					alt="imagen de una mano con la palabra 'Mano'" id="imagen1" title="Escucha aquí la palabra"></a>
-			<audio id="audio1" controls hidden="true">
-				<source src="audio1.mp3" type="audio/mpeg">
-			</audio>
+		<div class="contenedorImagen">
+			<img src="imagenBicicleta.png" alt="Imagen de una bicicleta" id="imagen1">
 		</div>
 
-		<!-- Here the user types the answer -->
-		<div>
-			<a class="contenedorInput"><input type="number" id="respuesta" placeholder="Número de sílabas"></a>
+		<!-- Activity options -->
+
+		<div class="opciones-respuesta">
+			<!-- Put here the selection options -->
+			<div id="opcion1">
+				<a onclick="seleccionar(1)" class="opciones" id="1"><img src="opcion1-Open-Dyslexic.png"
+						id="imageOption2" height="32" alt="sílaba HAM" title="Clic para escuchar"></a>
+				<audio id="audio1" class="audio-element" controls hidden="true">
+					<source src="audio1.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion2">
+				<a onclick="seleccionar(2)" class="opciones" id="2"><img src="opcion2-Open-Dyslexic.png"
+						id="imageOption1" height="32" alt="sílaba BUR" title="Clic para escuchar"></a>
+				<audio id="audio2" class="audio-element" controls hidden="true">
+					<source src="audio2.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion3">
+				<a onclick="seleccionar(3)" class="opciones" id="3"><img src="opcion3-Open-Dyslexic.png"
+						id="imageOption0" height="32" alt="sílaba GUE" title="Clic para escuchar"></a>
+				<audio id="audio3" class="audio-element" controls hidden="true">
+					<source src="audio3.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion4">
+				<a onclick="seleccionar(4)" class="opciones" id="4"><img src="opcion4-Open-Dyslexic.png"
+						id="imageOption3" height="32" alt="sílaba SA" title="Clic para escuchar"></a>
+				<audio id="audio4" class="audio-element" controls hidden="true">
+					<source src="audio4.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+
+			<!-- Put here as many containers as options -->
+			<div id="contenedorNumeracionOpcion1" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion1" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion2" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion2" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion3" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion3" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion4" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion4" style="visibility: hidden;">X</p>
+			</div>
 		</div>
 
 		<!-- Here is the continue button -->
 		<div id="continuar">
 			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
 		</div>
+
 		<!-- Modal to show if the answer is correct or incorrect -->
 		<!-- Modal to show if the answer is correct or incorrect -->
 		<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel"
@@ -126,20 +166,22 @@
 					<div class="modal-footer">
 						<button id="boton-continuar-modal" type="button" class="btn btn-primary"
 							data-bs-dismiss="modal"> </button>
-						<audio id="audio4" class="audio-element" controls hidden="true">
-							<source src="audio4.mp3" type="audio/mpeg">
+						<audio id="audio7" class="audio-element" controls hidden="true">
+							<source src="audio7.mp3" type="audio/mpeg">
 						</audio>
-						<audio id="audio5" class="audio-element" controls hidden="true">
-							<source src="audio5.mp3" type="audio/mpeg">
+						<audio id="audio8" class="audio-element" controls hidden="true">
+							<source src="audio8.mp3" type="audio/mpeg">
 						</audio>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
 	<!-- Scripts -->
 	<script src="script.js"></script>
+	<!-- Bootstrap JS file -->
 	<script src="../../../../../Bootstrap/js/bootstrap.min.js"></script>
 </body>
 
