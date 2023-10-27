@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import '../../styles/DetectionTestsList.css'
+import { Fragment } from "react"
 
 
 export const DetectionTestsList = ({ tests }) => {
@@ -11,7 +12,7 @@ export const DetectionTestsList = ({ tests }) => {
         <div className="test-list">
           {tests.map(item => {
             return (
-              <>
+              <Fragment key={item.id}>
                 <div className="d-flex align-items-center">
                   <NavLink to={item.route}>
                     <img className="item-img" src={item.image} />
@@ -23,7 +24,7 @@ export const DetectionTestsList = ({ tests }) => {
                     {item.description}
                   </p>
                 </div>
-              </>
+              </Fragment>
             )
           })}
         </div>

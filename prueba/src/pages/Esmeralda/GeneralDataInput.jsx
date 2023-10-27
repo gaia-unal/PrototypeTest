@@ -1,6 +1,5 @@
 import { useState } from "react";
 import '../../styles/GeneralDataInput.css';
-import { Footer } from '../../layouts/Footer';
 
 
 export const GeneralDataInput = ({ saveData }) => {
@@ -68,7 +67,6 @@ export const GeneralDataInput = ({ saveData }) => {
           </button>
         </div>
       </div>
-      <Footer/>
     </form>
   )
 }

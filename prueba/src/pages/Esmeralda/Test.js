@@ -5,11 +5,13 @@ import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
 import ModalComponent from './ModalComponent';
 import { GeneralDataInput } from './GeneralDataInput';
 import { BackButton } from '../../components/BackButton';
-import { Footer } from '../../layouts/Footer';
+import { useNavigate } from "react-router-dom";
 
 export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC1_6, nameActivityC1_7, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC2_6, nameActivityC2_7 }) => {
 
   const [mostrarModal, setMostrarModal] = useState(false);
+
+  let navigate = useNavigate();
 
   // Función para mostrar el modal
   const mostrarVentanaEmergente = () => {
@@ -261,13 +263,13 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                       </div>
                     )}
                   </PDFDownloadLink>
+                  <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
+                    Volver al inicio
+                  </button>
                 </div>
               </ModalComponent>
             ) : null}
           </div>
-
-
-          <Footer />
         </>
       )}
     </>

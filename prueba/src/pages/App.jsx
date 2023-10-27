@@ -6,6 +6,7 @@ import { HomeEsmeralda } from './Esmeralda/HomeEsmeralda';
 import { DyslexiaPhonologicalHome } from './Esmeralda/DyslexiaPhonologicalHome';
 import { DyslexiaSuperficialHome } from './Esmeralda/DyslexiaSuperficialHome';
 import { AttentionResource } from './Esmeralda/AttentionResource';
+import { Demo } from './Esmeralda/Demo';
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
 
           <Route path="inicio/superficial" element={<DyslexiaSuperficialHome></DyslexiaSuperficialHome>}></Route>
 
+          <Route path='inicio/demo' element={<Demo></Demo>}></Route>
 
           {/* Detection Tests */}
 

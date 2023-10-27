@@ -9,11 +9,10 @@ import { Footer } from '../layouts/Footer';
 export const Home = () => {
   return (
     <>
-
       <nav className="navbar" style={{ padding: '10px', height: '90px' }}>
         <div className="container-fluid">
           <Link style={{ textDecoration: 'none' }}>
-            <a className="navbar-brand texto">
+            <div className="navbar-brand texto">
               <img
                 src={logoPrincipal}
                 alt="Logo"
@@ -21,7 +20,7 @@ export const Home = () => {
                 className="d-inline-block align-text-top"
               />
               Piedras preciosas
-            </a>
+            </div>
           </Link>
         </div>
       </nav>
@@ -40,9 +39,9 @@ export const Home = () => {
         <div className="row">
           <div className="col">
             {/* Discalculia */}
-            <Link to={'https://gaia.manizales.unal.edu.co/diamante/'}>
+            <NavLink to={'https://gaia.manizales.unal.edu.co/diamante/'}>
               <img className='module-img' src={diamante} style={{ width: '45%' }} alt="Imagen de un diamante" title="Herramienta Diamante" />
-            </Link>
+            </NavLink>
           </div>
         </div>
         <div className="row">

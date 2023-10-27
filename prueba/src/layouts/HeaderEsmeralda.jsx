@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/HeaderEsmeralda.css'
 import logo from '../logo.png'
 import { NavLink, Link, Outlet } from 'react-router-dom'
+import { Footer } from './Footer';
 
 export const HeaderEsmeralda = () => {
   return (
@@ -10,8 +11,8 @@ export const HeaderEsmeralda = () => {
         <div className="container-fluid header-container contenedorLogoNombre">
           {/* Link elements are used for options that do not lead to any route */}
           <Link className="navbar-brand">
-            <img src={logo} alt="Logo" width="35" height="auto" title="Esmeralda" className="d-inline-block align-text-top" />
-            <Link className="nombreEsmeralda" title="Esmeralda">Esmeralda</Link>
+            <img style={{ display: 'inline' }} src={logo} alt="Logo" width="35" height="auto" title="Esmeralda" className="d-inline-block align-text-top" />
+            <p style={{ display: 'inline' }} className="nombreEsmeralda" title="Esmeralda">Esmeralda</p>
           </Link>
           <div></div>
         </div>
@@ -19,6 +20,8 @@ export const HeaderEsmeralda = () => {
 
       {/* Here the content of the subpaths is added */}
       <Outlet />
+
+      <Footer />
     </>
   )
 }

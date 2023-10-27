@@ -1,5 +1,5 @@
+import { Fragment } from "react"
 import { NavLink } from "react-router-dom"
-import { Footer } from '../../layouts/Footer';
 
 export const AttentionResourcesList = ({ tests }) => {
   return (
@@ -10,7 +10,7 @@ export const AttentionResourcesList = ({ tests }) => {
         <div className="test-list">
           {tests.map(item => {
             return (
-              <>
+              <Fragment key={item.id}>
                 <div className="d-flex align-items-center">
                   <NavLink to={item.route}>
                     <img className="item-img" src={item.image} />
@@ -22,7 +22,7 @@ export const AttentionResourcesList = ({ tests }) => {
                     {item.description}
                   </p>
                 </div>
-              </>
+              </Fragment>
             )
           })}
         </div>

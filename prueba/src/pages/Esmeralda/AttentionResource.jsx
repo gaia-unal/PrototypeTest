@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ModalComponent from './ModalComponent';
 import { NavLink, useNavigate } from "react-router-dom";
-import { Footer } from '../../layouts/Footer';
 
 export const AttentionResource = ({ route }) => {
 
@@ -154,7 +153,6 @@ export const AttentionResource = ({ route }) => {
           </ModalComponent>
         ) : null}
       </div>
-      <Footer />
     </>
   )
 }
