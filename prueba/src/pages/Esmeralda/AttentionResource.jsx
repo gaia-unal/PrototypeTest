@@ -11,6 +11,8 @@ export const AttentionResource = ({ route }) => {
   if (route === '/Activities/EarlyAttention/PhonologicalDyslexia/LetterKnowledge') {
     srcIframe = [
       { ruta: domain + route + "/1/indice.html" },
+      { ruta: domain + route + "/1.1/indice.html" },
+      { ruta: domain + route + "/1.2/indice.html" },
       { ruta: domain + route + "/2/indice.html" },
       { ruta: domain + route + "/3/indice.html" },
       { ruta: domain + route + "/4/indice.html" },
@@ -38,6 +40,7 @@ export const AttentionResource = ({ route }) => {
       { ruta: domain + route + "/26/indice.html" },
       { ruta: domain + route + "/27/indice.html" },
       { ruta: domain + route + "/28/indice.html" },
+      { ruta: domain + route + "/28.1/indice.html" },
     ];
   }
   // The number of activities in the rest of competences is 7
