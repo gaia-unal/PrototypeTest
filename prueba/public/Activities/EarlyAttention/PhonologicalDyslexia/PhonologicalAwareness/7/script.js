@@ -8,14 +8,14 @@ var idSeleccion = null;
 
 // Put the correct option number here
 // The correct option for grading
-var idOpcionCorrecta = "opcion" + "2";
+var idOpcionCorrecta = "opcion" + "4";
 
 // Message of the button in the modal
 var textoBoton = "";
 
 // Number of the audios to the modal
-var audio1Modal = 6;
-var audio2Modal = 7;
+var audio1Modal = 4;
+var audio2Modal = 5;
 
 // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
@@ -36,7 +36,6 @@ boton2.addEventListener('click', function () {
 	}
 });
 
-
 // Accessibility functions
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,17 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	const images = [
 		["opcion1-Open-Dyslexic.png", "opcion1-Arial.png"],
 		["opcion2-Open-Dyslexic.png", "opcion2-Arial.png"],
-		["opcion3-Open-Dyslexic.png", "opcion3-Arial.png"]
+		["opcion3-Open-Dyslexic.png", "opcion3-Arial.png"],
+		["opcion4-Open-Dyslexic.png", "opcion4-Arial.png"],
+		["opcion5-Open-Dyslexic.png", "opcion5-Arial.png"],
+		["opcion6-Open-Dyslexic.png", "opcion6-Arial.png"]
 	];
 	let imagenActual = 0;
 
-
-	//Aquí
 	// When the button is clicked
 	changeFontButton.addEventListener("click", () => {
-		actualFont = (actualFont + 1) % fonts.length;
-
 		// Change the text font of the required elements
+		actualFont = (actualFont + 1) % fonts.length;
 		textElement.style.fontFamily = fonts[actualFont];
 		changeFontButton.style.fontFamily = fonts[actualFont];
 		boton.style.fontFamily = fonts[actualFont];
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		for (let i = 0; i < spans.length; i++) {
 			spans[i].style.fontFamily = fonts[actualFont];
 		}
-	
+
 		// Change the option images
 		imagenActual = (imagenActual + 1) % images[0].length;
 		for (let i = 0; i < images.length; i++) {
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font-size
 
 	let initialFontSize = 2; // Initial font size that text elements have in the activity
-	let initialWidth = 40; // Initial width of answer options
+	let initialWidth = 50; // Initial width of answer options
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		// Images
-		for (let i = 0; i < images.length; i++) {
+		for (let i = 0; i < 6; i++) {
 			document.getElementById("imageOption" + i).style.width = initialWidth + '%';
 		}
 
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	decreaseFontButton.addEventListener("click", () => {
 		if (initialFontSize > 2) {
 			initialFontSize -= 0.1; // Decrease font size of text elements
-			initialWidth -= 3.3; // Decrease size of images (answer options)
+			initialWidth -= 2.7; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -132,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	increaseFontButton.addEventListener("click", () => {
 		if (initialFontSize < 3.8) {
 			initialFontSize += 0.1;
-			initialWidth += 3.3;
+			initialWidth += 2.7;
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -168,8 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			changeHeight();
 		}
 	});
-
-
 });
 
 // Function that sends the height of the current content of the activity to the iframe
@@ -241,7 +238,6 @@ function sonido(id) {
 // Event when an option is selected
 function seleccionar(id) {
 
-	sonido(id);
 	id = "opcion" + id;
 	// console.log("El id del seleccionado es:", id);
 
@@ -270,13 +266,14 @@ function calificar() {
 
 // Function to show the modal
 function mostrarModal() {
+	console.log("Llegamos aquí");
 	var mensaje = "";
 	var resultadoMensaje = document.getElementById("resultadoMensaje");
 	var botonContinuarModal = document.getElementById("boton-continuar-modal");
 	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
 
 	if (puntaje === 1) {
-		mensaje = "¡Muy bien! O es la respuesta correcta 😊";
+		mensaje = "¡Muy bien! La letra D es la respuesta correcta 😊";
 		botonContinuarModal.textContent = 'Continuar';
 		textoBoton = 'Continuar';
 		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"

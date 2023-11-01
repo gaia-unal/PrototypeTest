@@ -1,8 +1,7 @@
 /* General styles */
-html,
-body {
-	margin: 0;
-	padding: 0;
+html, body {
+    margin: 0;
+    padding: 0;
 	display: flex;
 	justify-content: center;
 }
@@ -14,11 +13,11 @@ body {
 }
 
 /* Main container */
-.contenedor {
+.contenedor{
 	width: 90%;
 	height: auto;
 	margin-top: 4rem;
-	font-family: 'Open-Dyslexic', sans-serif;
+	font-family: 'Open-Dyslexic', sans-serif; 
 	overflow: hidden;
 }
 
@@ -83,7 +82,7 @@ svg {
 }
 
 /* Activity image */
-.contenedorImagen {
+.contenedorImagen, .contenedorInput {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,89 +90,19 @@ svg {
 
 #imagen1 {
 	width: 30%;
-	margin-bottom: 2rem;
-}
-
-/* Distribution of answer options and numbering containers */
-
-.opciones-respuesta {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* 4 columns */
-	grid-gap: 20px; /* Space between elements */
-	justify-items: center;
-}
-
-/* Centering images */
-.opciones-respuesta div {
-	text-align: center;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 500px) {
-	.opciones-respuesta {
-		grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-	}
-
-	/* Give correct order to the response images and their numbering containers */
-	#opcion1 {
-		order: 5;
-	}
-
-	#opcion2 {
-		order: 2;
-	}
-
-	#opcion3 {
-		order: 1;
-	}
-
-	#opcion4 {
-		order: 6;
-	}
-
-	#contenedorNumeracionOpcion1 {
-		order: 7;
-	}
-
-	#contenedorNumeracionOpcion2 {
-		order: 4;
-	}
-
-	#contenedorNumeracionOpcion3 {
-		order: 3;
-	}
-
-	#contenedorNumeracionOpcion4 {
-		order: 8;
-	}
-}
-
-.opciones img {
-	width: 70%;
-	height: auto;
 	cursor: pointer;
 }
 
-/* Styles for numbering containers */
-.contenedorNumeracion {
-	background-color: #57ebbe;
-	margin: 5%;
-	border-radius: 100%;
-	border: 2px solid rgb(34, 102, 68);
-	width: 45%;
-	/* Ajusta el ancho y alto según tus necesidades */
-	height: auto;
-	font-size: 2vw;
-	/* Ajusta el tamaño del número */
-	font-weight: bold;
-	/* Opcional: ajusta el peso de la fuente */
-	color: #302f2f;
-	/* Opcional: ajusta el color del número */
-}
-
-.contenedorNumeracion p {
-	margin: 20%;
-	font-size: 2vw;
+/* Answer input */
+#respuesta{
+	width: 30%;
+	font-family: 'Open-Dyslexic', sans-serif; 
+	font-size: 2vw; 
+	border: 2px solid #bb5b02; 
+	padding: 0.5rem;
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
 }
 
 /* Continue button */

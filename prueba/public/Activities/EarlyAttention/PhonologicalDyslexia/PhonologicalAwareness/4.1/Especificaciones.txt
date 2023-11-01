@@ -1,0 +1,7 @@
+Tipo_dificultad: Dislexia Fonológica
+Tipo_enfoque: Atención
+Tipo actividad: RETO
+Competencia: Conciencia fonológica
+Tipo plantilla: No aplica
+Categoría: No aplica
+Instrucción: No aplica
