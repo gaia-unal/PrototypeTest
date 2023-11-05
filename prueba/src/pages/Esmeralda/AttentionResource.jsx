@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import ModalComponent from './ModalComponent';
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const AttentionResource = ({ route }) => {
 
-  console.log("Rutita es ",route);
-
   const domain = "http://localhost:3000";
 
-  var srcIframe = [];
+  var srcIframe = useMemo(() => [ //srcIframe is memoized using useMemo and will depend only on the route property. This will prevent a new instance of the array from being created on each rendering, which should resolve the warning.
+  ], []);
 
   if (route === '/Activities/EarlyAttention/PhonologicalDyslexia/LetterKnowledge') {
     srcIframe = [

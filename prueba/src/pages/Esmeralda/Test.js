@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import '../../styles/Test.css';
 import { PDFDownloadLink } from '@react-pdf/renderer'; // Importa el componente PDFDownloadLink
 import ReportePDF from './ReportePDF'; // Importa tu componente ReportePDF
@@ -22,7 +22,9 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
   const domain = "http://localhost:3000";
 
-  const srcIframe = [
+  var srcIframe = useMemo(() => [], []);
+
+  srcIframe = [
     { ruta: domain + module + competence1 + "/1/indice.html", nombre: nameActivityC1_1 },
     { ruta: domain + module + competence1 + "/2/indice.html", nombre: nameActivityC1_2 },
     { ruta: domain + module + competence1 + "/3/indice.html", nombre: nameActivityC1_3 },
@@ -252,7 +254,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                         message2={message2}
                       />
                     }
-                    fileName="reporte.pdf"
+                    fileName={`${nameStudent.replace(/ /g, '_')}_reporte.pdf`} // Construye el nombre del archivo
                   >
                     {({ blob, url, loading, error }) => (
                       <div>
@@ -263,7 +265,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                       </div>
                     )}
                   </PDFDownloadLink>
-                  <button className="return-button mt-2" onClick={() => navigate(-(srcIframe.length))}>
+                  <button className="return-button mt-2" onClick={() => navigate('/esmeralda/inicio')}>
                     Volver al inicio
                   </button>
                 </div>

@@ -16,6 +16,7 @@ export const Footer = () => {
               <p style={{ margin: '0' }}>Paula Andrea Taborda Montes</p>
               <p style={{ margin: '0' }}>María José Giraldo Gutiérrez</p>
               <p style={{ margin: '0' }}>Julián Pachón Castrillón</p>
+              <p style={{ margin: '0' }}>Jose Albeiro Montes Gil</p>
             </div>
             <div className="col-md-4">
               <img className="imagenLogo" src={logoUniversidad} alt="Logo Universidad Nacional de Colombia" title="Logo Universidad Nacional de Colombia" />
@@ -23,7 +24,7 @@ export const Footer = () => {
             <div className="col-md-4">
               <img className="imagenGAIA" src={logoGAIA} alt="Logo grupo de investigación Grupo de Ambientes Inteligentes Adaptativos" title="Logo Universidad Nacional de Colombia" />
             </div>
-            <div>
+            <div> <br></br>
               <strong>Proyecto: </strong><p>Construcción de una herramienta tecnológica para detección y atención de estudiantes con dificultades específicas de aprendizaje</p>
             </div>
           </div>

@@ -1,21 +1,19 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import ModalComponent from './ModalComponent';
 import '../../styles/Demo.css'
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Demo = ({ route }) => {
 
-  console.log("la ruta es ", route);
 
   const domain = "http://localhost:3000";
-  var srcIframe = [];
 
-  srcIframe = [
+  var srcIframe = useMemo(() => [ //srcIframe is memoized using useMemo and will depend only on the route property. This will prevent a new instance of the array from being created on each rendering, which should resolve the warning.
     { ruta: domain + route + "/1/indice.html" },
     { ruta: domain + route + "/2/indice.html" },
     { ruta: domain + route + "/3/indice.html" },
     { ruta: domain + route + "/4/indice.html" },
-  ];
+  ], [route]);
 
   const [actividadActual, setActividadActual] = useState(0); // Estado para rastrear la actividad actual
   const iframeRef = useRef(null);

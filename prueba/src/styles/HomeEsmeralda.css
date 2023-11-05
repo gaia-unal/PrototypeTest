@@ -16,7 +16,8 @@
 }
 
 .textoEsmeralda {
-    font-size: 130%;
+    text-align: justify;
+    font-size: 1.5vw; /* Tamaño de fuente relativo al ancho del viewport */
 }
 
 

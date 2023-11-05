@@ -45,7 +45,7 @@ export const HomeEsmeralda = () => {
                 <img src={coverSuperficial} className='card-img-top' alt='Imagen de Dislexia Superficial' title="Da click para ir a los recursos de Dislexia Superficial o Visual" />
               </NavLink>
               <div className='card-body'>
-                <p className='card-text text-center'>
+                <p className='card-text text-center textoEsmeralda'>
                   "Es otro subtipo de dislexia que implica dificultades específicas en la lectura. El problema se relaciona con el reconocimiento de palabras enteras como unidades visuales. Las personas con este tipo de dislexia es frecuente que tengan dificultad para leer palabras cuya lectura y pronunciación no se correspondan. También comenten errores en las palabras complejas o largas y leen mejor las palabras regulares que las irregulares, tienen confusión de homófonos porque el acceso al léxico está guiado por el sonido y no por la ortografía de la palabra, suelen tener errores de omisión, adición o sustitución de letras. La dislexia superficial consiste en un mal funcionamiento de la ruta visual léxica o directa, o sea que el alumno no tiene problemas de lectura de palabras regulares, ya que no tiene una alteración de grafemas y fonemas, pero sí a la hora de leer palabras irregulares, donde se verá que comete omisiones, adiciones de letras o sustituciones de palabras". Citado de la tesis Esmeralda.
                 </p>
               </div>

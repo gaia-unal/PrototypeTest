@@ -8,7 +8,7 @@ var idSeleccion = null;
 
 // Put the correct option number here
 // The correct option for grading
-var idOpcionCorrecta = "opcion" + "4";
+var idOpcionCorrecta = "opcion" + "3";
 
 // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";

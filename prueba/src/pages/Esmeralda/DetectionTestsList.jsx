@@ -15,7 +15,7 @@ export const DetectionTestsList = ({ tests }) => {
               <Fragment key={item.id}>
                 <div className="d-flex align-items-center">
                   <NavLink to={item.route}>
-                    <img className="item-img" src={item.image} />
+                    <img className="item-img" src={item.image} alt="Imagen representativa de la Dislexia" />
                   </NavLink>
                 </div>
                 <div>
