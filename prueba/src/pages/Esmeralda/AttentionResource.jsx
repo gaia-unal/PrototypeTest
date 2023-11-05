@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 export const AttentionResource = ({ route }) => {
 
+  console.log("Rutita es ",route);
+
   const domain = "http://localhost:3000";
 
   var srcIframe = [];

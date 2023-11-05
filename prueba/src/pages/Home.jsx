@@ -1,7 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import '../styles/Home.css'
 import logoPrincipal from '../assets/logo-app.png'
-import logoEsmeralda from '../logo.png'
 import diamante from '../assets/1.png'
 import esmeralda from '../assets/2.png'
 import amatista from '../assets/3.png'
@@ -73,7 +72,7 @@ export const Home = () => {
         <div className='p-2 flex-grow-1'>
           {/* Dislexia */}
           <NavLink to="/esmeralda/inicio">
-            <img className='module-img' src={logoEsmeralda} alt="Imagen de una esmeralda" title="Herramienta Esmeralda" />
+            <img className='module-img' src={esmeralda} alt="Imagen de una esmeralda" title="Herramienta Esmeralda" />
           </NavLink>
         </div>
         <div className='p-2'>

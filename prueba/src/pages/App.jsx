@@ -24,7 +24,8 @@ export const App = () => {
 
           <Route path="inicio/superficial" element={<DyslexiaSuperficialHome></DyslexiaSuperficialHome>}></Route>
 
-          <Route path='inicio/demo' element={<Demo></Demo>}></Route>
+          <Route path='inicio/demo' element={<Demo route='/Activities/Demo'/>}></Route>
+
 
           {/* Detection Tests */}
 
@@ -117,6 +118,7 @@ export const App = () => {
             }>
           </Route>
         </Route>
+
 
         <Route path='/amatista' element={<HomeAmatista></HomeAmatista>}></Route>
 

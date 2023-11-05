@@ -7,14 +7,19 @@
 }
 
 .container-module-description {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 20% 80%;
     align-content: center;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-align: justify;
 }
 
+.textoEsmeralda {
+    font-size: 130%;
+}
+
+
 .img-logo {
-    width: 50%;
+    width: 60%;
 }

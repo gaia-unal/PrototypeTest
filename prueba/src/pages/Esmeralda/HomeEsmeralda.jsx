@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import '../../styles/HomeEsmeralda.css'
 import coverPhonological from '../../assets/ImagenDislexiaFonológica.png'
 import coverSuperficial from '../../assets/ImagenDislexiaVisual.png'
-import esmeralda from '../../assets/2.png'
+import logoEsmeralda from '../../logo.png'
 
 export const HomeEsmeralda = () => {
   return (
@@ -13,13 +13,16 @@ export const HomeEsmeralda = () => {
         </div>
       </NavLink>
 
+
       <div className='container w-75 container-module-description'>
-        <img src={esmeralda} alt="Logo de Esmeralda" className='img-logo' />
-        <h4 className='text-center'>Apoyo al docente a realizar una identificación temprana de la Dislexia en el aula de clase</h4>
+        <img src={logoEsmeralda} alt="Logo de Esmeralda" className='img-logo' />
+        <h4 className='textoEsmeralda'>Esmeralda es el apoyo al docente para realizar una identificación temprana de la Dislexia en el aula de clase y provee las herramientas digitales para el proceso de atención inicial de esta dificultad específica de aprendizaje. A continuación recursos educativos digitales para Dislexia Fonológica y para Dislexia Visual.</h4>
       </div>
 
       <NavLink to='demo'>
-        <button>Demo</button>
+        <div className="text-center">
+          <button type="button" className="btn btn-primary" title="Click aquí para probar los recursos educativos digitales">¡Prueba los recursos!</button>
+        </div>
       </NavLink>
 
       <div className='container mt-5 mb-2'>
@@ -27,7 +30,7 @@ export const HomeEsmeralda = () => {
           <div className='col d-flex justify-content-center'>
             <div className='card'>
               <NavLink to="fonologica">
-                <img src={coverPhonological} className='card-img-top' alt='Imagen de Dislexia Fonológica' title="Imagen de Dislexia Fonológica" />
+                <img src={coverPhonological} className='card-img-top' alt='Imagen de Dislexia Fonológica' title="Da click para ir a los recursos de Dislexia Fonológica" />
               </NavLink>
               <div className='card-body'>
                 <p className='card-text text-center'>
@@ -39,7 +42,7 @@ export const HomeEsmeralda = () => {
           <div className='col d-flex justify-content-center'>
             <div className='card'>
               <NavLink to="superficial">
-                <img src={coverSuperficial} className='card-img-top' alt='Imagen de Dislexia Superficial' title="Imagen de Dislexia Superficial" />
+                <img src={coverSuperficial} className='card-img-top' alt='Imagen de Dislexia Superficial' title="Da click para ir a los recursos de Dislexia Superficial o Visual" />
               </NavLink>
               <div className='card-body'>
                 <p className='card-text text-center'>
