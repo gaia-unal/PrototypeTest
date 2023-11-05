@@ -19,7 +19,7 @@ export const HomeAmatista = () => {
 
       <div className="text-center">
         <img src={construccion} alt="Página en construcción" />
-        <h1 style={{ color: 'blue' }}>SITIO WEB EN CONSTRUCCIÓN</h1>
+        <h1 style={{ color: 'black' }}>SITIO WEB EN CONSTRUCCIÓN</h1>
       </div>
 
       <Footer />
