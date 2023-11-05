@@ -6,6 +6,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.js'
 import reportWebVitals from './reportWebVitals';
 import { App } from './pages/App';
 import { BrowserRouter } from 'react-router-dom'
+import Modal from 'react-modal';
+
+// root element of the application (App element) so that the screen reader knows what the main content of the application is when the modal is opened.
+Modal.setAppElement('#root'); // Asegúrate de que '#root' coincida con el ID de tu elemento raíz
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +19,7 @@ root.render(
     </React.StrictMode>
   </BrowserRouter>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
