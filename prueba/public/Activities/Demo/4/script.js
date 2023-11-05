@@ -2,7 +2,7 @@
 var puntaje = 0.01;
 
 // Add the IDs of the correct options as an array
-var opcionesCorrectas = ["opcion1", "opcion4", "opcion6"];
+var opcionesCorrectas = ["opcion1", "opcion3", "opcion8"];
 
 // Variables to store the values of correct and incorrect options
 var valorBueno = 1 / opcionesCorrectas.length;
@@ -17,12 +17,27 @@ var idSeleccion = null;
 // Border to set limits in the activity
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
-// Continue button
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 1;
+var audio2Modal = 2;
+
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Send a message to the React component in the parent
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 
@@ -194,7 +209,7 @@ function procesarPuntaje() {
 		}
 		ocultarContinuar();
 	} else {
-		console.log("El puntaje es: ", puntaje);
+		// console.log("El puntaje es: ", puntaje);
 		// Here, the score should be sent to be processed globally
 		// parent.enviarPuntaje(puntaje);
 	}
@@ -262,4 +277,27 @@ function calificar() {
 		puntaje = 0;
 	}
 	// console.log("El puntaje es: ", puntaje);
+}
+
+// Function to show the modal
+function mostrarModal() {
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! Esa es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
 }

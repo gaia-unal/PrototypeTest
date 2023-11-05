@@ -62,7 +62,6 @@ svg {
 	display: grid;
 	grid-template-columns: 10% 90%;
 	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
 }
 
 #icono-bocina {

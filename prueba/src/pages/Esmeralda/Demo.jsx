@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import ModalComponent from './ModalComponent';
+import '../../styles/Demo.css'
 import { NavLink, useNavigate } from "react-router-dom";
-import { BackButton } from "../../components/BackButton"
 
 export const Demo = ({ route }) => {
 
@@ -86,12 +86,19 @@ export const Demo = ({ route }) => {
 
   return (
     <>
-      <BackButton />
+      {/* Button to go back */}
+      <div className="positionButton">
+        <button className="btn btn-success button" onClick={() => navigate('/esmeralda/inicio')}>
+          Atrás
+        </button>
+      </div>
+
+
       <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
         <iframe
           src={srcIframe[actividadActual].ruta}
           frameBorder="0"
-          style={{ width: '80%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
+          style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
           ref={iframeRef}
           title="Actividad"
           scrolling='no'
@@ -105,7 +112,7 @@ export const Demo = ({ route }) => {
           <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
             <div style={{ padding: '20px' }}>
               <div>
-                <p className="message">¡Felicitaciones! Ya terminaste</p>
+                <p className="message">¡Estás listo(a) para explorar y resolver nuestros recursos!</p>
                 <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
                   Volver al inicio
                 </button>
@@ -114,9 +121,6 @@ export const Demo = ({ route }) => {
           </ModalComponent>
         ) : null}
       </div>
-
-
-      <h1>Demo</h1>
     </>
   )
 }

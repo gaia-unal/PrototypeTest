@@ -5,7 +5,7 @@ var puntaje = 0.01;
 // In this type of activity, all options must be selected, so the continue
 // button won't appear until all options listed in the following array 
 // have been selected.
-var opcionesCorrectasEnOrden = ["opcion1", "opcion2", "opcion3", "opcion4"];
+var opcionesCorrectasEnOrden = ["opcion2", "opcion4", "opcion1", "opcion3"];
 
 // Variables to store the values of good and bad options
 var valorBueno = 1 / opcionesCorrectasEnOrden.length;
@@ -17,15 +17,30 @@ var seleccionadas = Array();
 // Variable to store the ID of the just-selected option
 var idSeleccion = null;
 
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 7;
+var audio2Modal = 8;
+
 // Border to set limits in the activity
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
 
-// Continue Button
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Send a message to the React component in the parent
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 // Accessibility functions
@@ -319,4 +334,28 @@ function calificar() {
 			Correcto();
 		}
 	}
+}
+
+// Function to show the modal
+function mostrarModal() {
+	console.log("Llegamos aquí");
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! Esa es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
 }

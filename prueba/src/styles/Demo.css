@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(226, 253, 236);
+}
+
+.positionButton {
+    background-color: #e0deeb;
+    display: flex;
+    justify-content: flex-end; /* Alineación hacia la derecha */
+    align-items: center; /* Alineación vertical (centrada) */
+    flex-grow: 1; /* Toma el espacio restante en la dirección principal (horizontal en este caso) */
+  }
+
+.button {
+    margin-right: 5%;
+}
+  

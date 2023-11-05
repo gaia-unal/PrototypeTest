@@ -3,16 +3,29 @@
 var puntaje = null;
 
 // Here goes the correct answer value
-var respuestaCorrectaDelInput1 = 'luna';
-var respuestaCorrectaDelInput2 = 'lunita';
-var respuestaCorrectaDelInput3 = 'la luna';
+var respuestaCorrectaDelInput = 2;
 
-// Here, the actions of the 'continuar' button are defined
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 4;
+var audio2Modal = 5;
+
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Send a message to the React parent component
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 // Accessibility functions
@@ -21,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font
 
 	// Name of the activity's image
-	const imageName = "imagenLuna";
+	const imageName = "imagenMano";
 
 	// Obtain the elements to which the font must be changed
 	const changeFontButton = document.getElementById("changeFont");
@@ -65,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font-size
 
 	let initialFontSize = 2; // Initial font size that text elements have in the activity
-	let initialWidth = 20; // Initial width of answer options
+	let initialWidth = 30; // Initial width of answer options
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
@@ -81,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			spans[i].style.fontSize = initialFontSize + 'vw';
 		}
 
-		// Images
+		// Image
 		document.getElementById("imagen1").style.width = initialWidth + '%';
 
 		changeHeight();
@@ -94,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	decreaseFontButton.addEventListener("click", () => {
 		if (initialFontSize > 2) {
 			initialFontSize -= 0.1; // Decrease font size of text elements
-			initialWidth -= 4.4; // Decrease size of images (answer options)
+			initialWidth -= 1.1; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -108,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	increaseFontButton.addEventListener("click", () => {
 		if (initialFontSize < 3.8) {
 			initialFontSize += 0.1;
-			initialWidth += 4.4;
+			initialWidth += 1.1;
 
 			// The font size of all text elements and images is decreased
 			changeFontSize(initialFontSize, initialWidth);
@@ -144,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			changeHeight();
 		}
 	});
-
 });
 
 // Only part of the container
@@ -166,15 +178,15 @@ function mostrarContinuar() {
 	changeHeight();
 }
 
-// Function to hide the 'continuar' button
+// Función para ocultar el botón continuar
 function ocultarContinuar() {
 	document.getElementById('continuar').style.display = "none";
 }
 
-// Function to process the activity's score
+// Function to hide the 'continuar' button
 function procesarPuntaje() {
 	// console.log("Puntaje de la actividad: ", puntaje);
-	if (puntaje == null) {
+	if (puntaje == null || isNaN(puntaje)) {
 		var texto = 'Por favor completa la actividad';
 		if (typeof parent.mostrarAlerta === "function") {
 			parent.mostrarAlerta(texto);
@@ -222,6 +234,7 @@ function sonido(id) {
 	audio.play();
 }
 
+
 var input = document.getElementById('respuesta');
 input.addEventListener('input', function (e) {
 	calificar(this.value);
@@ -229,14 +242,12 @@ input.addEventListener('input', function (e) {
 
 // Grading function
 function calificar(valor) {
-	// Change the answer of the user to lower letters
-	valor = valor.toLowerCase()
-	if (!valor) {
+	if (!valor || isNaN(valor)) {
 		ocultarContinuar();
 		return false;
 	}
 
-	if (valor == respuestaCorrectaDelInput1 || valor == respuestaCorrectaDelInput2 || valor == respuestaCorrectaDelInput3) {
+	if (valor == respuestaCorrectaDelInput) {
 		Correcto();
 		// console.log('puntaje = 1')
 	} else {
@@ -244,3 +255,30 @@ function calificar(valor) {
 		// console.log('puntaje = 0')
 	}
 }
+
+
+// Function to show the modal
+function mostrarModal() {
+	console.log("Llegamos aquí");
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! 2 es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
+}
+
+
