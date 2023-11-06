@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: ${COMPOSE_PROJECT_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    networks:
+      - gaia
+networks:
+  backend:
+    name: ${COMPOSE_PROJECT_NAME}_backend
+  gaia:
+    name: gaia
+    external: true
