@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export const AttentionResource = ({ route }) => {
 
-  const domain = "http://localhost:3000";
+  const domain = "https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo";
 
   var srcIframe = useMemo(() => [ //srcIframe is memoized using useMemo and will depend only on the route property. This will prevent a new instance of the array from being created on each rendering, which should resolve the warning.
   ], []);

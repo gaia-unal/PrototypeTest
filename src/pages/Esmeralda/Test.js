@@ -20,7 +20,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
 
 
-  const domain = "http://localhost:3000";
+  const domain = "https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo";
 
   var srcIframe = useMemo(() => [], []);
 

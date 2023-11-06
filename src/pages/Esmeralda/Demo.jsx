@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Demo = ({ route }) => {
 
 
-  const domain = "http://localhost:3000";
+  const domain = "https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo";
 
   var srcIframe = useMemo(() => [ //srcIframe is memoized using useMemo and will depend only on the route property. This will prevent a new instance of the array from being created on each rendering, which should resolve the warning.
     { ruta: domain + route + "/1/indice.html" },
@@ -100,7 +100,8 @@ export const Demo = ({ route }) => {
           ref={iframeRef}
           title="Actividad"
           scrolling='no'
-          onLoad={handleIframeLoad}></iframe>
+          onLoad={handleIframeLoad}
+          sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
       </div>
 
       {/* Modal */}
