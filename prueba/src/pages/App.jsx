@@ -50,8 +50,8 @@ export const App = () => {
               nameActivityC2_3="Seleccionar en orden alfabético un conjunto de letras dado"
               nameActivityC2_4="Digitar la palabra que corresponde a la tarjeta dada del alfabeto"
               nameActivityC2_5="Formar palabras a partir de un conjunto de letras dado"
-              nameActivityC2_6=""
-              nameActivityC2_7=""
+              nameActivityC2_6="Seleccionar el audio que corresponde al sonido de una letra dada"
+              nameActivityC2_7="Digitar la palabra que corresponde a la tarjeta dada del alfabeto"
             />
           } />
 
@@ -66,8 +66,8 @@ export const App = () => {
               nameActivityC1_3="Seleccionar todos los elementos que se encuentren hacia la izquierda, o hacia la derecha"
               nameActivityC1_4="Seleccionar todos los elementos de un color específico"
               nameActivityC1_5="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
-              nameActivityC1_6=""
-              nameActivityC1_7=""
+              nameActivityC1_6="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
+              nameActivityC1_7="Seleccionar todas las instancias de una letra, símbolo o número (se usan letras, símbolos o números con los que se suele tener mayores confusiones, como b-d, p-q, m-n, m-w, entre otros)."
 
               competence2="/Orthography"
               nameActivityC2_1="Seleccionar la forma correcta de cómo se escribe una palabra representada en una imagen"

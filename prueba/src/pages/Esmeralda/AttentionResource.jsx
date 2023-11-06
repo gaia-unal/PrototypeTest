@@ -134,7 +134,7 @@ export const AttentionResource = ({ route }) => {
         <iframe
           src={srcIframe[actividadActual].ruta}
           frameBorder="0"
-          style={{ width: '80%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
+          style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
           ref={iframeRef}
           title="Actividad"
           scrolling='no'

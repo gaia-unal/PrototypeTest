@@ -6,8 +6,8 @@ const customStyles = {
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semitransparente oscuro
   },
   content: {
-    width: '50%', // Ancho personalizado
-    height: '30%',
+    width: '60%', // Ancho personalizado
+    height: '40%',
     margin: 'auto',
     border: '2px solid black', // Borde negro
     borderRadius: '8px', // Bordes redondeados

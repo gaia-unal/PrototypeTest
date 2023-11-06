@@ -11,7 +11,7 @@ import greenHeart from '../../assets/greenHeart.png';
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'column',
-        padding: 20,
+        padding: 35,
     },
     title: {
         fontSize: 20,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     image: {
-        width: 370, // Ancho de la imagen
+        width: 350, // Ancho de la imagen
         height: 'auto', // Alto de la imagen
         display: 'flex',
         marginLeft: 'auto',
@@ -211,22 +211,39 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
                 <Image style={styles.footer} src={footPDF} alt="Pie del PDF" />
             </Page>
 
+            {/* Se configuró de forma manual para que solo salgan las primeras 12 actividades en esta página */}
             <Page>
-
                 {/* Encabezado del pdf */}
                 <Image style={styles.header} src={headerPDF} alt="Encabezado del PDF" />
 
                 <View style={styles.information}>
                     <Text style={styles.subtitle}>{"\n"}{"\n"}Información por actividades</Text>
-                    <View style={{ columnCount: 2 }}>
-                        {resultados.map((resultado, index) => (
-                            <View key={index} style={styles.content}>
-                                <Text>Actividad {index + 1}: {resultado.nameActivity}</Text>
-                                <Text>Puntaje: {resultado.score}</Text>
-                                <Text>Tiempo: {resultado.time} segundos</Text>
-                            </View>
-                        ))}
-                    </View>
+                    {resultados.slice(0, 9).map((resultado, index) => (
+                        <View key={index} style={styles.content}>
+                            <Text>Actividad {index + 1}: {resultado.nameActivity}</Text>
+                            <Text>Puntaje: {resultado.score}</Text>
+                            <Text>Tiempo: {resultado.time} segundos</Text>
+                        </View>
+                    ))}
+                </View>
+                {/* Pie del pdf */}
+                <Image style={styles.footer} src={footPDF} alt="Pie del PDF" />
+            </Page>
+
+            {/* Aquí salen las actividades de la 10 a la 14. En caso de agregar más actividades, deben ajustarse de forma manual */}
+            <Page>
+                {/* Encabezado del pdf */}
+                <Image style={styles.header} src={headerPDF} alt="Encabezado del PDF" />
+
+                <View style={styles.information}>
+                    <Text style={styles.subtitle}>{"\n"}{"\n"}Información por actividades</Text>
+                    {resultados.slice(10, 14).map((resultado, index) => (
+                        <View key={index} style={styles.content}>
+                            <Text>Actividad {index + 10}: {resultado.nameActivity}</Text>
+                            <Text>Puntaje: {resultado.score}</Text>
+                            <Text>Tiempo: {resultado.time} segundos</Text>
+                        </View>
+                    ))}
                 </View>
                 {/* Pie del pdf */}
                 <Image style={styles.footer} src={footPDF} alt="Pie del PDF" />
