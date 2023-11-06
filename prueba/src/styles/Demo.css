@@ -1,6 +1,4 @@
-body {
-    background-color: rgb(226, 253, 236);
-}
+
 
 .positionButton {
     background-color: #e0deeb;
@@ -12,5 +10,18 @@ body {
 
 .button {
     margin-right: 5%;
+}
+
+.textoVideo {
+    font-size: 1.5vw;
+    text-align: center;
+    background-color: #e8dcec;
+}
+
+.video1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8dcec;
 }
   

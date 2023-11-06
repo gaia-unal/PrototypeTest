@@ -24,3 +24,15 @@
 .img-logo {
     width: 60%;
 }
+
+.textoVideo {
+    margin-left: 5%;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.video1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
