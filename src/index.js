@@ -13,7 +13,7 @@ Modal.setAppElement('#root'); // Asegúrate de que '#root' coincida con el ID de
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename='/PiedrasPreciosasPrototipo'>
     <React.StrictMode>
       <App />
     </React.StrictMode>
