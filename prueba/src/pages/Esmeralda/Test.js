@@ -99,6 +99,8 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     }
   };
 
+  const downloadButtonRef = useRef(null);
+
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
     // efecto secundario recibirMensajeDesdeIframe
@@ -167,6 +169,11 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
             if (actividadActual === srcIframe.length - 1) {
               // Si la actividad actual es la última en srcIframe, muestra el modal
               mostrarVentanaEmergente();
+
+              // Wait 3 seconds to automatically download the report
+              setTimeout(() => {
+                downloadButtonRef.current.click();
+              }, 3000);
             }
           }
         }
@@ -259,7 +266,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                     {({ blob, url, loading, error }) => (
                       <div>
                         <p className="message">¡Felicitaciones! Terminaste la prueba</p>
-                        <button className="descargar-button">
+                        <button ref={downloadButtonRef} className="descargar-button">
                           {loading ? 'Cargando documento...' : 'Descargar reporte'}
                         </button>
                       </div>
