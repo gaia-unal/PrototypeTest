@@ -93,7 +93,7 @@ export const Demo = ({ route }) => {
 
       {/* ¿Video informativo para los estudiantes, ¿Te sientes identificado con la Dislexia? */}
       <div className='textoVideo'>
-        <p id="pregunta">Tutorial para usar los Recursos Educativos Digitales</p>
+        <p id="pregunta2">Tutorial para usar los Recursos Educativos Digitales</p>
       </div>
       <div className="videoContainer">
         <iframe
