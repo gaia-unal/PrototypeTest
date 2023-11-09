@@ -22,7 +22,7 @@ export const Referencias = ({ }) => {
             <div className="container">
                 <p>Todos los recursos educativos digitales de Esmeralda han sido creados, basados en el análisis conceptual obtenido del
                     modelo de detección temprana y atención inicial de la Dislexia en estudiantes de grado primero de la tesis de Esmeralda,
-                    disponible en este enlace: <a href="https://docs.google.com/document/d/1BiLHK6c428ldsah8p1fYs50dVRY0Y2ZU/edit?usp=sharing&ouid=109829456139648107631&rtpof=true&sd=true">Tesis Esmeralda</a>. 
+                    disponible en este enlace: <a href="https://docs.google.com/document/d/1BiLHK6c428ldsah8p1fYs50dVRY0Y2ZU/edit?usp=sharing&ouid=109829456139648107631&rtpof=true&sd=true" target="blank__">Tesis Esmeralda</a>. 
                     Las actividades, habilidades y categorías evaluadas y exploradas en el marco de este trabjo, se muestran a continuación: </p>
                     <div className="contenedor">
                         <strong><p>1. Tabla 1 - Conciencia Fonológica</p></strong>
