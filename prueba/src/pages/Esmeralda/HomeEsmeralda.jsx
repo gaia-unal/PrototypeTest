@@ -16,12 +16,12 @@ export const HomeEsmeralda = () => {
 
       <div className='container w-75 container-module-description'>
         <img src={logoEsmeralda} alt="Logo de Esmeralda" className='img-logo' />
-        <h4 className='textoEsmeralda'>Esmeralda es el apoyo al docente para realizar una identificación temprana de la Dislexia en el aula de clase y provee las herramientas digitales para el proceso de atención inicial de esta dificultad específica de aprendizaje. A continuación recursos educativos digitales para Dislexia Fonológica y para Dislexia Visual.</h4>
+        <h4 className='textoEsmeralda'>Esmeralda es el apoyo al docente para realizar una identificación temprana de la Dislexia en el aula de clase y provee las herramientas digitales para el proceso de atención inicial de esta dificultad específica de aprendizaje. A continuación recursos educativos digitales para Dislexia Fonológica y para Dislexia Visual 💚.</h4>
       </div>
 
       <NavLink to='demo'>
         <div className="text-center">
-          <button type="button" className="btn btn-primary" title="Click aquí para probar los recursos educativos digitales">¡Prueba los recursos!</button>
+          <button type="button" className="btn btn-primary" title="Click aquí para probar los recursos educativos digitales">¡Prueba los recursos! 🤍</button>
         </div>
       </NavLink>
 
@@ -40,7 +40,7 @@ export const HomeEsmeralda = () => {
                   para conectar los sonidos del habla con las letras que representan esos sonidos en palabras escritas, hacen una lectura visual de la palabra,
                   es decir, observa la palabra de manera global, deduciendo (más que leyendo) las palabras conocidas, tienen problemas con la comprensión de lectura,
                   les resulta imposible leer palabras que desconocen. Todo esto puede dificultar la lectura, en lugar de leer palabras de manera fluida,
-                  a menudo tienen que leerlas letra por letra o sílaba por sílaba (Álvarez Palacio, 2015) - Tesis Esmeralda.
+                  a menudo tienen que leerlas letra por letra o sílaba por sílaba (Álvarez Palacio, 2015) - Tesis Esmeralda 💙.
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export const HomeEsmeralda = () => {
                   suelen tener errores de omisión, adición o sustitución de letras. La dislexia superficial
                   consiste en un mal funcionamiento de la ruta visual léxica o directa, o sea que el alumno tiene problemas
                   a la hora de leer palabras irregulares, donde se verá que comete omisiones, adiciones
-                  de letras o sustituciones de palabras (Álvarez Palacio, 2015) - Tesis Esmeralda.
+                  de letras o sustituciones de palabras (Álvarez Palacio, 2015) - Tesis Esmeralda 💙.
                 </p>
               </div>
             </div>
