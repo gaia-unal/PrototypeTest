@@ -70,12 +70,24 @@ export const HomeEsmeralda = () => {
       </div>
 
       {/* ¿Video informativo para los estudiantes, ¿Te sientes identificado con la Dislexia? */}
-      {/* <div className="textoVideo"><br />
-        <h4>¿Qué es la Dislexia? ¿Te sientes identificado(a)?</h4>
-        <div className="video1">
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/QJEXEIaOE4k" title="Paula Andrea Taborda Montes-Activador Creativo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      <div className='textoVideo'>
+        <p id="pregunta">¿Qué es la Dislexia?</p>
+      </div>
+      <div className="videoContainer">
+        <iframe
+          className='video'
+          src="https://www.youtube.com/embed/qtBoqtqwaYM"
+          title="Video de YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
+
+      {/* Botón de referencias */}
+      <NavLink to='referencias'>
+        <div className="text-center botonReferencias">
+          <button type="button" className="btn btn-primary" title="Click aquí para ver las referencias del aplicativo">Referencias</button>
         </div>
-      </div> */}
+      </NavLink>
     </>
   )
 }
