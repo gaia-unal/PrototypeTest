@@ -63,7 +63,7 @@ export const GeneralDataInput = ({ saveData }) => {
             className='btn btn-success'
             disabled={userName === "" || dateOfBirth === "" || dateOfBirth <= 0 || dateOfBirth > 20}
           >
-            Iniciar Prueba
+            Iniciar Prueba ❤️
           </button>
         </div>
       </div>
