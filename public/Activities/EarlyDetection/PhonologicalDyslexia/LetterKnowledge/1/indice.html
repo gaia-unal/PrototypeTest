@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--
+	Change the * for the proficiency that the activity assesses, and the # for the grade level
+	For example, if it is a phonological awareness activity for grade 1, write Phonological Activity Gr 1
+	-->
+	<title>***** Activity Gr #</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<!-- Bootstrap CSS file -->
+	<link rel="stylesheet" href="https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/public/Bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body>
+	<div class="contenedor">
+
+		<!-- Accessibility panel -->
+		<h6>
+			<button id="accessibilityButton" class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+				data-bs-target=".multi-collapse" aria-expanded="false"
+				aria-controls="multiCollapseExample1 multiCollapseExample2"
+				onClick="changeHeight(340)">
+				Panel de Accesibilidad
+			</button>
+		</h6>
+		<div class="row">
+			<div class="col">
+				<div class="collapse multi-collapse" id="multiCollapseExample1">
+					<!-- Button to change the font -->
+					<button type="button" class="btn btn-outline-dark" id="changeFont">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-font-fill"
+							viewBox="0 0 16 16">
+							<path
+								d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.057 4h5.886L11 6h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v6.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V4.755l-.293.01C5.856 4.808 5.68 4.905 5.5 6H5l.057-2z" />
+						</svg>
+						Cambiar fuente
+					</button>
+				</div>
+			</div>
+			<div class="col">
+				<div class="collapse multi-collapse" id="multiCollapseExample2">
+					<!-- Buttons to change the font size -->
+					<span>Tamaño de letra</span>
+					<div>
+						<button type="button" class="btn btn-outline-dark font-controls" id="decreaseFontSize">
+							<span>A<sup>-</sup></span>
+						</button>
+						<button type="button" class="btn btn-outline-dark font-controls" id="increaseFontSize" onClick="changeHeight()">
+							<span>A<sup>+</sup></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="collapse multi-collapse" id="multiCollapseExample3">
+					<!-- Buttons to change the line spacing -->
+					<span>Interlineado</span>
+					<div>
+						<button type="button" class="btn btn-outline-dark line-spacing" id="decreaseLineSpacing">
+							<span><b>-</b></span>
+						</button>
+						<button type="button" class="btn btn-outline-dark line-spacing" id="increaseLineSpacing">
+							<span><b>+</b></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Megaphone icon and activity instruction -->
+		<div class="instruccion">
+			<div>
+				<a href="#" onclick="sonido(0)"><img src="bocina.png" alt="Ícono de bocina" id="icono-bocina"
+						title="¡Da clic para escuchar!"></a>
+				<audio id="audio0" class="audio-element" controls hidden="true">
+					<source src="audio0.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+
+			<!-- Activity instruction -->
+			<a href="#" onclick="sonido(0)" style="text-decoration:none; outline:none;">
+				<h2 id="texto" title="¡Da clic para escuchar!">Selecciona en orden las letras para que formes la
+					palabra:
+				</h2>
+			</a>
+		</div>
+
+		<!-- Activity image -->
+		<div>
+			<a class="contenedorImagen" onclick="sonido(5)"><img src="imagenGato.png" alt="Imagen de un gato"
+					id="imagen1" title="Escucha aquí la palabra"></a>
+			<audio id="audio5" controls hidden="true">
+				<source src="audio5.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+
+		<!-- Activity options -->
+
+		<div class="opciones-respuesta">
+			<!-- Put here the selection options -->
+			<div id="opcion3">
+				<a onclick="seleccionar(3)" class="opciones" id="3"><img src="opcion3-Open-Dyslexic.png"
+						id="imageOption0" height="32" alt="Letra T" title="Clic para escuchar"></a>
+				<audio id="audio3" class="audio-element" controls hidden="true">
+					<source src="audio3.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion2">
+				<a onclick="seleccionar(2)" class="opciones" id="2"><img src="opcion2-Open-Dyslexic.png"
+						id="imageOption1" height="32" alt="Letra A" title="Clic para escuchar"></a>
+				<audio id="audio2" class="audio-element" controls hidden="true">
+					<source src="audio2.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion1">
+				<a onclick="seleccionar(1)" class="opciones" id="1"><img src="opcion1-Open-Dyslexic.png"
+						id="imageOption2" height="32" alt="Letra G" title="Clic para escuchar"></a>
+				<audio id="audio1" class="audio-element" controls hidden="true">
+					<source src="audio1.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+			<div id="opcion4">
+				<a onclick="seleccionar(4)" class="opciones" id="4"><img src="opcion4-Open-Dyslexic.png"
+						id="imageOption3" height="32" alt="Letra O" title="Clic para escuchar"></a>
+				<audio id="audio4" class="audio-element" controls hidden="true">
+					<source src="audio4.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+
+			<!-- Put here as many containers as options -->
+			<div id="contenedorNumeracionOpcion3" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion3" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion2" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion2" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion1" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion1" style="visibility: hidden;">X</p>
+			</div>
+			<div id="contenedorNumeracionOpcion4" class="contenedorNumeracion" style="visibility: hidden;">
+				<p id="numeracionOpcion4" style="visibility: hidden;">X</p>
+			</div>
+		</div>
+
+		<!-- Here is the continue button -->
+		<div id="continuar">
+			<button id="btn-continuar" title="Clic para continuar">Continuar</button>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="script.js"></script>
+	<!-- Bootstrap JS file -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

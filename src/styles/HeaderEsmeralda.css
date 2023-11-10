@@ -1,0 +1,29 @@
+.header-container {
+    background-color: #1cac75;
+}
+
+@font-face {
+	font-family: 'Open-Dyslexic';
+	/* When we upload this at the server, it's necessary to change the domain 'http://localhost:3000' */
+	src: url('https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/fonts/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+.nombreEsmeralda {
+    font-family: 'Open-Dyslexic', Arial;
+    font-size: 3vw;
+    color: white;
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    text-decoration: none;
+    margin-left: 10%;
+
+}
+
+.contenedorLogoNombre {
+    align-items: center;
+}
+
+.nombreEsmeralda:hover,
+.nombreEsmeralda:active, /* Estilo cuando está activo (haciendo clic) */
+.nombreEsmeralda:focus {
+    color: white;
+}
