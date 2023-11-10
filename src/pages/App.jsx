@@ -7,7 +7,6 @@ import { DyslexiaPhonologicalHome } from './Esmeralda/DyslexiaPhonologicalHome';
 import { DyslexiaSuperficialHome } from './Esmeralda/DyslexiaSuperficialHome';
 import { AttentionResource } from './Esmeralda/AttentionResource';
 import { Demo } from './Esmeralda/Demo';
-import { Referencias } from './Esmeralda/Referencias';
 import { HomeAmatista } from './Amatista/HomeAmatista';
 
 export const App = () => {
@@ -26,8 +25,6 @@ export const App = () => {
           <Route path="inicio/superficial" element={<DyslexiaSuperficialHome></DyslexiaSuperficialHome>}></Route>
 
           <Route path='inicio/demo' element={<Demo route='/Activities/Demo'/>}></Route>
-
-          <Route path="inicio/referencias" element={<Referencias></Referencias>}></Route>
 
 
           {/* Detection Tests */}

@@ -149,7 +149,7 @@ export const AttentionResource = ({ route }) => {
             <div style={{ padding: '20px' }}>
               <div>
                 <p className="message">¡Felicitaciones! Ya terminaste</p>
-                <button className="descargar-button" onClick={() => navigate(-(srcIframe.length + 1))}>
+                <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
                   Volver al inicio
                 </button>
               </div>

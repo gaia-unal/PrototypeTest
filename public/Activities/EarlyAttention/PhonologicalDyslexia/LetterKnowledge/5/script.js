@@ -85,15 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
 		// Text elements
-		changeFontButton.style.fontSize = initialFontSize + 'rem';
-		textElement.style.fontSize = initialFontSize + 'rem';
-		answerElement.style.fontSize = initialFontSize + 'rem';
-		boton.style.fontSize = initialFontSize + 'rem';
-		accessibility.style.fontSize = initialFontSize + 'rem';
+		changeFontButton.style.fontSize = initialFontSize + 'vw';
+		textElement.style.fontSize = initialFontSize + 'vw';
+		answerElement.style.fontSize = initialFontSize + 'vw';
+		boton.style.fontSize = initialFontSize + 'vw';
+		accessibility.style.fontSize = initialFontSize + 'vw';
 
 		// Don't change
 		for (let i = 0; i < spans.length; i++) {
-			spans[i].style.fontSize = initialFontSize + 'rem';
+			spans[i].style.fontSize = initialFontSize + 'vw';
 		}
 
 		// Images
