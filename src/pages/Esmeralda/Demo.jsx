@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import ModalComponent from './ModalComponent';
-import '../../styles/Demo.css'
+import '../../styles/Demo.css';
 import { useNavigate } from "react-router-dom";
 
 export const Demo = ({ route }) => {
@@ -89,6 +89,19 @@ export const Demo = ({ route }) => {
         <button className="btn btn-success button" onClick={() => navigate('/esmeralda/inicio')}>
           Atrás
         </button>
+      </div>
+
+      {/* ¿Video informativo para los estudiantes, ¿Te sientes identificado con la Dislexia? */}
+      <div className='textoVideo'>
+        <p id="pregunta2">Tutorial para usar los Recursos Educativos Digitales</p>
+      </div>
+      <div className="videoContainer">
+        <iframe
+          className='video'
+          src="https://www.youtube.com/embed/OOd8q7jfvG0"
+          title="Video de YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
       </div>
 
 

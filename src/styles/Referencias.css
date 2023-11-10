@@ -1,0 +1,24 @@
+.positionButton2 {
+  background-color: rgb(226, 253, 236);
+  display: flex;
+  justify-content: flex-end;
+  /* Alineación hacia la derecha */
+  align-items: center;
+  /* Alineación vertical (centrada) */
+  flex-grow: 1;
+  /* Toma el espacio restante en la dirección principal (horizontal en este caso) */
+}
+
+
+.contenedor {
+  text-align: center;
+  /* Centrar el contenido horizontalmente */
+  margin-top: 3%;
+}
+
+.contenedor img {
+  display: block;
+  /* Hacer que la imagen sea un bloque */
+  margin: 0 auto;
+  /* Centrar la imagen horizontalmente */
+}

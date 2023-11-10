@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     image: {
-        width: 350, // Ancho de la imagen
+        width: 300, // Ancho de la imagen
         height: 'auto', // Alto de la imagen
         display: 'flex',
         marginLeft: 'auto',
