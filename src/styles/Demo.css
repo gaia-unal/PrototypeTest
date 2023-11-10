@@ -1,30 +1,27 @@
 
 
 .positionButton {
+    background-color: #e0deeb;
     display: flex;
     justify-content: flex-end; /* Alineación hacia la derecha */
     align-items: center; /* Alineación vertical (centrada) */
     flex-grow: 1; /* Toma el espacio restante en la dirección principal (horizontal en este caso) */
-}
+  }
 
 .button {
     margin-right: 5%;
 }
 
-#pregunta2 {
-    font-size: 150%;
-    font-weight: bold;
-    text-align: center;
-}
-
 .textoVideo {
-    font-size: 130%;
+    font-size: 1.5vw;
     text-align: center;
+    background-color: #e8dcec;
 }
 
 .video1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #e8dcec;
 }
-
+  

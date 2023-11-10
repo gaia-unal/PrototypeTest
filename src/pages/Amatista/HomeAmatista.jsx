@@ -12,11 +12,11 @@ export const HomeAmatista = () => {
         </div>
       </NavLink>
 
-      <div className="text-center">
-        <img src={amatista} alt="Logo de Amatista" style={{ width: "25%" }} />
+      <div className='container w-75 container-module-description'>
+        <img src={amatista} alt="Logo de Amatista" className='img-logo' />
+        <h4 className='text-center'>Apoyo al docente a realizar una identificación temprana de la Disgrafía en el aula de clase</h4>
       </div>
-      <h4 className='text-center'>Apoyo al docente a realizar una identificación temprana de la Disgrafía en el aula de clase</h4>
-      
+
       <div className="text-center">
         <img src={construccion} alt="Página en construcción" />
         <h1 style={{ color: 'black' }}>SITIO WEB EN CONSTRUCCIÓN</h1>

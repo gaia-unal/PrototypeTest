@@ -68,38 +68,6 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   // The states where the student's general data is saved are defined here:
 
   const [isDataEntered, setIsDataEntered] = useState(false); // To know if the data has already been entered and the test can be shown
-  const [shuffledIframe, setShuffledIframe] = useState([]);
-
-  // Utilidad para desordenar un array utilizando el algoritmo de Fisher-Yates
-  // Función para desordenar un array de forma aleatoria
-  function desordenarArray(array) {
-  const newArray = [...array];
-  const desordenado = [];
-
-  while (newArray.length > 0) {
-    const randomIndex = Math.floor(Math.random() * newArray.length);
-    const elementoSeleccionado = newArray.splice(randomIndex, 1)[0];
-    desordenado.push(elementoSeleccionado);
-  }
-
-  return desordenado;
-}
-
-
-
-  // The general data entered by the student is saved
-  const saveData = (name, age) => {
-    setNameStudent(name)
-    setAge(age)
-    setIsDataEntered(true)
-    const newShuffledIframe = desordenarArray(srcIframe);
-    setShuffledIframe(newShuffledIframe);
-
-    console.log("El desordenado es ", newShuffledIframe);
-    console.log("El normal es ", srcIframe);
-
-  }
-
 
   const [nameStudent, setNameStudent] = useState("");
   const date = new Date();
@@ -131,8 +99,6 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     }
   };
 
-  const downloadButtonRef = useRef(null);
-
   useEffect(() => { // Se utiliza el hook useEffect
     // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
     // efecto secundario recibirMensajeDesdeIframe
@@ -154,8 +120,8 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
             const elapsedTime = (currentTime - startTime) / 1000; // Seconds
             // Information of each activity
             const activitieResult = {
-              nameActivity: shuffledIframe[actividadActual].nombre,
-              location: shuffledIframe[actividadActual].ruta,
+              nameActivity: srcIframe[actividadActual].nombre,
+              location: srcIframe[actividadActual].ruta,
               score: mensajeDesdeIframe,
               time: elapsedTime
             };
@@ -171,12 +137,12 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
             let cumulativeCompetence1Score = competence1Score;
             let cumulativeCompetence2Score = competence2Score;
 
-            if (shuffledIframe[actividadActual].ruta.includes("PhonologicalAwareness") || shuffledIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
+            if (srcIframe[actividadActual].ruta.includes("PhonologicalAwareness") || srcIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
               cumulativeCompetence1Score += mensajeDesdeIframe;
               setCompetence1Score(cumulativeCompetence1Score);
             }
             else {
-              if (shuffledIframe[actividadActual].ruta.includes("LetterKnowledge") || shuffledIframe[actividadActual].ruta.includes("Orthography")) {
+              if (srcIframe[actividadActual].ruta.includes("LetterKnowledge") || srcIframe[actividadActual].ruta.includes("Orthography")) {
                 cumulativeCompetence2Score += mensajeDesdeIframe;
                 setCompetence2Score(cumulativeCompetence2Score);
               }
@@ -184,7 +150,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
             const siguienteActividad = actividadActual + 1;
 
-            if (siguienteActividad < shuffledIframe.length) {
+            if (siguienteActividad < srcIframe.length) {
               setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
               // el estado que tiene el índice de la actividad actual
               setStartTime(new Date()); // Update startTime for the next activity
@@ -198,14 +164,9 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
               console.log("Resultados de cada actividad: ");
               console.log(JSON.stringify(currentResults));
             }
-            if (actividadActual === shuffledIframe.length - 1) {
+            if (actividadActual === srcIframe.length - 1) {
               // Si la actividad actual es la última en srcIframe, muestra el modal
               mostrarVentanaEmergente();
-
-              // Wait 3 seconds to automatically download the report
-              setTimeout(() => {
-                downloadButtonRef.current.click();
-              }, 3000);
             }
           }
         }
@@ -232,8 +193,14 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
       };
     }
 
-  }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, shuffledIframe, testScore]);
+  }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, testScore]);
 
+  // The general data entered by the student is saved
+  const saveData = (name, age) => {
+    setNameStudent(name)
+    setAge(age)
+    setIsDataEntered(true)
+  }
 
   return (
     <>
@@ -253,7 +220,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
           <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
             <iframe
-              src={shuffledIframe[actividadActual].ruta}
+              src={srcIframe[actividadActual].ruta}
               frameBorder="0"
               style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
               ref={iframeRef}
@@ -292,7 +259,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
                     {({ blob, url, loading, error }) => (
                       <div>
                         <p className="message">¡Felicitaciones! Terminaste la prueba</p>
-                        <button ref={downloadButtonRef} className="descargar-button">
+                        <button className="descargar-button">
                           {loading ? 'Cargando documento...' : 'Descargar reporte'}
                         </button>
                       </div>
