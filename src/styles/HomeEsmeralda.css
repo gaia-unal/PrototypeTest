@@ -17,7 +17,8 @@
 
 .textoEsmeralda {
     text-align: justify;
-    font-size: 1.5vw; /* Tamaño de fuente relativo al ancho del viewport */
+    font-size: 110%;
+    /* Tamaño de fuente relativo al ancho del viewport */
 }
 
 
@@ -25,14 +26,52 @@
     width: 60%;
 }
 
-.textoVideo {
-    margin-left: 5%;
-    font-size: 1.5vw;
+
+
+#pregunta {
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(226, 253, 236);
+
+}
+
+
+.videoContainer {
+    position: relative;
+    padding-top: 30%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 30%;
+    /* Establece la relación de aspecto (16:9) */
+    width: 80%;
+    /* Establece el ancho máximo del contenedor de video */
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    /* Centra horizontalmente el contenedor de video */
+}
+
+.videoContainer p {
     text-align: center;
 }
 
-.video1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 0;
+    /* Establece el margen derecho a 0 para centrar horizontalmente el video */
+    bottom: 0;
+    /* Establece el margen inferior a 0 para centrar verticalmente el video */
+    width: 60%;
+    height: 60%;
+}
+
+.botonReferencias {
+    border: none;
+    cursor: pointer;
+    margin-top: -10;
 }

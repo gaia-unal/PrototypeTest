@@ -51,7 +51,7 @@ export const Home = () => {
       <div className="container w-50 d-flex module-container">
         <div className='p-2 flex-grow-1'>
           {/* Discalculia */}
-          <NavLink to={'https://gaia.manizales.unal.edu.co/diamante/'}>
+          <NavLink to={'https://gaia.manizales.unal.edu.co/diamante/'} target="blank__">
             <img className='module-img' src={diamante} alt="Imagen de un diamante" title="Herramienta Diamante" />
           </NavLink>
         </div>

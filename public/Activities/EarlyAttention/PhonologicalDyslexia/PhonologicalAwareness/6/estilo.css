@@ -32,14 +32,14 @@ body {
 
 
 .btn.btn-outline-dark {
-    font-size: 2vw;
+    font-size: 2rem;
     padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 
@@ -50,7 +50,7 @@ div .font-controls {
 
 svg {
     display: inline;
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 
@@ -61,7 +61,7 @@ svg {
 
 /* Accessibility options */
 #accessibilityButton {
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 /* Activity instruction */
@@ -77,7 +77,7 @@ svg {
 
 #texto {
     color: black;
-    font-size: 2vw;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -162,7 +162,7 @@ svg {
 	width: 45%;
 	/* Ajusta el ancho y alto según tus necesidades */
 	height: auto;
-	font-size: 2vw;
+	font-size: 2rem;
 	/* Ajusta el tamaño del número */
 	font-weight: bold;
 	/* Opcional: ajusta el peso de la fuente */
@@ -172,7 +172,7 @@ svg {
 
 .contenedorNumeracion p {
 	margin: 20%;
-	font-size: 2vw;
+	font-size: 2rem;
 }
 
 /* Continue button */
@@ -191,7 +191,7 @@ svg {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-size: 2vw;
+	font-size: 2rem;
 	padding: 0.5rem 0rem;
 	text-decoration: none;
 	font-family: "Open-Dyslexic", sans-serif;
