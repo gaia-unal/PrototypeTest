@@ -237,7 +237,7 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
 
                 <View style={styles.information}>
                     <Text style={styles.subtitle}>{"\n"}{"\n"}Información por actividades</Text>
-                    {resultados.slice(10, 14).map((resultado, index) => (
+                    {resultados.slice(9, 15).map((resultado, index) => (
                         <View key={index} style={styles.content}>
                             <Text>Actividad {index + 10}: {resultado.nameActivity}</Text>
                             <Text>Puntaje: {resultado.score}</Text>

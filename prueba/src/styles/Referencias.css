@@ -17,6 +17,7 @@
 }
 
 .contenedor img {
+  width: 60%;
   display: block;
   /* Hacer que la imagen sea un bloque */
   margin: 0 auto;

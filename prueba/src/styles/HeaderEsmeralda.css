@@ -10,12 +10,11 @@
 
 .nombreEsmeralda {
     font-family: 'Open-Dyslexic', Arial;
-    font-size: 3vw;
+    font-size: 150%;
     color: white;
     text-align: left; /* Alinea el texto hacia la izquierda */
     text-decoration: none;
     margin-left: 10%;
-
 }
 
 .contenedorLogoNombre {
