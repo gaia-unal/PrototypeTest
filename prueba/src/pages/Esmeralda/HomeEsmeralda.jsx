@@ -73,9 +73,9 @@ export const HomeEsmeralda = () => {
       <div className='textoVideo'>
         <p id="pregunta">¿Qué es la Dislexia?</p>
       </div>
-      <div className="videoContainer">
+      <div className="videoContainer2">
         <iframe
-          className='video'
+          className='video2'
           src="https://www.youtube.com/embed/qtBoqtqwaYM"
           title="Video de YouTube"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

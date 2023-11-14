@@ -7,6 +7,12 @@
     flex-grow: 1; /* Toma el espacio restante en la dirección principal (horizontal en este caso) */
 }
 
+.iframePrincipal {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 4rem;
+  }
+
 .button {
     margin-right: 5%;
 }
@@ -22,9 +28,37 @@
     text-align: center;
 }
 
-.video1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.videoContainer {
+    position: relative;
+    padding-top: 30%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 30%;
+    /* Establece la relación de aspecto (16:9) */
+    width: 100%;
+    /* Establece el ancho máximo del contenedor de video */
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    /* Centra horizontalmente el contenedor de video */
+}
+
+.videoContainer p {
+    text-align: center;
+}
+
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 0;
+    /* Establece el margen derecho a 0 para centrar horizontalmente el video */
+    bottom: 0;
+    /* Establece el margen inferior a 0 para centrar verticalmente el video */
+    width: 70%;
+    height: 80%;
 }
 

@@ -132,6 +132,7 @@ export const AttentionResource = ({ route }) => {
     <>
       <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
         <iframe
+          className="iframePrincipal"
           src={srcIframe[actividadActual].ruta}
           frameBorder="0"
           style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}

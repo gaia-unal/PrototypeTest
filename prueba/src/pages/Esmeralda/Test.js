@@ -54,15 +54,15 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     tipoDislexia = 'Dislexia Fonológica';
     nameCompetence1 = 'Conciencia Fonológica';
     nameCompetence2 = 'Conocimiento de las letras';
-    message1 = " Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
-    message2 = " Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+    message1 = " Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 1 en: https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/esmeralda/inicio/referencias";
+    message2 = " Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 2 en:  https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/esmeralda/inicio/referencias";
   }
   else {
     tipoDislexia = 'Dislexia Superficial o Visual';
     nameCompetence1 = 'Discriminación visual';
     nameCompetence2 = 'Ortografía';
-    message1 = " Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla: https://drive.google.com/file/d/1vBTQY4yHhxNUk0Hthb05c3hqkUitIKUT/view?usp=sharing";
-    message2 = " La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la siguiente tabla:  https://drive.google.com/file/d/15uW6HY7ltgCq9RMVPSQ7smkhjnVaSiCI/view?usp=sharing";
+    message1 = " Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 3 en: https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/esmeralda/inicio/referencias";
+    message2 = " La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 4 en:  https://gaia.manizales.unal.edu.co/PiedrasPreciosasPrototipo/esmeralda/inicio/referencias";
   }
 
   // The states where the student's general data is saved are defined here:
@@ -253,6 +253,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
           <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
             <iframe
+              className="iframePrincipal"
               src={shuffledIframe[actividadActual].ruta}
               frameBorder="0"
               style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
