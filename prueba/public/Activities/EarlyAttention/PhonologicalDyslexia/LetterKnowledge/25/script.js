@@ -4,6 +4,7 @@ var puntaje = null;
 
 // Here goes the correct answer value
 var respuestaCorrectaDelInput1 = 'wafle';
+var respuestaCorrectaDelInput2 = 'waffle';
 
 // Message of the button in the modal
 var textoBoton = "";
@@ -249,7 +250,7 @@ function calificar(valor) {
 		return false;
 	}
 
-	if (valor == respuestaCorrectaDelInput1) {
+	if (valor == respuestaCorrectaDelInput1 || valor == respuestaCorrectaDelInput2) {
 		Correcto();
 		console.log('puntaje = 1')
 	} else {
