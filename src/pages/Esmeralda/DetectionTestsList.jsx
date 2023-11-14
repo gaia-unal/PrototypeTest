@@ -19,10 +19,14 @@ export const DetectionTestsList = ({ tests }) => {
                   </NavLink>
                 </div>
                 <div>
-                  <h5>{item.title}</h5>
-                  <p>
-                    {item.description}
-                  </p>
+                  <NavLink to={item.route} style={{ textDecoration: 'none', color: 'black' }}>
+
+                    <h5>{item.title}</h5>
+                    <p>
+                      {item.description}
+                    </p>
+                  </NavLink>
+
                 </div>
               </Fragment>
             )

@@ -8,7 +8,7 @@ var idSeleccion = null;
 
 // Put the correct option number here
 // The correct option for grading
-var idOpcionCorrecta = "opcion" + "4";
+var idOpcionCorrecta = "opcion" + "1";
 
 // Container only for guidance
 // document.getElementsByClassName("contenedor")[0].style.border = "solid black";
@@ -70,20 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// To change the font-size
 
-	let initialFontSize = 2; // Initial font size that text elements have in the activity
+	let initialFontSize = 19; // Initial font size that text elements have in the activity
 	let initialWidth = 50; // Initial width of answer options
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
 		// Text elements
-		changeFontButton.style.fontSize = initialFontSize + 'vw';
-		textElement.style.fontSize = initialFontSize + 'vw';
-		boton.style.fontSize = initialFontSize + 'vw';
-		accessibility.style.fontSize = initialFontSize + 'vw';
+		changeFontButton.style.fontSize = initialFontSize + 'px';
+		textElement.style.fontSize = initialFontSize + 'px';
+		boton.style.fontSize = initialFontSize + 'px';
+		accessibility.style.fontSize = initialFontSize + 'px';
 
 		// Don't change
 		for (let i = 0; i < spans.length; i++) {
-			spans[i].style.fontSize = initialFontSize + 'vw';
+			spans[i].style.fontSize = initialFontSize + 'px';
 		}
 
 		// Images
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// When the button to decrease the font size is clicked
 	decreaseFontButton.addEventListener("click", () => {
-		if (initialFontSize > 2) {
-			initialFontSize -= 0.1; // Decrease font size of text elements
+		if (initialFontSize > 19) {
+			initialFontSize -= 1; // Decrease font size of text elements
 			initialWidth -= 2.7; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// When the button to increase the font size is clicked
 	increaseFontButton.addEventListener("click", () => {
-		if (initialFontSize < 3.8) {
-			initialFontSize += 0.1;
+		if (initialFontSize < 24) {
+			initialFontSize += 1;
 			initialWidth += 2.7;
 
 			// The font size of all text elements and images is decreased

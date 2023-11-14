@@ -28,19 +28,19 @@ body {
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-    width: 2vw;
+    width: 2px;
 }
 
 
 .btn.btn-outline-dark {
-    font-size: 2vw;
+    font-size: 19px;
     padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-    font-size: 2vw;
+    font-size: 19px;
 }
 
 
@@ -51,7 +51,7 @@ div .font-controls {
 
 svg {
     display: inline;
-    font-size: 2vw;
+    font-size: 19px;
 }
 
 
@@ -62,7 +62,7 @@ svg {
 
 /* Accessibility options */
 #accessibilityButton {
-    font-size: 2vw;
+    font-size: 19px;
 }
 
 /* Activity instruction */
@@ -79,7 +79,7 @@ svg {
 
 #texto {
     color: black;
-    font-size: 2vw;
+    font-size: 19px;
     line-height: 1;
 }
 
@@ -132,19 +132,19 @@ svg {
 }
 
 #btn-continuar {
-	width: 30%;
 	background-color: #16be2c;
 	border-radius: 8px;
 	border: none;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-size: 2vw;
+	font-size: 19px;
 	padding: 0.5rem 0rem;
 	text-decoration: none;
 	font-family: "Open-Dyslexic", sans-serif;
 	text-align: center;
 	margin-bottom: 1rem;
+	width: 100px;
 }
 
 #btn-continuar:hover {

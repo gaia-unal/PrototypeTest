@@ -132,6 +132,7 @@ export const AttentionResource = ({ route }) => {
     <>
       <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
         <iframe
+          className="iframePrincipal"
           src={srcIframe[actividadActual].ruta}
           frameBorder="0"
           style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
@@ -149,7 +150,7 @@ export const AttentionResource = ({ route }) => {
             <div style={{ padding: '20px' }}>
               <div>
                 <p className="message">¡Felicitaciones! Ya terminaste</p>
-                <button className="descargar-button" onClick={() => navigate(-(srcIframe.length))}>
+                <button className="descargar-button" onClick={() => navigate('/esmeralda/inicio')}>
                   Volver al inicio
                 </button>
               </div>

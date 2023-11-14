@@ -170,7 +170,7 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
                         <View style={{ flexDirection: 'row' }}>
                             {/* Imagen del corazón */}
                             <Image src={imageCompetence1} alt="Corazón" style={styles.image2} />
-                            <Text style={styles.subsubtitle}>Se obtuvo un puntaje de {competence1Score} para {numberActivitiesCompetence} actividades.
+                            <Text style={styles.subsubtitle}>Se obtuvo un puntaje de {competence1Score.toFixed(2)} para {numberActivitiesCompetence} actividades.
                                 Su desempeño fue del {"\n"}{porcentajeCompetencia1.toFixed(2)}% para la competencia {nameCompetence1}{"\n"}{"\n"}</Text>
                         </View>
 
@@ -193,7 +193,7 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
                     <View style={{ flexDirection: 'row' }}>
                         {/* Imagen del corazón */}
                         <Image src={imageCompetence2} alt="Corazón" style={styles.image2} />
-                        <Text style={styles.subsubtitle}>Se obtuvo un puntaje de {competence2Score} para {numberActivitiesCompetence} actividades.
+                        <Text style={styles.subsubtitle}>Se obtuvo un puntaje de {competence2Score.toFixed(2)} para {numberActivitiesCompetence} actividades.
                             Su desempeño fue del {"\n"}{porcentajeCompetencia2.toFixed(2)}% para la competencia {nameCompetence2} {"\n"}{"\n"}</Text>
                     </View>
 

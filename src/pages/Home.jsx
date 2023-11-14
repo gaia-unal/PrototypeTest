@@ -48,7 +48,7 @@ export const Home = () => {
       <h1 className='text-center title'><span className='bordered-text' title='Aquí encontrarás los módulos con los que contamos'>Módulos:</span></h1>
 
 
-      <div className="container w-50 d-flex module-container">
+      <div className="container w-75 d-flex module-container">
         <div className='p-2 flex-grow-1'>
           {/* Discalculia */}
           <NavLink to={'https://gaia.manizales.unal.edu.co/diamante/'}>
@@ -68,7 +68,7 @@ export const Home = () => {
           </button>
         </div>
       </div>
-      <div className="container w-50 d-flex module-container">
+      <div className="container w-75 d-flex module-container">
         <div className='p-2 flex-grow-1'>
           {/* Dislexia */}
           <NavLink to="/esmeralda/inicio">
@@ -88,7 +88,7 @@ export const Home = () => {
           </button>
         </div>
       </div>
-      <div className="container w-50 d-flex module-container">
+      <div className="container w-75 d-flex module-container">
         <div className='p-2 flex-grow-1'>
           {/* Disgrafía */}
           <NavLink to='/amatista'>

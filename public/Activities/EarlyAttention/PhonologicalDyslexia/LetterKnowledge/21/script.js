@@ -1,3 +1,5 @@
+
+
 // Global variable definitions
 // The 'puntaje' variable holds the activity's score
 var puntaje = null;
@@ -6,12 +8,29 @@ var puntaje = null;
 var respuestaCorrectaDelInput1 = 'serpiente';
 var respuestaCorrectaDelInput2 = 'serpientes';
 
-// Here, the actions of the 'continuar' button are defined
+
+// Message of the button in the modal
+var textoBoton = "";
+
+// Number of the audios to the modal
+var audio1Modal = 1;
+var audio2Modal = 2;
+
+
+// 'Continuar' button
 var boton = document.getElementById('btn-continuar');
 boton.addEventListener('click', function () {
-	// Send a message to the React parent component
-	procesarPuntaje();
-	window.parent.postMessage(puntaje, '*');
+	mostrarModal();
+});
+
+// 'Continuar' button of the modal
+var boton2 = document.getElementById('boton-continuar-modal');
+boton2.addEventListener('click', function () {
+	if (textoBoton == "Continuar") {
+		// Send a message to the React component in the parent
+		procesarPuntaje();
+		window.parent.postMessage(puntaje, '*');
+	}
 });
 
 // Accessibility functions
@@ -20,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// To change the font
 
 	// Name of the activity's image
-	const imageName = "S";
+	const imageName = "R";
 
 	// Obtain the elements to which the font must be changed
 	const changeFontButton = document.getElementById("changeFont");
@@ -63,21 +82,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// To change the font-size
 
-	let initialFontSize = 2; // Initial font size that text elements have in the activity
+	let initialFontSize = 19; // Initial font size that text elements have in the activity
 	let initialWidth = 20; // Initial width of answer options
 
 	// Function to change the font size
 	const changeFontSize = (initialFontSize, initialWidth) => {
 		// Text elements
-		changeFontButton.style.fontSize = initialFontSize + 'vw';
-		textElement.style.fontSize = initialFontSize + 'vw';
-		answerElement.style.fontSize = initialFontSize + 'vw';
-		boton.style.fontSize = initialFontSize + 'vw';
-		accessibility.style.fontSize = initialFontSize + 'vw';
+		changeFontButton.style.fontSize = initialFontSize + 'px';
+		textElement.style.fontSize = initialFontSize + 'px';
+		answerElement.style.fontSize = initialFontSize + 'px';
+		boton.style.fontSize = initialFontSize + 'px';
+		accessibility.style.fontSize = initialFontSize + 'px';
 
 		// Don't change
 		for (let i = 0; i < spans.length; i++) {
-			spans[i].style.fontSize = initialFontSize + 'vw';
+			spans[i].style.fontSize = initialFontSize + 'px';
 		}
 
 		// Images
@@ -91,8 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// When the button to decrease the font size is clicked
 	decreaseFontButton.addEventListener("click", () => {
-		if (initialFontSize > 2) {
-			initialFontSize -= 0.1; // Decrease font size of text elements
+		if (initialFontSize > 19) {
+			initialFontSize -= 1; // Decrease font size of text elements
 			initialWidth -= 4.4; // Decrease size of images (answer options)
 
 			// The font size of all text elements and images is decreased
@@ -105,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// When the button to increase the font size is clicked
 	increaseFontButton.addEventListener("click", () => {
-		if (initialFontSize < 3.8) {
-			initialFontSize += 0.1;
+		if (initialFontSize < 24) {
+			initialFontSize += 1;
 			initialWidth += 4.4;
 
 			// The font size of all text elements and images is decreased
@@ -242,4 +261,27 @@ function calificar(valor) {
 		Error();
 		console.log('puntaje = 0')
 	}
+}
+
+// Function to show the modal
+function mostrarModal() {
+	var mensaje = "";
+	var resultadoMensaje = document.getElementById("resultadoMensaje");
+	var botonContinuarModal = document.getElementById("boton-continuar-modal");
+	var miModal = new bootstrap.Modal(document.getElementById("resultadoModal"));
+
+	if (puntaje === 1) {
+		mensaje = "¡Muy bien! Esa es la respuesta correcta 😊";
+		botonContinuarModal.textContent = 'Continuar';
+		textoBoton = 'Continuar';
+		sonido(audio1Modal); // Se reproduce el audio que dice: "Muy bien"
+	} else {
+		mensaje = "Inténtalo nuevamente, ¡Tú puedes! 😊";
+		botonContinuarModal.textContent = 'Intentar nuevamente';
+		textoBoton = "Intentar nuevamente";
+		sonido(audio2Modal); // Se reproduce el audio que dice "Inténtalo nuevamente"
+	}
+
+	resultadoMensaje.textContent = mensaje;
+	miModal.show();
 }
