@@ -11,9 +11,9 @@ export const AttentionResource = ({ route }) => {
 
   if (route === '/Activities/EarlyAttention/PhonologicalDyslexia/LetterKnowledge') {
     srcIframe = [
-      { ruta: domain + route + "/1/indice.html" },
-      { ruta: domain + route + "/1.1/indice.html" },
-      { ruta: domain + route + "/1.2/indice.html" },
+      // { ruta: domain + route + "/1/indice.html" },
+      // { ruta: domain + route + "/1.1/indice.html" },
+      // { ruta: domain + route + "/1.2/indice.html" },
       { ruta: domain + route + "/2/indice.html" },
       { ruta: domain + route + "/3/indice.html" },
       { ruta: domain + route + "/4/indice.html" },
