@@ -9,7 +9,7 @@ export const HomeEsmeralda = () => {
     <>
       <NavLink to='/' style={{ textDecoration: 'none' }}>
         <div className='container d-flex flex-row-reverse mt-2'>
-          <button className='btn btn-success' title="Regresa al inicio">Volver al inicio</button>
+          <button className='btn btn-success botonVolver' title="Regresa al inicio">Volver al inicio</button>
         </div>
       </NavLink>
 

@@ -9,6 +9,10 @@
   /* Toma el espacio restante en la dirección principal (horizontal en este caso) */
 }
 
+.button {
+  margin-top: 2%;
+}
+
 
 .contenedor {
   text-align: center;
