@@ -96,8 +96,8 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     const newShuffledIframe = desordenarArray(srcIframe);
     setShuffledIframe(newShuffledIframe);
 
-    console.log("El desordenado es ", newShuffledIframe);
-    console.log("El normal es ", srcIframe);
+    // console.log("El desordenado es ", newShuffledIframe);
+    // console.log("El normal es ", srcIframe);
 
   }
 
