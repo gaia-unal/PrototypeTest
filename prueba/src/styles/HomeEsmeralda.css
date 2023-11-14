@@ -16,6 +16,8 @@
 }
 
 .textoEsmeralda {
+    color: black;
+    text-decoration: none;
     text-align: justify;
     font-size: 110%;
 }
