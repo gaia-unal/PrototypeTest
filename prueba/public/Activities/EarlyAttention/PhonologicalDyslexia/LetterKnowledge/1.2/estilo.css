@@ -27,19 +27,19 @@ body {
 
 /* Button to change the font of the activity text */
 .bi.bi-file-font-fill {
-	width: 2vw;
+	width: 2px;
 }
 
 
 .btn.btn-outline-dark {
-	font-size: 2vw;
+	font-size: 19px;
 	padding: 1%;
 }
 
 
 /* Font size and line spacing controls */
 span {
-	font-size: 2vw;
+	font-size: 19px;
 }
 
 
@@ -50,7 +50,7 @@ div .font-controls {
 
 svg {
 	display: inline;
-	font-size: 2vw;
+	font-size: 19px;
 }
 
 
@@ -61,7 +61,7 @@ svg {
 
 /* Accessibility options */
 #accessibilityButton {
-	font-size: 2vw;
+	font-size: 19px;
 }
 
 /* Activity instruction */
@@ -78,13 +78,13 @@ svg {
 
 #texto {
     color: black;
-    font-size: 3vw;
+    font-size: 19px;
     line-height: 1;
 }
 
 #reto {
 	color: black;
-    font-size: 3vw;
+    font-size: 19px;
     line-height: 1;
 }
 
@@ -104,7 +104,7 @@ svg {
 #respuesta {
 	width: 30%;
 	font-family: 'Open-Dyslexic', sans-serif;
-	font-size: 1.5vw;
+	font-size: 1.5px;
 	border: 2px solid #bb5b02;
 	padding: 0.5rem;
 	text-align: center;
@@ -128,7 +128,7 @@ svg {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-size: 2vw;
+	font-size: 19px;
 	padding: 0.5rem 0rem;
 	text-decoration: none;
 	font-family: "Open-Dyslexic", sans-serif;
@@ -148,7 +148,7 @@ svg {
   }
   
   .checkbox-label {
-	font-size: 16px; /* Cambia el tamaño de la etiqueta del checkbox */
+	font-size: 19px; /* Cambia el tamaño de la etiqueta del checkbox */
 	margin-left: 10px; /* Añade un espacio entre la etiqueta y el checkbox */
   }
   
