@@ -1,6 +1,5 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
-import imagenGuiaResultados from "../../assets/imagenGuiaResultados.png"
 import headerPDF from '../../assets/headerPDF.png';
 import footPDF from '../../assets/footPDF.png'
 import orangeHeart from '../../assets/orangeHeart.png';
@@ -81,8 +80,9 @@ const styles = StyleSheet.create({
     },
 });
 
-const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore, tipoDislexia, nameStudent, applicationDate, age, nameCompetence1, nameCompetence2, message1, message2 }) => {
+const ReportePDF = ({ resultados, imagenPDF, competence1Score, competence2Score, testScore, tipoDislexia, nameStudent, applicationDate, age, nameCompetence1, nameCompetence2, message1, message2 }) => {
 
+    console.log("Es: ",imagenPDF);
     // Número de actividads para cada competencia
     const numberActivitiesCompetence = 7;
     // Número de actividades de la prueba total
@@ -161,7 +161,7 @@ const ReportePDF = ({ resultados, competence1Score, competence2Score, testScore,
 
 
                     {/* Imagen de guía de los resultados */}
-                    <Image src={imagenGuiaResultados} alt="Guía de resultados" style={styles.image} />
+                    <Image src={imagenPDF} alt="Guía de resultados" style={styles.image} />
 
                     {/* Datos por competencias */}
                     <Text style={styles.subtitle}>{"\n"}Puntajes por competencias</Text>
