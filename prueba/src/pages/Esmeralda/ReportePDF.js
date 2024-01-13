@@ -222,7 +222,7 @@ const ReportePDF = ({ resultados, imagenPDF, competence1Score, competence2Score,
                         <View key={index} style={styles.content}>
                             <Text>Actividad {index + 1}: {resultado.nameActivity}</Text>
                             <Text>Puntaje: {resultado.score}</Text>
-                            <Text>Tiempo: {resultado.time} segundos</Text>
+                            <Text>Tiempo: {resultado.time.toFixed(1)} segundos</Text>
                         </View>
                     ))}
                 </View>
@@ -241,7 +241,7 @@ const ReportePDF = ({ resultados, imagenPDF, competence1Score, competence2Score,
                         <View key={index} style={styles.content}>
                             <Text>Actividad {index + 10}: {resultado.nameActivity}</Text>
                             <Text>Puntaje: {resultado.score}</Text>
-                            <Text>Tiempo: {resultado.time} segundos</Text>
+                            <Text>Tiempo: {resultado.time.toFixed(1)} segundos</Text>
                         </View>
                     ))}
                 </View>
