@@ -6,6 +6,8 @@ import ModalComponent from './ModalComponent';
 import { GeneralDataInput } from './GeneralDataInput';
 import { BackButton } from '../../components/BackButton';
 import { useNavigate } from "react-router-dom";
+import imagenGuiaResultados from "../../assets/imagenGuiaResultados.png"
+import imagenGuiaResultados2 from "../../assets/imagenGuiaResultados2.png"
 
 export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameActivityC1_2, nameActivityC1_3, nameActivityC1_4, nameActivityC1_5, nameActivityC1_6, nameActivityC1_7, nameActivityC2_1, nameActivityC2_2, nameActivityC2_3, nameActivityC2_4, nameActivityC2_5, nameActivityC2_6, nameActivityC2_7 }) => {
 
@@ -49,6 +51,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   var nameCompetence2 = '';
   var message1 = '';
   var message2 = '';
+  var imagenPDF = '';
 
 
   if (module === "/Activities/EarlyDetection/PhonologicalDyslexia") {
@@ -57,6 +60,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     nameCompetence2 = 'Conocimiento de las letras';
     message1 = " Se refiere a la habilidad de una persona para comprender y manipular la estructura de los sonidos en las palabras habladas. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 1 en: http://bit.ly/piedras-prototipo";
     message2 = " Se refiere a la capacidad de una persona para reconocer, identificar y comprender las letras del alfabeto. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 2 en:  http://bit.ly/piedras-prototipo";
+    imagenPDF = imagenGuiaResultados;
   }
   else {
     tipoDislexia = 'Dislexia Superficial o Visual';
@@ -64,6 +68,7 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
     nameCompetence2 = 'Ortografía';
     message1 = " Es la habilidad visual que ayuda al estudiante a reconocer las semejanzas y las diferencias de formas, colores, letras y posición de objetos, personas y otros materiales, y a advertir las coincidencias entre ellos. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 3 en: http://bit.ly/piedras-prototipo";
     message2 = " La ortografía es la norma o conjunto de reglas que rigen la correcta escritura de una lengua. Para fortalecer esta competencia se pueden trabajar actividades, habilidades cognitivas y categorías o temáticas como las que se muestra en la Tabla 4 en:  http://bit.ly/piedras-prototipo";
+    imagenPDF = imagenGuiaResultados2;
   }
 
   // The states where the student's general data is saved are defined here:
@@ -74,17 +79,17 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
   // Utilidad para desordenar un array utilizando el algoritmo de Fisher-Yates
   // Función para desordenar un array de forma aleatoria
   function desordenarArray(array) {
-  const newArray = [...array];
-  const desordenado = [];
+    const newArray = [...array];
+    const desordenado = [];
 
-  while (newArray.length > 0) {
-    const randomIndex = Math.floor(Math.random() * newArray.length);
-    const elementoSeleccionado = newArray.splice(randomIndex, 1)[0];
-    desordenado.push(elementoSeleccionado);
+    while (newArray.length > 0) {
+      const randomIndex = Math.floor(Math.random() * newArray.length);
+      const elementoSeleccionado = newArray.splice(randomIndex, 1)[0];
+      desordenado.push(elementoSeleccionado);
+    }
+
+    return desordenado;
   }
-
-  return desordenado;
-}
 
 
 
@@ -134,181 +139,183 @@ export const Test = ({ module, competence1, competence2, nameActivityC1_1, nameA
 
   const downloadButtonRef = useRef(null);
 
-  useEffect(() => { // Se utiliza el hook useEffect
-    // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
-    // efecto secundario recibirMensajeDesdeIframe
+    useEffect(() => { // Se utiliza el hook useEffect
+      // useEffect se utiliza para realizar efectos secundarios en componentes funcionales, en este caso, se activa el
+      // efecto secundario recibirMensajeDesdeIframe
 
 
-    // Antes de usar iframeRef, verifica que no sea null
-    if (iframeRef.current) {
-      // Accede a las propiedades o métodos del iframe
-      const recibirMensajeDesdeIframe = (event) => {
-        if (event.source === iframeRef.current.contentWindow) {
-          const mensajeDesdeIframe = event.data;
+      // Antes de usar iframeRef, verifica que no sea null
+      if (iframeRef.current) {
+        // Accede a las propiedades o métodos del iframe
+        const recibirMensajeDesdeIframe = (event) => {
+          if (event.source === iframeRef.current.contentWindow) {
+            const mensajeDesdeIframe = event.data;
 
-          // Verifica el mensaje y avanza a la siguiente actividad si es necesario
-          // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
-          // índice de la siguiente actividad y se actualiza el puntaje global
-          if (typeof mensajeDesdeIframe === "number") {
-            // Time elapsed to perform the activity
-            const currentTime = new Date();
-            const elapsedTime = (currentTime - startTime) / 1000; // Seconds
-            // Information of each activity
-            const activitieResult = {
-              nameActivity: shuffledIframe[actividadActual].nombre,
-              location: shuffledIframe[actividadActual].ruta,
-              score: mensajeDesdeIframe,
-              time: elapsedTime
-            };
-            const currentResults = [...results, activitieResult];
-            // Activity information is saved
-            setResults(currentResults);
+            // Verifica el mensaje y avanza a la siguiente actividad si es necesario
+            // Si desde el iframe le llega el puntaje de la actividad, entonces se define una constante que guarda el
+            // índice de la siguiente actividad y se actualiza el puntaje global
+            if (typeof mensajeDesdeIframe === "number") {
+              // Time elapsed to perform the activity
+              const currentTime = new Date();
+              const elapsedTime = (currentTime - startTime) / 1000; // Seconds
+              // Information of each activity
+              const activitieResult = {
+                nameActivity: shuffledIframe[actividadActual].nombre,
+                location: shuffledIframe[actividadActual].ruta,
+                score: mensajeDesdeIframe,
+                time: elapsedTime
+              };
+              const currentResults = [...results, activitieResult];
+              // Activity information is saved
+              setResults(currentResults);
 
-            // Global score is updated
-            let cumulativeScore = testScore + mensajeDesdeIframe;
-            setTestScore(cumulativeScore);
+              // Global score is updated
+              let cumulativeScore = testScore + mensajeDesdeIframe;
+              setTestScore(cumulativeScore);
 
-            // Competence score is updated
-            let cumulativeCompetence1Score = competence1Score;
-            let cumulativeCompetence2Score = competence2Score;
+              // Competence score is updated
+              let cumulativeCompetence1Score = competence1Score;
+              let cumulativeCompetence2Score = competence2Score;
 
-            if (shuffledIframe[actividadActual].ruta.includes("PhonologicalAwareness") || shuffledIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
-              cumulativeCompetence1Score += mensajeDesdeIframe;
-              setCompetence1Score(cumulativeCompetence1Score);
-            }
-            else {
-              if (shuffledIframe[actividadActual].ruta.includes("LetterKnowledge") || shuffledIframe[actividadActual].ruta.includes("Orthography")) {
-                cumulativeCompetence2Score += mensajeDesdeIframe;
-                setCompetence2Score(cumulativeCompetence2Score);
+              if (shuffledIframe[actividadActual].ruta.includes("PhonologicalAwareness") || shuffledIframe[actividadActual].ruta.includes("VisualDiscrimination")) {
+                cumulativeCompetence1Score += mensajeDesdeIframe;
+                setCompetence1Score(cumulativeCompetence1Score);
+              }
+              else {
+                if (shuffledIframe[actividadActual].ruta.includes("LetterKnowledge") || shuffledIframe[actividadActual].ruta.includes("Orthography")) {
+                  cumulativeCompetence2Score += mensajeDesdeIframe;
+                  setCompetence2Score(cumulativeCompetence2Score);
+                }
+              }
+
+              const siguienteActividad = actividadActual + 1;
+
+              if (siguienteActividad < shuffledIframe.length) {
+                setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
+                // el estado que tiene el índice de la actividad actual
+                setStartTime(new Date()); // Update startTime for the next activity
+              }
+              else {
+                // The test is over
+
+                console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
+                console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
+                console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
+                console.log("Resultados de cada actividad: ");
+                console.log(JSON.stringify(currentResults));
+              }
+              if (actividadActual === shuffledIframe.length - 1) {
+                // Si la actividad actual es la última en srcIframe, muestra el modal
+                mostrarVentanaEmergente();
+
+                // Wait 3 seconds to automatically download the report
+                setTimeout(() => {
+                  downloadButtonRef.current.click();
+                }, 3000);
               }
             }
-
-            const siguienteActividad = actividadActual + 1;
-
-            if (siguienteActividad < shuffledIframe.length) {
-              setActividadActual(siguienteActividad); // Si todavía existe una siguiente actividad, entonces se actualiza
-              // el estado que tiene el índice de la actividad actual
-              setStartTime(new Date()); // Update startTime for the next activity
-            }
-            else {
-              // The test is over
-
-              console.log("Puntaje de la prueba calculado: " + cumulativeScore); // We checked this variable because scoreTest has not been updated yet
-              console.log("Puntaje de la competencia 1: " + cumulativeCompetence1Score);
-              console.log("Puntaje de la competencia 2: " + cumulativeCompetence2Score);
-              console.log("Resultados de cada actividad: ");
-              console.log(JSON.stringify(currentResults));
-            }
-            if (actividadActual === shuffledIframe.length - 1) {
-              // Si la actividad actual es la última en srcIframe, muestra el modal
-              mostrarVentanaEmergente();
-
-              // Wait 3 seconds to automatically download the report
-              setTimeout(() => {
-                downloadButtonRef.current.click();
-              }, 3000);
-            }
           }
-        }
-      };
+        };
 
-      // When a change occurs within the activity that increases the size of the 
-      // content, this message will be received
-      const handleMessage = (event) => {
-        if (event.data && event.data.type === 'iframeHeightChange') {
-          setIframeHeight(event.data.height);
-        }
-      };
+        // When a change occurs within the activity that increases the size of the 
+        // content, this message will be received
+        const handleMessage = (event) => {
+          if (event.data && event.data.type === 'iframeHeightChange') {
+            setIframeHeight(event.data.height);
+          }
+        };
 
-      window.addEventListener('message', handleMessage);
+        window.addEventListener('message', handleMessage);
 
-      // With this event listener we receive the score from the iframe
-      window.addEventListener('message', recibirMensajeDesdeIframe);
-
-
-      return () => {
-        // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
-        window.removeEventListener('message', recibirMensajeDesdeIframe);
-        window.removeEventListener('message', handleMessage);
-      };
-    }
-
-  }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, shuffledIframe, testScore]);
+        // With this event listener we receive the score from the iframe
+        window.addEventListener('message', recibirMensajeDesdeIframe);
 
 
-  return (
-    <>
-      {!isDataEntered && (
-        <>
-          <BackButton />
-          <GeneralDataInput
-            saveData={saveData}
-          />
-        </>
-      )}
+        return () => {
+          // Se hace limpieza del efecto del hook useEffect, para no tener problemas con la siguiente actividad
+          window.removeEventListener('message', recibirMensajeDesdeIframe);
+          window.removeEventListener('message', handleMessage);
+        };
+      }
 
-      {/* The activities are shown and the fields to enter general data are hidden */}
-      {isDataEntered && (
-        <>
-          {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
-
-          <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
-            <iframe
-              className="iframePrincipal"
-              src={shuffledIframe[actividadActual].ruta}
-              frameBorder="0"
-              style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
-              ref={iframeRef}
-              title="Actividad"
-              scrolling='no'
-              onLoad={handleIframeLoad}></iframe>
-          </div>
+    }, [actividadActual, startTime, results, competence1Score, competence2Score, srcIframe, shuffledIframe, testScore]);
 
 
-          {/* Modal */}
-          <div>
-            {mostrarModal ? (
-              // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
-              <ModalComponent isOpen={mostrarModal} onClose={() => setMostrarModal(false)}>
-                <div style={{ padding: '20px' }}>
-                  {/* Contenido dentro del modal */}
-                  <PDFDownloadLink
-                    document={
-                      <ReportePDF
-                        resultados={results}
-                        competence1Score={competence1Score}
-                        competence2Score={competence2Score}
-                        testScore={testScore}
-                        tipoDislexia={tipoDislexia}
-                        nameStudent={nameStudent}
-                        applicationDate={applicationDate}
-                        age={age + ' años'}
-                        nameCompetence1={nameCompetence1}
-                        nameCompetence2={nameCompetence2}
-                        message1={message1}
-                        message2={message2}
-                      />
-                    }
-                    fileName={`${nameStudent.replace(/ /g, '_')}_reporte.pdf`} // Construye el nombre del archivo
-                  >
-                    {({ blob, url, loading, error }) => (
-                      <div>
-                        <p className="message">¡Felicitaciones! Terminaste la prueba</p>
-                        <button ref={downloadButtonRef} className="descargar-button">
-                          {loading ? 'Cargando documento...' : 'Descargar reporte'}
-                        </button>
-                      </div>
-                    )}
-                  </PDFDownloadLink>
-                  <button className="return-button mt-2" onClick={() => navigate('/esmeralda/inicio')}>
-                    Volver al inicio
-                  </button>
-                </div>
-              </ModalComponent>
-            ) : null}
-          </div>
-        </>
-      )}
-    </>
-  );
-}
+    return (
+      <>
+        {!isDataEntered && (
+          <>
+            <BackButton />
+            <GeneralDataInput
+              saveData={saveData}
+            />
+          </>
+        )}
+
+        {/* The activities are shown and the fields to enter general data are hidden */}
+        {isDataEntered && (
+          <>
+            {/* Se actualiza el iframe de la actividad actual - índice manejado en los estados */}
+
+            <div style={{ display: 'flex', justifyContent: 'center' }} className='iframe-div'>
+              <iframe
+                className="iframePrincipal"
+                src={shuffledIframe[actividadActual].ruta}
+                frameBorder="0"
+                style={{ width: '70%', height: iframeHeight, position: 'relative', top: 0, left: 0 }}
+                ref={iframeRef}
+                title="Actividad"
+                scrolling='no'
+                onLoad={handleIframeLoad}></iframe>
+            </div>
+
+
+            {/* Modal */}
+            <div>
+              {mostrarModal ? (
+                // Utiliza PDFDownloadLink para generar y descargar el informe en PDF
+                <ModalComponent isOpen={mostrarModal} onRequestClose={() => setMostrarModal(false)} shouldCloseOnOverlayClick={false}>
+                  <div style={{ padding: '20px' }}>
+                    {/* Contenido dentro del modal */}
+                    <PDFDownloadLink
+                      document={
+                        <ReportePDF
+                          resultados={results}
+                          imagenPDF={imagenPDF}
+                          competence1Score={competence1Score}
+                          competence2Score={competence2Score}
+                          testScore={testScore}
+                          tipoDislexia={tipoDislexia}
+                          nameStudent={nameStudent}
+                          applicationDate={applicationDate}
+                          age={age + ' años'}
+                          nameCompetence1={nameCompetence1}
+                          nameCompetence2={nameCompetence2}
+                          message1={message1}
+                          message2={message2}
+                        />
+                      }
+                      fileName={`${nameStudent.replace(/ /g, '_')}_reporte.pdf`} // Construye el nombre del archivo
+                    >
+                      {({ blob, url, loading, error }) => (
+                        <div>
+                          <p className="message">¡Felicitaciones! Terminaste la prueba</p>
+                          <button ref={downloadButtonRef} className="descargar-button">
+                            {loading ? 'Cargando documento...' : 'Descargar reporte'}
+                          </button>
+                        </div>
+                      )}
+                    </PDFDownloadLink>
+                    <button className="return-button mt-2" onClick={() => navigate('/esmeralda/inicio')}>
+                      Volver al inicio
+                    </button>
+                  </div>
+                </ModalComponent>
+                
+              ) : null}
+            </div>
+          </>
+        )}
+      </>
+    );
+  }
